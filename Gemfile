@@ -31,15 +31,21 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 #Base gems!
-gem 'geokit-rails'
 gem 'pg', '~> 0.18.4'
 gem 'pry', '~> 0.10.3'
-gem "figaro"
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'jquery-rails'
+gem 'sinatra', github: 'sinatra/sinatra'
+gem "refile", require: "refile/rails", github: 'refile/refile'
+gem "refile-mini_magick"
+gem 'refile-postgres', '~> 1.4'
+gem 'rails_admin', '~> 1.0'
+
 
 #Adding further social intergration!
-
 gem 'omniauth-facebook'
+gem 'geokit-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
