@@ -42,6 +42,9 @@ gem "refile-mini_magick"
 gem 'refile-postgres', '~> 1.4'
 gem 'rails_admin', '~> 1.0'
 
+#Not sure about the following gems!
+# gem 'rollbar'
+# gem 'oj', '~> 2.12.14'
 
 #Adding further social intergration!
 gem 'omniauth-facebook'
