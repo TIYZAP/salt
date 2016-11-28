@@ -44,6 +44,7 @@ gem 'rails_admin', '~> 1.0'
 gem 'webpack-rails'
 gem 'rails_12factor', group: :production
 gem 'factory_girl'
+gem 'devise'
 
 #Exception / Monitoring!
 gem 'rollbar'
