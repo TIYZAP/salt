@@ -33,9 +33,9 @@ gem 'jbuilder', '~> 2.5'
 #Base gems!
 gem 'pg', '~> 0.18.4'
 gem 'pry-rails'
+gem 'thor', '0.19.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'active_model_serializers', '~> 0.10.0'
-gem 'jquery-rails'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick"
@@ -45,6 +45,7 @@ gem 'webpack-rails'
 gem 'rails_12factor', group: :production
 gem 'factory_girl'
 gem 'devise'
+gem 'foreman', '~> 0.82.0'
 
 #Exception / Monitoring!
 gem 'rollbar'
