@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 #Base gems!
 gem 'pg', '~> 0.18.4'
-gem 'pry', '~> 0.10.3'
+gem 'pry-rails'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'jquery-rails'
@@ -51,6 +51,7 @@ gem 'rollbar'
 gem 'oj', '~> 2.12.14'
 
 #Adding further social intergration!
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'geokit-rails'
 gem "socialization"
