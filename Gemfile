@@ -41,10 +41,13 @@ gem "refile", require: "refile/rails", github: 'refile/refile'
 gem "refile-mini_magick"
 gem 'refile-postgres', '~> 1.4'
 gem 'rails_admin', '~> 1.0'
+gem 'webpack-rails'
+gem 'rails_12factor', group: :production
+gem 'factory_girl'
 
-#Not sure about the following gems!
-# gem 'rollbar'
-# gem 'oj', '~> 2.12.14'
+#Exception / Monitoring!
+gem 'rollbar'
+gem 'oj', '~> 2.12.14'
 
 #Adding further social intergration!
 gem 'omniauth-facebook'
