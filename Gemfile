@@ -49,6 +49,7 @@ gem 'rails_admin', '~> 1.0'
 #Adding further social intergration!
 gem 'omniauth-facebook'
 gem 'geokit-rails'
+gem "socialization"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
