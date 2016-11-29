@@ -4,11 +4,22 @@
     <title>Salt</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
+    <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+    <% if Rails.env == :development %>
+    <script src="http://localhost:3808/webpack-dev-server.js"></script>
+    <% end %>
+    <script src="https://use.fontawesome.com/622f283375.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
   </head>
 
   <body>
+    <div id="app">
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582e63c0afc019d8"></script>
+    </div>
     <script>
  window.fbAsyncInit = function() {
    FB.init({
