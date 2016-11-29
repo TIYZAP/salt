@@ -1,3 +1,17 @@
 .fb-button {
   padding-top: 200px;
 }
+
+.signin-container {
+  background: #345577;
+  color: white;
+  height: 100vh;
+}
+
+.signin-container h1 {
+  font-size: 90px;
+}
+
+.signin-container a {
+  color: white;
+}
