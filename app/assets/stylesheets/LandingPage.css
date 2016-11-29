@@ -1,0 +1,19 @@
+.signup-page-text {
+  font-family: 'Eczar', serif;
+  font-size: 130px;
+}
+
+.landing-container {
+  background: #345577;
+  color: white;
+  height: 100vh;
+}
+
+.landing-container h1 {
+  font-family: 'Eczar', serif;
+  font-size: 130px;
+}
+
+.landing-container h3 {
+  padding-bottom: 80px;
+}

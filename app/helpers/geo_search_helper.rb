@@ -1,0 +1,2 @@
+module GeoSearchHelper
+end

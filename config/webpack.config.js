@@ -16,7 +16,18 @@ var config = {
     // Sources are expected to live in $app_root/webpack
     'application': './webpack/application.js'
   },
-
+  module: {
+     loaders: [
+       {
+         test: /\.js$/,
+         exclude: /node_modules/,
+         loader: 'babel',
+         query: {
+           presets: ['latest', 'react']
+         }
+       }
+     ]
+   },
   output: {
     // Build assets directly in to public/webpack/, let webpack know
     // that all webpacked assets start with webpack/

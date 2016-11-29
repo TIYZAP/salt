@@ -1,0 +1,9 @@
+.signup-page-text{
+  font-family: 'Eczar', serif;
+  font-size: 130px;
+}
+.signup-container{
+  background: #345577;
+  color: white;
+  height: 100vh;
+}
