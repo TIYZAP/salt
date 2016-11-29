@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   attachment :image, type: :image
   has_many :reviews
+  acts_as_follower
+  acts_as_followable
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
