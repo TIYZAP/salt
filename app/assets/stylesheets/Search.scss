@@ -1,0 +1,23 @@
+.search-page-container{
+    h3{
+        font-size: 40px;
+    }
+}
+.search-wrapper{
+    padding: 10px;
+    background: #0FAF9B;
+    opacity: .5;
+    border-radius: 10px;
+    button{
+        background: #0FAF9B;
+        border: 1px solid white;
+        color: white;
+    }
+}
+
+.search-results{
+    background: #15A3EB;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
