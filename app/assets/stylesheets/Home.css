@@ -12,6 +12,10 @@ img {
   box-shadow: 5px 5px 5px;
   position: fixed;
   z-index: 1;
+  padding: 10px;
+  width: 280px;
+  top: 0;
+  left: 0;
 }
 
 .nav-bar-left h1 {
@@ -22,11 +26,11 @@ img {
   background: white;
   border-radius: 50%;
   box-shadow: 1px 2px 2px;
+  padding: 5px;
 }
 
 .nav-bar-left ul {
   padding: 10px;
-  overflow: scroll;
 }
 
 .nav-bar-left li {
@@ -44,7 +48,7 @@ img {
 }
 
 li:hover {
-  background: #4C5053;
+  background: #BB5792;
   opacity: .8;
   transition: all ease 0;
   cursor: pointer;
@@ -60,10 +64,6 @@ li:hover {
 
 .main-body-home {
   background: #4C5053;
-}
-
-.main-body-right {
-  margin-left: 420px;
 }
 
 .timeline {
@@ -112,6 +112,12 @@ li:hover {
   left: 106px;
   top: 24px;
   border-radius: 100%;
+}
+
+@media (min-width: 768px) {
+  .nav-bar-left {
+    width: 25vw;
+  }
 }
 
 @media (max-width: 760px) {

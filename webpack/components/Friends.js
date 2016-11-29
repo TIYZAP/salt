@@ -16,15 +16,15 @@ class Friends extends React.Component {
                         <div className="form-group">
                             <input type="text" id="search" name="search" className="form-control"/>
                         </div>
-                        <div className="col-sm-3 col-sm-offset-3 friend">
+                        <div className="col-sm-3 friend">
                             <img src="http://unsplash.it/300/300?random" alt="" />
                             <h3>Name</h3>
                         </div>
-                        <div className="col-sm-3 col-sm-offset-3 friend">
+                        <div className="col-sm-3 friend">
                             <img src="http://unsplash.it/300/300?random" alt="" />
                             <h3>Name</h3>
                         </div>
-                        <div className="col-sm-3 col-sm-offset-3 friend">
+                        <div className="col-sm-3 friend">
                             <img src="http://unsplash.it/300/300?random" alt="" />
                             <h3>Name</h3>
                         </div>
