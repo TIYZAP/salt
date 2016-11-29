@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 get '/jon' => 'geo_search#search'
 get '/' => 'static#index'
+get '/profile/:id' => 'user#show'
 end
 
 
