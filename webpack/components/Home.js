@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router'
 class Home extends React.Component {
     constructor(props){
         super(props)
@@ -7,21 +7,21 @@ class Home extends React.Component {
     render(){
         return(
             <div className="container-fluid main-body-home">
-                <div className="row">
-                    <div className="col-sm-3 nav-bar-left">
-                        <div>
-                            <img src="http://unsplash.it/600/600?random" alt="" />
-                        </div>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Friends</a></li>
-                            <li><a href="#">Reviews</a></li>
-                            <li><a href="#">Search</a></li>
-                            <li><a href="#">Logout</a></li>
-                        </ul>
+                <div className="nav-bar-left">
+                    <div>
+                        <img src="http://unsplash.it/600/600?random" alt="" />
                     </div>
-                    <div className="col-sm-9 main-body-right">
-                        <div className="col-sm-9 text-center logo">
+                    <ul>
+                        <Link to="/"><li><a href="#">Home</a></li></Link>
+                        <Link to="/friends"><li><a href="#">Friends</a></li></Link>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Search</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+                <div className="row">
+                    <div className="col-sm-9 col-sm-offset-3 main-body-right">
+                        <div className="text-center logo">
                             <h1>Grain of Salt</h1>
                         </div>
                         <div className="col-sm-12">

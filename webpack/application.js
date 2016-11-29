@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Router, Route, Link, browserHistory } from 'react-router'
 import LandingPage from './components/LandingPage'
 import SignIn from './components/SignIn'
-import Signup from './components/Signup'
+import SignUp from './components/SignUp'
 import Home from './components/Home'
 import Friends from './components/Friends'
 
