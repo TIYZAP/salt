@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 get '/jon' => 'geo_search#search'
+get '/' => 'static#index'
 end
