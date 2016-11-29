@@ -46,6 +46,7 @@ gem 'rails_12factor', group: :production
 gem 'factory_girl'
 gem 'devise'
 gem 'foreman', '~> 0.82.0'
+gem 'google_places'
 
 #Exception / Monitoring!
 gem 'rollbar'
