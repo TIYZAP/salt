@@ -12,8 +12,16 @@ class GeoSearchController < ApplicationController
     res = MultiGeocoder.geocode(params[:address])
     @lat = res.lat
     @lng = res.lng
-
     @client = GooglePlaces::Client.new(ENV['GOOGLE_API'])
-    render json: @client.spots(@lat, @lng, :types => 'restaurant', :radius => 8046)
+    render json: @client.spots(@lat, @lng, :types => 'restaurant', :radius => 8046).map{|this_one| build_hash_for_output(this_one) }
+  end
+
+
+  private
+
+  def build_hash_for_output(spot)
+    {
+      name: spot.name , vicinity: spot.vicinity, place_id: spot.place_id, photo: spot.photos
+    }
   end
 end
