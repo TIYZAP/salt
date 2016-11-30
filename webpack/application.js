@@ -6,6 +6,9 @@ import SignIn from './components/SignIn'
 import SignUp from './components/SignUp'
 import Home from './components/Home'
 import Friends from './components/Friends'
+import Search from './components/Search'
+import FriendProfile from './components/FriendProfile'
+import Review from './components/Review'
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -16,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
             <Route path="/landingpage" component={LandingPage} />
+            <Route path="/search" component={Search} />
+            <Route path="/friendprofile" component={FriendProfile} />
+            <Route path="/review" component={Review} />
         </Router>
         ,document.getElementById('app')
     )
