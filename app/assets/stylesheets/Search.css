@@ -5,14 +5,19 @@
 .search-wrapper {
   padding: 10px;
   background: #0FAF9B;
-  opacity: .5;
   border-radius: 10px;
 }
 
+.search-wrapper input {
+  padding: 10px 5px;
+  border: 0;
+}
+
 .search-wrapper button {
-  background: #0FAF9B;
+  background: #e54040;
   border: 1px solid white;
   color: white;
+  width: 70px;
 }
 
 .search-results {

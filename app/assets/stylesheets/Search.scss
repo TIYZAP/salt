@@ -6,12 +6,16 @@
 .search-wrapper{
     padding: 10px;
     background: #0FAF9B;
-    opacity: .5;
     border-radius: 10px;
+    input{
+        padding: 10px 5px;
+        border: 0;
+    }
     button{
-        background: #0FAF9B;
+        background: #e54040;
         border: 1px solid white;
         color: white;
+        width: 70px;
     }
 }
 
