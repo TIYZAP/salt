@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
+import Menu from './Menu'
+
 class Home extends React.Component {
     constructor(props){
         super(props)
     }
     render(){
         return(
+            <div>
+                <Menu />
             <div className="container-fluid main-body-home">
                 <div className="nav-bar-left">
                     <div>
@@ -14,8 +18,8 @@ class Home extends React.Component {
                     <ul>
                         <Link to="/"><li><a href="#">Home</a></li></Link>
                         <Link to="/friends"><li><a href="#">Friends</a></li></Link>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Search</a></li>
+                        <Link to="/review"><li><a href="#">Review</a></li></Link>
+                        <Link to="/search"><li><a href="#">Search</a></li></Link>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </div>
@@ -114,6 +118,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         )
     }

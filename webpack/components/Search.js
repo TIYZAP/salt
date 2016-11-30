@@ -1,11 +1,15 @@
 import React from 'react'
+import Menu from './Menu'
+
 
 class Search extends React.Component{
-    constuctor(props){
+    constructor(props){
         super(props)
     }
     render(){
         return(
+            <div>
+                <Menu />
             <div className="container-fluid search-page-container">
               <div className="row">
                 <div className="col-sm-12 text-center">
@@ -47,6 +51,7 @@ class Search extends React.Component{
                   </div>
                 </div>
               </div>
+            </div>
             </div>
         )
     }
