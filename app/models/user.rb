@@ -16,6 +16,21 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       user.name = auth.info.name   # assuming the user model has a name
       user.remote_image_url = auth.info.image # assuming the user model has an image
+      user.fb_token = auth.credentials.token
+      puts auth.info.inspect
     end
   end
+
+  # def self.find_for_facebook_oauth(response, signed_in_resource=nil)
+  #  data = response['extra']['user_hash']
+  #  access_token = response['credentials']['token']
+  #  user = User.find_by_email(data["email"])
+  #  # only log in confirmed users
+  #  # that way users can't spoof accounts
+  #  if user and user.confirmed?
+  #    user.update_attribute('fb_token', access_token)
+  #    user
+  #  end
+  # end
+
 end
