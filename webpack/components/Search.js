@@ -17,7 +17,7 @@ class Search extends React.Component{
                 </div>
                 <div className="col-sm-6 col-sm-offset-3 search-wrapper">
                   <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Search for..." />
+                    <input type="text" className="form-control" placeholder="Enter Zip Code/Address" />
                     <span className="input-group-btn">
                       <button className="btn" type="button">Search</button>
                     </span>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 class LandingPage extends React.Component {
     constructor(props){
@@ -13,10 +14,10 @@ class LandingPage extends React.Component {
                             <h3>Reviews by your trusted network</h3>
                         </div>
                         <div className="col-sm-2 col-sm-offset-5">
-                            <button id="signin" type="button" className="btn btn-primary btn-block">SignIn</button>
+                            <Link to="/signin"><button id="signin" type="button" className="btn btn-primary btn-block">SignIn</button></Link>
                         </div>
                         <div className="col-sm-2 col-sm-offset-5">
-                            <button id="signup" type="button" className="btn btn-success btn-block">SignUp</button>
+                            <Link to="/signup"><button id="signup" type="button" className="btn btn-success btn-block">SignUp</button></Link>
                         </div>
                 </div>
             </div>
