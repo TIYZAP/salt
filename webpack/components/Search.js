@@ -32,7 +32,7 @@ class Search extends React.Component{
         }
     }
     updateSearch(updateResults){
-        fetch('/jon?address=' + this.state.search)
+        fetch('/search?address=' + this.state.search)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {
@@ -41,9 +41,10 @@ class Search extends React.Component{
     }
     render(){
         var results = this.state.searchResults.map((result, i) => {
+            // console.log(result)
             return <div className="col-sm-6 col-sm-offset-3 search-results" key={i}>
               <div className="col-sm-5">
-                <img src={'https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=' + result.photos.photo_reference + '&key=AIzaSyCLWARDbqg4WhZsc948xtGX0W2NZNcaG10'} alt="" />
+                <img height="200" src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
               </div>
               <div className="col-sm-7">
                 <h2 className="text-center">{result.name}</h2>
@@ -69,7 +70,7 @@ class Search extends React.Component{
                   </div>
                 </div>
                 {results}
-                <div className="col-sm-6 col-sm-offset-3 search-results">
+                {/* <div className="col-sm-6 col-sm-offset-3 search-results">
                   <div className="col-sm-5">
                     <img src="http://unsplash.it/300/300?random" alt="" />
                   </div>
@@ -77,7 +78,7 @@ class Search extends React.Component{
                     <h2 className="text-center">Name of place</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
             </div>
