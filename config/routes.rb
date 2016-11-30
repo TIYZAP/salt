@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
-get '/jon' => 'geo_search#search'
+get '/search' => 'geo_search#search'
 get '/' => 'static#index'
 get '/profile' => 'user#show'
 get '/koala' => 'koala#test'
