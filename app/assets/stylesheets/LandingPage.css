@@ -4,9 +4,12 @@
 }
 
 .landing-container {
-  background: #345577;
+  background: url(/images/salt2.jpg);
+  background-size: cover;
   color: white;
+  font-weight: bolder;
   height: 100vh;
+  padding-top: 90px;
 }
 
 .landing-container h1 {
@@ -16,4 +19,10 @@
 
 .landing-container h3 {
   padding-bottom: 80px;
+}
+
+.landing-container button {
+  border-radius: 24px;
+  background: transparent;
+  border: 1px solid white;
 }

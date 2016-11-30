@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router'
 class SignUp extends React.Component {
     constructor(props){
         super(props)
@@ -31,7 +31,7 @@ class SignUp extends React.Component {
                         <div className="form-group">
                             <div className="row">
                                 <div className="col-sm-6">
-                                    <button type="button" id="cancel-button" className="btn btn-danger btn-block">Cancel</button>
+                                    <Link to="/landingpage"><button type="button" id="cancel-button" className="btn btn-danger btn-block">Cancel</button></Link>
                                 </div>
                                 <div className="col-sm-6">
                                     <button type="button" id="signup" className="btn btn-primary btn-block">Sign Up</button>

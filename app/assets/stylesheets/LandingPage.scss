@@ -3,14 +3,22 @@
   font-size: 130px;
 }
 .landing-container{
-  background: #345577;
+  background: url(/images/salt2.jpg);
+  background-size: cover;
   color: white;
+  font-weight: bolder;
   height: 100vh;
+  padding-top: 90px;
   h1{
     font-family: 'Eczar', serif;
     font-size: 130px;
   }
   h3{
     padding-bottom: 80px;
+  }
+  button{
+    border-radius: 24px;
+    background: transparent;
+    border: 1px solid white;
   }
 }
