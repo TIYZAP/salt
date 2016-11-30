@@ -17,7 +17,8 @@ class User < ApplicationRecord
       user.name = auth.info.name   # assuming the user model has a name
       user.remote_image_url = auth.info.image # assuming the user model has an image
       user.fb_token = auth.credentials.token
-      puts auth.info.inspect
+      user.fb_id = auth.extra.raw_info.id
+      puts auth.inspect
     end
   end
 

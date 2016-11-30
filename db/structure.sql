@@ -243,7 +243,8 @@ CREATE TABLE users (
     uid character varying,
     name character varying,
     image_id character varying,
-    fb_token character varying
+    fb_token character varying,
+    fb_id character varying
 );
 
 
@@ -455,6 +456,6 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107');
+INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107'), ('20161130184930');
 
 
