@@ -1,4 +1,5 @@
 import React from 'react'
+import Menu from './Menu'
 
 class FriendProfile extends React.Component{
     constructor(props){
@@ -6,6 +7,8 @@ class FriendProfile extends React.Component{
     }
     render(){
         return (
+            <div>
+                <Menu />
             <div className="container-fluid friend-page">
               <div className="row">
                 <div className="col-sm-6 col-sm-offset-2 ">
@@ -45,6 +48,7 @@ class FriendProfile extends React.Component{
                 </div>
               </div>
             </div>
+        </div>
         )
     }
 }

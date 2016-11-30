@@ -1,4 +1,6 @@
 import React from 'react'
+import Menu from './Menu'
+
 
 class Friends extends React.Component {
     constructor(props){
@@ -6,6 +8,8 @@ class Friends extends React.Component {
     }
     render(){
         return(
+            <div>
+                <Menu />
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-sm-12 main-body-home text-center logo">
@@ -31,6 +35,8 @@ class Friends extends React.Component {
                     </div>
                 </div>
             </div>
+        </div>
+
         )
     }
 }

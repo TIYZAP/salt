@@ -1,4 +1,6 @@
 import React from 'react'
+import Menu from './Menu'
+
 
 class Review extends React.Component{
     constructor(props){
@@ -6,6 +8,8 @@ class Review extends React.Component{
     }
     render(){
         return (
+            <div>
+                <Menu />
             <div className="container">
               <div className="row">
                 <h1 className="text-center">Please leave your review below</h1>
@@ -29,6 +33,7 @@ class Review extends React.Component{
                 </div>
               </div>
             </div>
+        </div>
         )
     }
 }
