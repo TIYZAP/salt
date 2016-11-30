@@ -10,7 +10,8 @@ class SignIn extends React.Component {
              <div className="row">
                <h1 className="text-center">Grain of Salt</h1>
                 <div className="col-sm-6 col-sm-offset-3 text-center fb-button">
-                  <button className="btn btn-primary">Signin with Facebook</button>
+                  <button className="btn btn-primary"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook
+                  </button>
                   <h4>or</h4>
                   <hr />
                 </div>

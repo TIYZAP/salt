@@ -1,3 +1,10 @@
+$color1: #FF5E62;
+$color2: #FF0C2B;
+$color3: #F5F5F1;
+$color4: #E6EFF2;
+$color5: #B6CED6;
+
+
 *{
     box-sizing: border-box;
 }
@@ -5,9 +12,10 @@ img{
     width: 100%;
 }
 .nav-bar-left{
-    background: #345577;
+    // background: #FF5E62;
+    background: #FF0C2B;
     height: 100vh;
-    box-shadow: 5px 5px 5px ;
+    box-shadow: 2px 2px 2px ;
     position: fixed;
     z-index: 1;
     padding: 10px;
@@ -26,7 +34,6 @@ img{
         }
     ul{
         padding: 10px;
-        text-decoration: none;
         li{
             list-style-type: none;
             padding: 20px;
@@ -35,13 +42,11 @@ img{
             font-size: 20px;
             color: white;
             padding-left: 20px;
-            text-decoration: none;
         }
         li:hover{
-            background: #BB5792;
+            background: #FF5E62;
             transition: all ease 0;
             cursor: pointer;
-            text-decoration: none;
             list-style-type: none;
 
         }
@@ -50,26 +55,22 @@ img{
 
 .logo{
     color: white;
-    background: #2B3642;
+    background: #FF0C2B;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     height: 100px;
 }
 .main-body-home{
-    background: #345577;
-}
-.main-body-right{
-  // margin-left: 420px;
+    background: $color4;
 }
 
 //reviews styling
 .reviews{
   padding: 10px;
   margin-top: 10px;
-  background: #2B3642;
+  background: white;
   max-height: 300px;
   max-width: 800px;
-  color: white;
   border-radius: 30px 10px 30px 10px;
 }
 
