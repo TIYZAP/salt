@@ -1,3 +1,7 @@
+.search-page-container {
+  background: #E6EFF2;
+}
+
 .search-page-container h3 {
   font-size: 40px;
 }
@@ -21,8 +25,8 @@
 }
 
 .search-results {
-  background: #15A3EB;
-  border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
+  background: white;
+  border-radius: 10px 30px 10px 30px;
 }

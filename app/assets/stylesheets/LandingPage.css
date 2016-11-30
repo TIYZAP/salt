@@ -6,23 +6,39 @@
 .landing-container {
   background: url(/images/salt2.jpg);
   background-size: cover;
-  color: white;
+  color: #FF0C2B;
   font-weight: bolder;
   height: 100vh;
   padding-top: 90px;
 }
 
-.landing-container h1 {
+.landingpage-box {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 2px 2px white;
+}
+
+.landingpage-box h1 {
   font-family: 'Eczar', serif;
   font-size: 130px;
 }
 
-.landing-container h3 {
+.landingpage-box h3 {
   padding-bottom: 80px;
 }
 
-.landing-container button {
+.landingpage-box button {
   border-radius: 24px;
+  background: #FF0C2B;
+  border: 1px solid #FF0C2B;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.landingpage-box button:hover {
   background: transparent;
-  border: 1px solid white;
+  color: #FF0C2B;
+  text-decoration: none;
 }
