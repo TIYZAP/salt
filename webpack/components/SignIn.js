@@ -1,8 +1,16 @@
 import React from 'react'
-
+import { Link } from 'react-router'
 class SignIn extends React.Component {
     constructor(props){
         super(props)
+        this.fbHandler = this.fbHandler.bind(this)
+    }
+    fbHandler(){
+        fetch('/users/auth/facebook')
+        .then(response => response.json())
+        .then(response => {
+            console.log(response)
+        })
     }
     render(){
         return(
@@ -10,8 +18,8 @@ class SignIn extends React.Component {
              <div className="row">
                <h1 className="text-center">Grain of Salt</h1>
                 <div className="col-sm-6 col-sm-offset-3 text-center fb-button">
-                  <button className="btn btn-primary"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook
-                  </button>
+                  <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook
+                  </a>
                   <h4>or</h4>
                   <hr />
                 </div>
