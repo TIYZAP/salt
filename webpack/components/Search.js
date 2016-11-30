@@ -1,7 +1,7 @@
 import React from 'react'
 
 class Search extends React.Component{
-    constuctor(props){
+    constructor(props){
         super(props)
     }
     render(){
