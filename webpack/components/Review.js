@@ -9,8 +9,9 @@ class Review extends React.Component{
             searchResults: ''
         }
     }
+
     componentWillMount(){
-        fetch('/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=',''))
+        fetch('/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
     }
