@@ -12,14 +12,14 @@ class SignIn extends React.Component {
             console.log(response)
         })
     }
+
     render(){
         return(
             <div className="container-fluid signin-container">
              <div className="row">
                <h1 className="text-center">Grain of Salt</h1>
                 <div className="col-sm-6 col-sm-offset-3 text-center fb-button">
-                  <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook
-                  </a>
+                  <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook</a>
                   <h4>or</h4>
                   <hr />
                 </div>

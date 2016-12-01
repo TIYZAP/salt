@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "license": "MIT",
   "dependencies": {
-    "stats-webpack-plugin": "^0.2.1",
     "babel": "^6.5.2",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.2.5",
     "babel-preset-latest": "^6.16.0",
     "babel-preset-react": "^6.11.1",
+    "moment": "^2.15.2",
+    "momentjs": "^2.0.0",
     "react": "^15.2.1",
+    "react-burger-menu": "^1.10.9",
     "react-dom": "^15.2.1",
     "react-helpers": "https://github.com/tiyindyfee/react-helpers.git",
     "react-localstorage": "^0.3.0",
@@ -22,11 +24,10 @@
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
+    "stats-webpack-plugin": "^0.2.1",
+    "url-parse": "^1.1.7",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
     "webpack-dev-middleware": "1.7.0",
-    "moment": "^2.15.2",
-    "momentjs": "^2.0.0",
-    "react-burger-menu": "^1.10.9"
+    "webpack-dev-server": "^1.14.1"
   }
 }
