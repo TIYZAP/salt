@@ -41,7 +41,6 @@ class Friends extends React.Component {
                             <input type="text" id="search" name="search" className="form-control"/>
                         </div>
                         {myFriends}
-
                     </div>
                 </div>
             </div>
