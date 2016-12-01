@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router'
 import Menu from './Menu'
+import urlParse from 'url-parse'
 
 class Home extends React.Component {
     constructor(props){
         super(props)
     }
     componentDidMount(){
-        sessionStorage.setItem('email', window.location.href.split('?')[1].replace('%', '@'))
+        var url = new urlParse(window.location.href, true)
+        console.log(url)
+        sessionStorage.setItem('email', url.query.email)
+        sessionStorage.setItem('token', url.query.token)
     }
     render(){
         return(
