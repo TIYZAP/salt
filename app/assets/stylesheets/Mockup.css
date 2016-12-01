@@ -1,0 +1,72 @@
+.head-nav-wrapper {
+  color: white;
+  text-align: center;
+  height: 70px;
+}
+
+.head-nav-wrapper .head-nav-left {
+  background: #4CD2B9;
+  height: 70px;
+}
+
+.head-nav-wrapper .head-nav-middle {
+  background: #353942;
+  height: 70px;
+}
+
+.head-nav-wrapper .head-nav-right {
+  background: #E2624B;
+  height: 70px;
+}
+
+.home-middle-section .home-middle-left {
+  background: #353942;
+  color: #8ca2ad;
+  height: 100vh;
+}
+
+.home-middle-section .home-middle-left img {
+  width: 100%;
+  padding: 10px;
+}
+
+.home-middle-section .home-middle-left ul {
+  list-style: none;
+  text-decoration: none;
+}
+
+.home-middle-section .home-middle-left ul li {
+  padding: 15px;
+  font-size: 25px;
+}
+
+.home-middle-section .home-middle-left ul li a {
+  color: #8ca2ad;
+}
+
+.home-middle-section .home-middle-middle {
+  background: #b2acab;
+  height: 100vh;
+}
+
+.home-middle-section .home-middle-right {
+  background: #8ca2ad;
+  height: 100vh;
+  text-align: center;
+}
+
+.home-middle-section .home-middle-right h1 {
+  color: #353942;
+}
+
+.home-middle-section .home-middle-right .home-each-friend {
+  padding: 20px;
+  background: #4CD2B9;
+  border-radius: 24px;
+  margin-top: 8px;
+}
+
+.home-middle-section .home-middle-right .home-each-friend img {
+  width: 100%;
+  border-radius: 24px;
+}
