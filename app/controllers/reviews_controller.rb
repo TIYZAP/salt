@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 
   acts_as_token_authentication_handler_for User, except: [:show]
 
-  def index
+  def timeline
     @reviews = Review.timeline(current_user)
     render json: @reviews
   end
