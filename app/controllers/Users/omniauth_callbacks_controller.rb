@@ -31,7 +31,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
    @user = User.from_omniauth(request.env["omniauth.auth"])
    puts 'hello?'
    if @user.persisted?
-     render json: @user,serializer: SigninSerializer #this will throw if @user is not activated
+     redirect_to root_path email: @user.email, token: @user.authentication_token
+    #  render json: @user, serializer: SigninSerializer #this will throw if @user is not activated
      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
    else
      session["devise.facebook_data"] = request.env["omniauth.auth"]
