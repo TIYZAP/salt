@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show]
+  acts_as_token_authentication_handler_for User, except: [:show]
 
   def index
     @reviews = Review.timeline(current_user)
