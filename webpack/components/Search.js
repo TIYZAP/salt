@@ -33,7 +33,7 @@ class Search extends React.Component{
     }
 
     updateSearch(updateResults){
-        fetch('/search?address=' + this.state.search)
+        fetch('/search?address=' + this.state.search + + '&x-user-token=' + sessionStorage.getItem('token') + '&x-user-email' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {
@@ -43,7 +43,7 @@ class Search extends React.Component{
     render(){
         var results = this.state.searchResults.map((result, i) => {
             // console.log(result)
-            return <Link to={'/review/' + result.place_id} key={i}>
+            return <Link to={'/review?place_id=' + result.place_id} key={i}>
             <div className="col-sm-6 col-sm-offset-3 search-results">
               <div className="col-sm-5">
                 <img height="200" src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
@@ -75,7 +75,7 @@ class Search extends React.Component{
                 {results}
                 {/* <div className="col-sm-6 col-sm-offset-3 search-results">
                   <div className="col-sm-5">
-                    <img src="http://unsplash.it/300/300?random" alt="" />
+                    <img src="https://maps.google.com/?cid=5102160940829361475" alt="" />
                   </div>
                   <div className="col-sm-7">
                     <h2 className="text-center">Name of place</h2>

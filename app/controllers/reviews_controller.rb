@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :authenticate_user!, except: [:show]
+  acts_as_token_authentication_handler_for User, except: [:show]
 
   def index
     @reviews = Review.timeline(current_user)
@@ -22,9 +22,19 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review = Review.find(params[:id])
+    @review.reviews = params[:body]
+    if @review.save
+      render json: @review
+    else
+      render json: @review.erros.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @review.destroy!
+    render json: "Your review has been removed!"
   end
 
   private

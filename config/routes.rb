@@ -13,6 +13,8 @@ get '/koala' => 'koala#test'
 get '/facebook/follow' => 'koala#follow_facebook'
 get '/:thing' => 'static#index'
 get '/friends/all' => 'user#all_friends'
+get '/timeline' => 'review#index'
+  root 'static#index'
 end
 
 
