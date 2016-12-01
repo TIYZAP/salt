@@ -47,6 +47,7 @@ gem 'devise'
 gem 'foreman', '~> 0.82.0'
 gem 'google_places'
 gem "koala", "~> 2.2"
+gem 'simple_token_authentication', '~> 1.0'
 
 #Exception / Monitoring!
 gem 'rollbar'
