@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 get '/search' => 'geo_search#search'
+get '/search/place' => 'geo_search#show'
 get '/' => 'static#index'
 get '/profile' => 'user#show'
 get '/koala' => 'koala#test'
