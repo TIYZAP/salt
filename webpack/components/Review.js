@@ -6,7 +6,7 @@ class Review extends React.Component{
     constructor(props){
         super(props)
         this.submitReview = this.submitReview.bind(this)
-        this.updateForm = this.updateForm.bind(this)
+        // this.updateForm = this.updateForm.bind(this)
         this.bodyHandler = this.bodyHandler.bind(this)
         this.dishHandler = this.dishHandler.bind(this)
         this.ratingHandler = this.ratingHandler.bind(this)
