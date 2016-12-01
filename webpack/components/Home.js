@@ -9,7 +9,6 @@ class Home extends React.Component {
     }
     componentDidMount(){
         var url = new urlParse(window.location.href, true)
-        console.log(url)
         sessionStorage.setItem('email', url.query.email)
         sessionStorage.setItem('token', url.query.token)
     }

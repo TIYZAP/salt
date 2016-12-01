@@ -33,7 +33,7 @@ class Search extends React.Component{
     }
 
     updateSearch(updateResults){
-        fetch('/search?address=' + this.state.search + + '&x-user-token=' + sessionStorage.getItem('token') + '&x-user-email' + sessionStorage.getItem('email'))
+        fetch('/search?address=' + this.state.search)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {
