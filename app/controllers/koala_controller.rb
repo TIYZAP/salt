@@ -1,5 +1,7 @@
 class KoalaController < ApplicationController
 
+  acts_as_token_authentication_handler_for User, except: [:show]
+
   def follow_facebook
     @user = current_user
     @graph = Koala::Facebook::API.new(@user.fb_token)
