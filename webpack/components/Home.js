@@ -8,9 +8,11 @@ class Home extends React.Component {
         super(props)
     }
     componentDidMount(){
-        var url = new urlParse(window.location.href, true)
-        sessionStorage.setItem('email', url.query.email)
-        sessionStorage.setItem('token', url.query.token)
+        if(window.location.href.includes('email')){
+            var url = new urlParse(window.location.href, true)
+            sessionStorage.setItem('email', url.query.email)
+            sessionStorage.setItem('token', url.query.token)
+        }
     }
     render(){
         return(
