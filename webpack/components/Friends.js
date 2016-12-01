@@ -10,20 +10,20 @@ class Friends extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('/friends/all' + + '&x-user-token=' + sessionStorage.getItem('token') + '&x-user-email' + sessionStorage.getItem('email'))
+        fetch('/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
-            friends: response
+            friends: response.users
         }))
         // .then(response => {
-        //     console.log('test')
+        //     console.log(response)
         // })
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
         return      <div className="col-sm-3 friend" key={i}>
                         <img src={friend.image} alt="" />
-                        <h3>Name: {friend.name}</h3>
+                        <h3>{friend.name}</h3>
                         {/* <h3>Reviews: <span className="badge">{friend.reviews.length}</span></h3> */}
                     </div>
         })
