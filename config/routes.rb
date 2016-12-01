@@ -11,6 +11,7 @@ get '/profile' => 'user#show'
 get '/koala' => 'koala#test'
 get '/facebook/follow' => 'koala#follow_facebook'
 get '/:thing' => 'static#index'
+get '/friends/all' => 'user#all_friends'
 end
 
 
