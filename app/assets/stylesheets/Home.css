@@ -7,9 +7,8 @@ img {
 }
 
 .nav-bar-left {
-  background: #FF0C2B;
+  background: white;
   height: 100vh;
-  box-shadow: 2px 2px 2px;
   position: fixed;
   z-index: 1;
   padding: 10px;
@@ -23,8 +22,7 @@ img {
 }
 
 .nav-bar-left img {
-  background: white;
-  box-shadow: 1px 2px 2px;
+  background: #FF0C2B;
   padding: 5px;
   width: 100%;
   max-height: 250px;
@@ -38,25 +36,42 @@ img {
   list-style-type: none;
   padding: 20px;
   text-align: center;
-  border-bottom: 2px solid white;
+  border-bottom: 1px solid #FF0C2B;
   font-size: 20px;
-  color: white;
+  color: #FF0C2B;
   padding-left: 20px;
 }
 
+.nav-bar-left ul li i {
+  color: #FF0C2B;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .nav-bar-left ul li:hover {
-  background: #FF5E62;
+  background: #FF0C2B;
   transition: all ease 0;
   cursor: pointer;
   list-style-type: none;
+  color: white;
+}
+
+.nav-bar-left ul li:hover i {
+  color: white;
 }
 
 .logo {
-  color: white;
-  background: #FF0C2B;
+  color: #FF0C2B;
+  background: white;
   width: 100%;
   padding: 10px;
   height: 100px;
+  border-radius: 10px 10px 30px 30px;
+}
+
+.logo h1 {
+  font-size: 45px;
+  font-weight: bolder;
 }
 
 .main-body-home {
@@ -65,11 +80,11 @@ img {
 
 .reviews {
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 15px;
   background: white;
   max-height: 300px;
   max-width: 800px;
-  border-radius: 30px 10px 30px 10px;
+  border-radius: 10px 10px 20px 20px;
 }
 
 @media (min-width: 768px) {
