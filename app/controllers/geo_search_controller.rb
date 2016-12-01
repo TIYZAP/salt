@@ -16,6 +16,11 @@ class GeoSearchController < ApplicationController
     render json: @client.spots(@lat, @lng, :types => 'restaurant', :radius => 8046).map{|this_one| build_hash_for_output(this_one) }
   end
 
+  def show
+    @client = GooglePlaces::Client.new(ENV['GOOGLE_API'])
+    render json: @client.spot(params[:place_id])
+  end
+
 
   private
 
