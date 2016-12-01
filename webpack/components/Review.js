@@ -57,6 +57,7 @@ class Review extends React.Component{
 
         })
         .then(response => response.json())
+        window.location.href="/"
     }
     // updateForm(){
     //     var updatedState = {}
