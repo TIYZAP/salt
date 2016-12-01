@@ -10,7 +10,7 @@ class Friends extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('/friends/all' + + '&x-user-token=' + sessionStorage.getItem('token') + '&x-user-email' + sessionStorage.getItem('email'))
+        fetch('/friends/all?' + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             friends: response
