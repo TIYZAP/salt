@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   validates_inclusion_of :rating, :in => 1..5
 
   def self.timeline(user)
-    follwing_ids = user.followees(User).pluck(:id)
+    following_ids = user.followees(User).pluck(:id)
     Review.where(user_id: following_ids).order("created_at DESC")
   end
 
