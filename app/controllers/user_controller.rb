@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-
+acts_as_token_authentication_handler_for User, except: [:index, :show]
   def show
     @user = User.find(params[:id])
     render json: @user
