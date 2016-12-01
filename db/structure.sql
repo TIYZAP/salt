@@ -2,12 +2,11 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.6.1
--- Dumped by pg_dump version 9.6.1
+-- Dumped from database version 9.5.4
+-- Dumped by pg_dump version 9.5.4
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -245,7 +244,8 @@ CREATE TABLE users (
     name character varying,
     image_id character varying,
     fb_token character varying,
-    fb_id character varying
+    fb_id character varying,
+    authentication_token character varying(30)
 );
 
 
@@ -269,49 +269,49 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: follows id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY follows ALTER COLUMN id SET DEFAULT nextval('follows_id_seq'::regclass);
 
 
 --
--- Name: likes id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY likes ALTER COLUMN id SET DEFAULT nextval('likes_id_seq'::regclass);
 
 
 --
--- Name: mentions id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY mentions ALTER COLUMN id SET DEFAULT nextval('mentions_id_seq'::regclass);
 
 
 --
--- Name: refile_attachments id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY refile_attachments ALTER COLUMN id SET DEFAULT nextval('refile_attachments_id_seq'::regclass);
 
 
 --
--- Name: reviews id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY reviews ALTER COLUMN id SET DEFAULT nextval('reviews_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
--- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY ar_internal_metadata
@@ -319,7 +319,7 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
--- Name: follows follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY follows
@@ -327,7 +327,7 @@ ALTER TABLE ONLY follows
 
 
 --
--- Name: likes likes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: likes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY likes
@@ -335,7 +335,7 @@ ALTER TABLE ONLY likes
 
 
 --
--- Name: mentions mentions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: mentions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY mentions
@@ -343,7 +343,7 @@ ALTER TABLE ONLY mentions
 
 
 --
--- Name: refile_attachments refile_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: refile_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY refile_attachments
@@ -351,7 +351,7 @@ ALTER TABLE ONLY refile_attachments
 
 
 --
--- Name: reviews reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY reviews
@@ -359,7 +359,7 @@ ALTER TABLE ONLY reviews
 
 
 --
--- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY schema_migrations
@@ -367,7 +367,7 @@ ALTER TABLE ONLY schema_migrations
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -438,6 +438,13 @@ CREATE INDEX index_reviews_on_user_id ON reviews USING btree (user_id);
 
 
 --
+-- Name: index_users_on_authentication_token; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_users_on_authentication_token ON users USING btree (authentication_token);
+
+
+--
 -- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -457,6 +464,6 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107'), ('20161130184930');
+INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107'), ('20161130184930'), ('20161201142147');
 
 
