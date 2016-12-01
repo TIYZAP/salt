@@ -6,6 +6,9 @@ class Home extends React.Component {
     constructor(props){
         super(props)
     }
+    componentDidMount(){
+        sessionStorage.setItem('email', window.location.href.split('?')[1].replace('%', '@'))
+    }
     render(){
         return(
             <div>
