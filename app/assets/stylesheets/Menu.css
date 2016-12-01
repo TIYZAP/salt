@@ -10,7 +10,7 @@
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   border-radius: 10px;
-  background: #45CAAB;
+  background: #FF0C2B;
 }
 
 /* Position and sizing of clickable cross button */
@@ -26,7 +26,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #2B3642;
+  background: #FF0C2B;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -57,9 +57,9 @@
 }
 
 .menu-item:hover {
-  background: #0FAF9B;
+  background: white;
   transition: all ease 0;
   cursor: pointer;
-  color: white;
+  color: #FF0C2B;
   text-decoration: none;
 }

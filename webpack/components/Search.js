@@ -11,8 +11,7 @@ class Search extends React.Component{
         this.updateSearch = this.updateSearch.bind(this)
         this.state = {
             searchResults: [],
-            search: '',
-            name: ''
+            search: ''
         }
     }
     typing(e){
@@ -32,6 +31,7 @@ class Search extends React.Component{
             })
         }
     }
+
     updateSearch(updateResults){
         fetch('/search?address=' + this.state.search)
         .then(response => response.json())

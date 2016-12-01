@@ -37,6 +37,7 @@ class Friends extends React.Component {
                         <div className="form-group">
                             <input type="text" id="search" name="search" className="form-control"/>
                         </div>
+                        {myFriends}
                         {/* <div className="col-sm-3 friend">
                             <img src="http://unsplash.it/300/300?random" alt="" />
                             <h3>Name</h3>
