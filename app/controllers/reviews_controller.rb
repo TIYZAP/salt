@@ -40,7 +40,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:venue_name, :venue_address, :place_id, :dish, :body, :rating)
+    params.permit(:venue_name, :venue_address, :place_id, :dish, :body, :rating, :image)
   end
 
 
