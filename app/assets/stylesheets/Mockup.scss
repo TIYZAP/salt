@@ -4,6 +4,7 @@ $col3: #E2624B;
 $col4: #353942;
 $col5: #8ca2ad;
 $col6: #b2acab;
+$col7: #E6EFF2;
 
 .head-nav-wrapper{
     color: white;
@@ -34,17 +35,21 @@ $col6: #b2acab;
         ul{
             list-style: none;
             text-decoration: none;
+            padding: 0px;
             li{
-            padding: 15px;
+            padding: 20px;
             font-size: 25px;
-                a{
-                    color: $col5;
+            cursor: pointer;
+            padding-left: 0;
+            &:hover{
+                background: $col1;
+                color: white;
                 }
             }
         }
     }
     .home-middle-middle{
-        background: $col6;
+            background: $col7;
         height: 100vh;
     }
     .home-middle-right{
@@ -57,11 +62,11 @@ $col6: #b2acab;
         .home-each-friend{
             padding: 20px;
             background: $col1;
-            border-radius: 24px;
+            border-radius: 10px;
             margin-top: 8px;
             img{
                 width: 100%;
-                border-radius: 24px;
+                // border-radius: 24px;
             }
         }
     }

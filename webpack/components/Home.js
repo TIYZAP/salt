@@ -6,6 +6,9 @@ import urlParse from 'url-parse'
 class Home extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            allReviews: []
+        }
     }
     componentDidMount(){
         if(window.location.href.includes('email')){
@@ -13,6 +16,12 @@ class Home extends React.Component {
             sessionStorage.setItem('email', url.query.email)
             sessionStorage.setItem('token', url.query.token)
         }
+        fetch('/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
+        .then(response => response.json())
+        // .then(response => this.setState({allReviews: response.reviews}))
+        .then(response => {
+            console.log(response.reviews)
+        })
     }
     render(){
         return(
@@ -45,39 +54,6 @@ class Home extends React.Component {
                             <h1>Grain of Salt</h1>
                         </div>
                         <div className="col-sm-12">
-                            <div className="col-sm-8 col-sm-offset-2 reviews">
-                                <div className="col-sm-4">
-                                    <img className="img-rounded" src="http://unsplash.it/400/300?random" alt="" />
-                                    <h1>Manny</h1>
-                                </div>
-                                <div className="col-sm-8">
-                                    <h1>Jimmy John's</h1>
-                                    <p>Dish: Veggie Sub</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-8 col-sm-offset-2 reviews">
-                                <div className="col-sm-4">
-                                    <img className="img-rounded" src="http://unsplash.it/400/300?random" alt="" />
-                                    <h1>Manny</h1>
-                                </div>
-                                <div className="col-sm-8">
-                                    <h1>Jimmy John's</h1>
-                                    <p>Dish: Veggie Sub</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
-                            <div className="col-sm-8 col-sm-offset-2 reviews">
-                                <div className="col-sm-4">
-                                    <img className="img-rounded" src="http://unsplash.it/400/300?random" alt="" />
-                                    <h1>Manny</h1>
-                                </div>
-                                <div className="col-sm-8">
-                                    <h1>Jimmy John's</h1>
-                                    <p>Dish: Veggie Sub</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
                             <div className="col-sm-8 col-sm-offset-2 reviews">
                                 <div className="col-sm-4">
                                     <img className="img-rounded" src="http://unsplash.it/400/300?random" alt="" />

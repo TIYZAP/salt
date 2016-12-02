@@ -33,19 +33,23 @@
 .home-middle-section .home-middle-left ul {
   list-style: none;
   text-decoration: none;
+  padding: 0px;
 }
 
 .home-middle-section .home-middle-left ul li {
-  padding: 15px;
+  padding: 20px;
   font-size: 25px;
+  cursor: pointer;
+  padding-left: 0;
 }
 
-.home-middle-section .home-middle-left ul li a {
-  color: #8ca2ad;
+.home-middle-section .home-middle-left ul li:hover {
+  background: #4CD2B9;
+  color: white;
 }
 
 .home-middle-section .home-middle-middle {
-  background: #b2acab;
+  background: #E6EFF2;
   height: 100vh;
 }
 
@@ -62,11 +66,10 @@
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
   background: #4CD2B9;
-  border-radius: 24px;
+  border-radius: 10px;
   margin-top: 8px;
 }
 
 .home-middle-section .home-middle-right .home-each-friend img {
   width: 100%;
-  border-radius: 24px;
 }
