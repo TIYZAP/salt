@@ -24,4 +24,3 @@
 /config/application.yml
 # Added by webpack-rails
 /node_modules
-/public/webpack
