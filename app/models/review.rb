@@ -5,9 +5,12 @@ class Review < ApplicationRecord
   validates_presence_of :venue_name, :body, :dish, :place_id, :venue_address
   validates_inclusion_of :rating, :in => 1..5
 
+  attachment :image, type: :image
+
   def self.timeline(user)
     following_ids = user.followees(User).pluck(:id)
-    Review.where(user_id: following_ids).order("created_at DESC")
+    all_ids = following_ids << user.id
+    Review.where(user_id: all_ids).order("created_at DESC")
   end
 
 end
