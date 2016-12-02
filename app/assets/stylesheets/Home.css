@@ -60,6 +60,12 @@ img {
   color: white;
 }
 
+.nav-bar-left ul button {
+  width: 100px;
+  color: #FF0C2B;
+  border: 1px solid #FF0C2B;
+}
+
 .logo {
   color: #FF0C2B;
   background: white;

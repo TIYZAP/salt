@@ -20,8 +20,7 @@ class Review extends React.Component{
             place_id: '',
             address: '',
             website: '',
-            phone: '',
-            photo: ''
+            phone: ''
         }
     }
 
@@ -37,7 +36,7 @@ class Review extends React.Component{
             phone: response.formatted_phone_number
         }))
         // .then(response => {
-        //     console.log(response)
+        //     console.log(response.photos[0].photo_reference)
         // })
     }
     submitReview(){

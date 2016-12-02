@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router'
+import moment from 'moment'
 import Menu from './Menu'
 import urlParse from 'url-parse'
 
 class Home extends React.Component {
     constructor(props){
         super(props)
+        this.logoutHandler = this.logoutHandler.bind(this)
         this.state = {
-            allReviews: []
+        allReviews:[]
         }
     }
     componentDidMount(){
@@ -18,12 +20,35 @@ class Home extends React.Component {
         }
         fetch('/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
-        // .then(response => this.setState({allReviews: response.reviews}))
-        .then(response => {
-            console.log(response.reviews)
-        })
+        .then(response => this.setState({allReviews: response.reviews}))
+        // .then(response => {
+        //     console.log(response.reviews)
+        // })
+    }
+    logoutHandler(){
+        sessionStorage.removeItem('email')
+        sessionStorage.removeItem('token')
+        window.location.href="/landingpage"
     }
     render(){
+        var friendsReviews = this.state.allReviews.map((review, i) => {
+            return  (
+                <div className="col-sm-8 col-sm-offset-2 reviews" key={i}>
+                    <div className="col-sm-4">
+                        <img height="200" className="img-rounded" src={review.user.image} alt="" />
+                        <h4>{review.user.name}</h4>
+                        <h5>{moment(review.created_at).fromNow()}</h5>
+                    </div>
+                    <div className="col-sm-8">
+                        <h1>{review.venue_name}</h1>
+                        <p>Dish: {review.dish}</p>
+                        <p>Rating: {review.rating}</p>
+                        <p>Address: {review.venue_address}</p>
+                        <p>{review.body}</p>
+                    </div>
+                </div>
+            )}
+        )
         return(
             <div>
                 <Menu />
@@ -44,7 +69,7 @@ class Home extends React.Component {
                         <Link to="/signin" style={{textDecoration: 'none'}}><li>Signin</li></Link>
                         <Link to="/signup" style={{textDecoration: 'none'}}><li>Signup
                         </li></Link>
-                        <Link tp="/landingpage"><li><i className="fa fa-sign-out" aria-hidden="true"> Logout</i></li></Link>
+                        <li><button className="btn btn-default" onClick={this.logoutHandler}><i className="fa fa-sign-out" aria-hidden="true"> Logout</i></button></li>
                     </ul>
                 </div>
             <div className="container-fluid main-body-home">
@@ -54,17 +79,7 @@ class Home extends React.Component {
                             <h1>Grain of Salt</h1>
                         </div>
                         <div className="col-sm-12">
-                            <div className="col-sm-8 col-sm-offset-2 reviews">
-                                <div className="col-sm-4">
-                                    <img className="img-rounded" src="http://unsplash.it/400/300?random" alt="" />
-                                    <h1>Manny</h1>
-                                </div>
-                                <div className="col-sm-8">
-                                    <h1>Jimmy John's</h1>
-                                    <p>Dish: Veggie Sub</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                </div>
-                            </div>
+                            {friendsReviews}
                         </div>
                     </div>
                 </div>
