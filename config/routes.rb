@@ -15,6 +15,7 @@ get '/facebook/follow' => 'koala#follow_facebook'
 get '/:thing' => 'static#index'
 get '/friends/all' => 'user#all_friends'
   root 'static#index'
+  get '/search/name' => 'geo_search#name_test'
 end
 
 
