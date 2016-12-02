@@ -8,6 +8,7 @@ class Search extends React.Component{
         super(props)
         this.typing = this.typing.bind(this)
         this.search = this.search.bind(this)
+        this.enter = this.enter.bind(this)
         this.updateSearch = this.updateSearch.bind(this)
         this.state = {
             searchResults: [],
@@ -19,19 +20,21 @@ class Search extends React.Component{
             search: e.target.value
         })
     }
-    search(e){
-        var updateResults = this.state.search
+    enter(e){
         if(e.key === 'Enter'){
-            this.setState({
-                search: e.target.value
-            })
-            this.updateSearch(updateResults)
-            this.setState({
-                search: ''
-            })
+            this.search(e)
         }
     }
-
+    search(e){
+        var updateResults = this.state.search
+        this.setState({
+            search: e.target.value
+        })
+        this.updateSearch(updateResults)
+        this.setState({
+            search: ''
+        })
+    }
     updateSearch(updateResults){
         fetch('/search?address=' + this.state.search)
         .then(response => response.json())
@@ -66,9 +69,9 @@ class Search extends React.Component{
                 </div>
                 <div className="col-sm-6 col-sm-offset-3 search-wrapper">
                   <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Enter Zip Code/Address" value={this.state.search} onChange={this.typing} onKeyPress={this.search} />
+                    <input type="text" className="form-control" placeholder="Enter Zip Code/Address" value={this.state.search} onChange={this.typing} onKeyPress={this.enter} />
                     <span className="input-group-btn">
-                      <button className="btn" type="button">Search</button>
+                      <button className="btn" type="button" value={this.state.search} onChange={this.typing} onClick={this.search}>Search</button>
                     </span>
                   </div>
                 </div>
