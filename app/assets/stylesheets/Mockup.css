@@ -2,6 +2,7 @@
   color: white;
   text-align: center;
   height: 70px;
+  padding: 0;
 }
 
 .head-nav-wrapper .head-nav-left {
@@ -10,7 +11,7 @@
 }
 
 .head-nav-wrapper .head-nav-middle {
-  background: #353942;
+  background: #252626;
   height: 70px;
 }
 
@@ -19,8 +20,12 @@
   height: 70px;
 }
 
+.home-middle-section {
+  padding: 0;
+}
+
 .home-middle-section .home-middle-left {
-  background: #353942;
+  background: #252626;
   color: #8ca2ad;
   height: 100vh;
 }
@@ -49,12 +54,24 @@
 }
 
 .home-middle-section .home-middle-middle {
-  background: #E6EFF2;
+  background: white;
   height: 100vh;
+  overflow: scroll;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-review {
+  border: 4px solid #E6EFF2;
+  margin: 5px;
+  padding: 20px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-review img {
+  width: 100%;
+  padding: 10px;
 }
 
 .home-middle-section .home-middle-right {
-  background: #8ca2ad;
+  background: #E6EFF2;
   height: 100vh;
   text-align: center;
 }

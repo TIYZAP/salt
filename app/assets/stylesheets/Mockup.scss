@@ -1,5 +1,6 @@
 $col1: #4CD2B9;
-$col2: #252626;
+$col2: #253240;
+$col8: #252626;
 $col3: #E2624B;
 $col4: #353942;
 $col5: #8ca2ad;
@@ -10,12 +11,13 @@ $col7: #E6EFF2;
     color: white;
     text-align: center;
     height: 70px;
+    padding: 0;
     .head-nav-left{
         background: $col1;
         height: 70px;
     }
     .head-nav-middle{
-        background: $col4;
+        background: $col8;
         height: 70px;
     }
     .head-nav-right{
@@ -24,8 +26,9 @@ $col7: #E6EFF2;
     }
 }
 .home-middle-section{
+    padding: 0;
     .home-middle-left{
-        background: $col4;
+        background: $col8;
         color: $col5;
         height: 100vh;
         img{
@@ -49,11 +52,21 @@ $col7: #E6EFF2;
         }
     }
     .home-middle-middle{
-            background: $col7;
+        background: white;
         height: 100vh;
+        overflow: scroll;
+        .home-middle-middle-review{
+            border: 4px solid $col7;
+            margin: 5px;
+            padding: 20px;
+            img{
+                width: 100%;
+                padding: 10px;
+            }
+        }
     }
     .home-middle-right{
-        background: $col5;
+        background: $col7;
         height: 100vh;
         text-align: center;
         h1{
