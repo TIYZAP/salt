@@ -20,6 +20,10 @@
   height: 70px;
 }
 
+.head-nav-wrapper .head-nav-right i {
+  padding: 5px;
+}
+
 .home-middle-section {
   padding: 0;
 }
@@ -27,7 +31,7 @@
 .home-middle-section .home-middle-left {
   background: #252626;
   color: #8ca2ad;
-  height: 100vh;
+  height: 93vh;
 }
 
 .home-middle-section .home-middle-left img {
@@ -55,7 +59,7 @@
 
 .home-middle-section .home-middle-middle {
   background: white;
-  height: 100vh;
+  height: 93vh;
   overflow: scroll;
 }
 
@@ -70,9 +74,15 @@
   padding: 10px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-friends {
+  border: 5px solid #E6EFF2;
+  margin: 15px;
+  padding: 10px;
+}
+
 .home-middle-section .home-middle-right {
   background: #E6EFF2;
-  height: 100vh;
+  height: 93vh;
   text-align: center;
 }
 
