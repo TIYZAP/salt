@@ -3,9 +3,23 @@ class ReviewsController < ApplicationController
   acts_as_token_authentication_handler_for User, except: [:show]
 
   def timeline
-    @reviews = Review.timeline(current_user)
-    render json: @reviews
+    if current_user
+      @reviews = Review.timeline(current_user).page(params[:page] || 1).per(10)
+      render json: @reviews, meta: pagination_dict(@reviews)
+    else
+      render json: "You must logged in!"
+    end
   end
+
+  def pagination_dict(object)
+    {
+      current_page: object.current_page,
+      next_page: object.next_page,
+      total_pages: object.total_pages,
+      total_count: object.total_count
+    }
+  end
+
 
   def create
     @review = Review.new(review_params)
@@ -20,6 +34,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     render json: @review
   end
+
 
   def update
     @review = Review.find(params[:id])
