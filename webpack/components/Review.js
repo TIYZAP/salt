@@ -1,6 +1,8 @@
 import React from 'react'
 import Menu from './Menu'
-
+import LeftMenu from './LeftMenu'
+import Header from './Header'
+import FriendSideBar from './FriendSideBar'
 
 class Review extends React.Component{
     constructor(props){
@@ -81,51 +83,55 @@ class Review extends React.Component{
     }
     render(){
         return (
-            <div>
-                <Menu />
-            <div className="container">
-              <div className="row">
-                <h1 className="text-center">Please leave your review below</h1>
-                <div className="col-sm-5">
-                  <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'http://unsplash.it/600?random'} alt="" />
-                  <h4>Venue Name: {this.state.name}</h4>
-                  <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
-                  <h4>Venue Address: {this.state.address}</h4>
-                  <h4>Venue Phone: {this.state.phone}</h4>
-                </div>
-                <div className="col-sm-7">
-                  <label className="form-group">
-                    What dish did you have?
-                    <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
+        <div className="container-fluid">
+          <div className="row">
+              <Header />
+            <div className="col-sm-12 home-middle-section">
+                <LeftMenu />
+              <div className="col-sm-8 home-middle-middle">
+                  <h1 className="text-center">Please leave your review below</h1>
+                  <div className="col-sm-5">
+                    <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'http://unsplash.it/600?random'} alt="" />
+                    <h4>Venue Name: {this.state.name}</h4>
+                    <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
+                    <h4>Venue Address: {this.state.address}</h4>
+                    <h4>Venue Phone: {this.state.phone}</h4>
+                  </div>
+                  <div className="col-sm-7">
+                    <label className="form-group">
+                      What dish did you have?
+                      <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
+                    </label>
+                    <br />
+                    <label className="form-group">
+                      How would you rate it from 1-5?
                   </label>
-                  <br />
-                  <label className="form-group">
-                    How would you rate it from 1-5?
-                </label>
-                    <ul className="rating-stars">
-                        <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                        <input type="radio" name="rating" value="1" className="form-control" onChange={this.ratingHandler}/></label></li>
+                      <ul className="rating-stars">
+                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
+                          <input type="radio" name="rating" value="1" className="form-control" onChange={this.ratingHandler}/></label></li>
 
-                        <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                        <input type="radio" name="rating" value="2" className="form-control" onChange={this.ratingHandler}/></label></li>
+                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
+                          <input type="radio" name="rating" value="2" className="form-control" onChange={this.ratingHandler}/></label></li>
 
-                        <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                        <input type="radio" name="rating" value="3" className="form-control" onChange={this.ratingHandler}/></label></li>
+                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
+                          <input type="radio" name="rating" value="3" className="form-control" onChange={this.ratingHandler}/></label></li>
 
-                        <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                        <input type="radio" name="rating" value="4" className="form-control" onChange={this.ratingHandler}/></label></li>
+                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
+                          <input type="radio" name="rating" value="4" className="form-control" onChange={this.ratingHandler}/></label></li>
 
-                        <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                        <input type="radio" name="rating" value="5" className="form-control" onChange={this.ratingHandler}/></label></li>
-                    </ul>
-                  <label htmlFor="review">
-                    Please write your review below:
-                    <textarea name="name" rows="8" cols="80" name="body" onChange={this.bodyHandler}></textarea>
-                  </label>
-                  <button className="btn btn-success" onClick={this.submitReview}>Submit</button>
-                </div>
+                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
+                          <input type="radio" name="rating" value="5" className="form-control" onChange={this.ratingHandler}/></label></li>
+                      </ul>
+                    <label htmlFor="review">
+                      Please write your review below:
+                      <textarea name="name" rows="8" cols="80" name="body" onChange={this.bodyHandler}></textarea>
+                    </label>
+                    <button className="btn btn-success" onClick={this.submitReview}>Submit</button>
+                  </div>
               </div>
+              <FriendSideBar />
             </div>
+          </div>
         </div>
         )
     }

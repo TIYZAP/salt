@@ -78,7 +78,18 @@ $col7: #E6EFF2;
 
         //css for search
         .home-middle-middle-search{
+            
+        }
 
+        //css for friends profile
+        .home-middle-middle-friends-profile{
+            background: $col3;
+            height: 20vh;
+            padding: 20px;
+            .friend-profile-name{
+                color: white;
+                font-size: 60px;
+            }
         }
     }
     .home-middle-right{
