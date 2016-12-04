@@ -80,6 +80,17 @@
   padding: 10px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
+  background: #E2624B;
+  height: 20vh;
+  padding: 20px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friend-profile-name {
+  color: white;
+  font-size: 60px;
+}
+
 .home-middle-section .home-middle-right {
   background: #E6EFF2;
   height: 93vh;

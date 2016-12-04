@@ -1,5 +1,8 @@
 import React from 'react'
 import Menu from './Menu'
+import LeftMenu from './LeftMenu'
+import Header from './Header'
+import FriendSideBar from './FriendSideBar'
 
 
 class Friends extends React.Component {
@@ -22,31 +25,24 @@ class Friends extends React.Component {
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
-        return      <div className="col-sm-3 friend" key={i}>
-                        <img src={friend.image} alt="" />
-                        <h3>{friend.name}</h3>
-                        {/* <h3>Reviews: <span className="badge">{friend.reviews.length}</span></h3> */}
+        return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
+                      <img className="img-thumbnail" src={friend.image} alt="" />
+                      <h1 className="text-center">{friend.name}</h1>
                     </div>
         })
         return(
-            <div>
-                <Menu />
-            <div className="container-fluid">
-                <div className="row">
-                    <div className="col-sm-12 main-body-home text-center logo">
-                        <h1>Friends</h1>
-                    </div>
-                    <div className="col-sm-12">
-                        <br />
-                        <div className="form-group">
-                            <input type="text" id="search" name="search" className="form-control"/>
-                        </div>
-                        {myFriends}
-                    </div>
-                </div>
+        <div className="container-fluid">
+          <div className="row">
+              <Header />
+            <div className="col-sm-12 home-middle-section">
+                <LeftMenu />
+              <div className="col-sm-8 home-middle-middle">
+                {myFriends}
+              </div>
+              <FriendSideBar />
             </div>
+          </div>
         </div>
-
         )
     }
 }
