@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
 
   def timeline
     if current_user
-      @reviews = Review.timeline(current_user).page(params[:page] || 1).per(10)
+      @reviews = Review.timeline(current_user).page(params[:page] || 1).per(5)
       render json: @reviews, meta: pagination_dict(@reviews)
     else
       render json: "You must logged in!"
