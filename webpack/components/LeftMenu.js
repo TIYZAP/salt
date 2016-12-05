@@ -40,8 +40,7 @@ class LeftMenu extends React.Component {
                  <Link to="/search"><li><i className="fa fa-search" aria-hidden="true">Search</i></li></Link>
                  <Link to="/landingpage"><li>Landing</li></Link>
                  <Link to="/signin"><li>SignIn</li></Link>
-                 <Link to="/signup"><li>SignUp</li></Link>
-                 <button className="btn btn-default" onClick={this.followAllFriends}>Click me to follow all friends</button>
+                 <button className="btn btn-default" onClick={this.followAllFriends}>Follow fb friends</button>
               </ul>
             </div>
         )
