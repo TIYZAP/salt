@@ -87,7 +87,6 @@ class Search extends React.Component{
                   </div>
                   <FriendSideBar />
                 </div>
-
               </div>
             </div>
         )

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 
 class FriendSideBar extends React.Component{
@@ -17,7 +18,8 @@ class FriendSideBar extends React.Component{
     }
     render(){
         var friendsList = this.state.friends.map((friend, i) =>{
-        return    <div className="col-sm-12 home-each-friend" key={i}>
+        return    <Link to={'/friendprofile?id=' + friend.id} key={i}>
+                    <div className="col-sm-12 home-each-friend">
                       <div className="col-sm-4">
                         <img className="img-rounded" src={friend.image} alt="" />
                       </div>
@@ -25,6 +27,7 @@ class FriendSideBar extends React.Component{
                         {friend.name}
                       </div>
                     </div>
+                </Link>
         })
         return(
             <div className="col-sm-2 home-middle-right">
