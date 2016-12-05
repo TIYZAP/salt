@@ -9,6 +9,7 @@ class Header extends React.Component{
     logoutHandler(){
         sessionStorage.removeItem('email')
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('id')
         window.location.href="/landingpage"
     }
     render(){

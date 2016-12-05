@@ -22,7 +22,8 @@ class Review extends React.Component{
             place_id: '',
             address: '',
             website: '',
-            phone: ''
+            phone: '',
+            photo:''
         }
     }
 
@@ -50,7 +51,8 @@ class Review extends React.Component{
                 venue_address: this.state.address,
                 place_id: this.state.place_id,
                 rating: Number(this.state.rating),
-                dish: this.state.dish
+                dish: this.state.dish,
+                image: this.state.photo
             }),
             method: 'POST',
             headers: {

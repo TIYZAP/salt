@@ -94,17 +94,9 @@ img{
   border-radius: 10px 10px 20px 20px;
 }
 
-//media query for mobile
-@media (min-width: 768px) {
-  .nav-bar-left{
-    width: 25vw;
-  }
-}
+
 @media ( max-width : 760px ) {
   .nav-bar-left{
       display: none;
-  }
-  .main-body-right{
-    margin-left: 0;
   }
 }

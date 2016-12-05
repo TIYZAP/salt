@@ -58,6 +58,7 @@ class Home extends React.Component {
         }
         return(
             <div className="container-fluid">
+                <Menu />
               <div className="row">
                 <Header />
                 <div className="col-sm-12 home-middle-section">
