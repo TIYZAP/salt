@@ -8,7 +8,7 @@ class FriendSideBar extends React.Component{
             friends: []
         }
     }
-    componentDidMount(){
+    componentWillMount(){
         fetch('/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
