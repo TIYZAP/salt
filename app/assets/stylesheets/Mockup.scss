@@ -78,7 +78,7 @@ $col7: #E6EFF2;
 
         //css for search
         .home-middle-middle-search{
-            
+
         }
 
         //css for friends profile
@@ -109,5 +109,17 @@ $col7: #E6EFF2;
                 // border-radius: 24px;
             }
         }
+    }
+}
+
+@media ( max-width : 760px ) {
+    .head-nav-left{
+        display: none;
+    }
+    .home-middle-left{
+        display: none;
+    }
+    .home-middle-right{
+        display: none;
     }
 }

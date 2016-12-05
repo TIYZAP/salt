@@ -111,3 +111,15 @@
 .home-middle-section .home-middle-right .home-each-friend img {
   width: 100%;
 }
+
+@media (max-width: 760px) {
+  .head-nav-left {
+    display: none;
+  }
+  .home-middle-left {
+    display: none;
+  }
+  .home-middle-right {
+    display: none;
+  }
+}
