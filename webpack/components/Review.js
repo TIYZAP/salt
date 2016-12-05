@@ -3,6 +3,7 @@ import Menu from './Menu'
 import LeftMenu from './LeftMenu'
 import Header from './Header'
 import FriendSideBar from './FriendSideBar'
+import StarRating from './StarRating'
 
 class Review extends React.Component{
     constructor(props){
@@ -11,7 +12,7 @@ class Review extends React.Component{
         // this.updateForm = this.updateForm.bind(this)
         this.bodyHandler = this.bodyHandler.bind(this)
         this.dishHandler = this.dishHandler.bind(this)
-        this.ratingHandler = this.ratingHandler.bind(this)
+        this.updateRating = this.updateRating.bind(this)
         this.state = {
             searchResults: '',
             body: '',
@@ -50,7 +51,7 @@ class Review extends React.Component{
                 venue_name: this.state.name,
                 venue_address: this.state.address,
                 place_id: this.state.place_id,
-                rating: Number(this.state.rating),
+                rating: this.state.rating,
                 dish: this.state.dish,
                 image: this.state.photo
             }),
@@ -61,7 +62,7 @@ class Review extends React.Component{
 
         })
         .then(response => response.json())
-        window.location.href="/"
+        .then(response => window.location.href="/")
     }
     // updateForm(){
     //     var updatedState = {}
@@ -78,9 +79,9 @@ class Review extends React.Component{
             dish: e.target.value
         })
     }
-    ratingHandler(e){
+    updateRating(rating){
         this.setState({
-            rating: e.target.value
+            rating: Number(rating)
         })
     }
     render(){
@@ -105,10 +106,11 @@ class Review extends React.Component{
                       <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
                     </label>
                     <br />
-                    <label className="form-group">
+                    {/* <label className="form-group">
                       How would you rate it from 1-5?
-                  </label>
-                      <ul className="rating-stars">
+                  </label> */}
+                  <StarRating updateRating={this.updateRating} />
+                      {/* <ul className="rating-stars">
                           <li><label><i className="fa fa-star" aria-hidden="true"></i>
                           <input type="radio" name="rating" value="1" className="form-control" onChange={this.ratingHandler}/></label></li>
 
@@ -123,7 +125,7 @@ class Review extends React.Component{
 
                           <li><label><i className="fa fa-star" aria-hidden="true"></i>
                           <input type="radio" name="rating" value="5" className="form-control" onChange={this.ratingHandler}/></label></li>
-                      </ul>
+                      </ul> */}
                     <label htmlFor="review">
                       Please write your review below:
                       <textarea name="name" rows="8" cols="80" name="body" onChange={this.bodyHandler}></textarea>
