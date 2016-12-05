@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"errors":[],"warnings":[],"version":"1.13.3","hash":"2516855c503642b683b5","publicPath":"/webpack/","assetsByChunkName":{"application":"application-ffc4d58245523af977bc.js"},"assets":[{"name":"application-ffc4d58245523af977bc.js","size":592562,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}
+=======
+{"errors":[],"warnings":[],"version":"1.13.3","hash":"656fbf0c19edc8c778f3","publicPath":"/webpack/","assetsByChunkName":{"application":"application-a445ddb7ef4223758df1.js"},"assets":[{"name":"application-a445ddb7ef4223758df1.js","size":596618,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}
+>>>>>>> a2acc2349821eb16aa402893c8464bf9fc6be9e1

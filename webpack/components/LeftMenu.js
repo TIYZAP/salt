@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
+import urlParse from 'url-parse'
 
 class LeftMenu extends React.Component {
     constructor(props){
@@ -10,8 +11,9 @@ class LeftMenu extends React.Component {
             image: '',
         }
     }
-    componentDidMount(){
-        fetch('/profile?id=' + sessionStorage.getItem('id'))
+    componentWillMount(){
+        var url = new urlParse(window.location.href, true)
+        fetch('/profile?id=' + (sessionStorage.getItem('id')?sessionStorage.getItem('id'):url.query.id))
         .then(response => response.json())
         .then(response => this.setState({
             name: response.user.name,
@@ -24,6 +26,7 @@ class LeftMenu extends React.Component {
     followAllFriends(){
         fetch('/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
+        .then(response => window.location.href="/")
     }
     render(){
         return(
@@ -35,12 +38,10 @@ class LeftMenu extends React.Component {
               <ul>
                  <Link to="/"><li><i className="fa fa-home" aria-hidden="true">Home</i></li></Link>
                  <Link to="/friends"><li><i className="fa fa-users" aria-hidden="true">Friends</i></li></Link>
-                 <Link to="/friendprofile"><li><i className="fa fa-users" aria-hidden="true">FriendsProfile</i></li></Link>
                  <Link to="/search"><li><i className="fa fa-search" aria-hidden="true">Search</i></li></Link>
                  <Link to="/landingpage"><li>Landing</li></Link>
                  <Link to="/signin"><li>SignIn</li></Link>
-                 <Link to="/signup"><li>SignUp</li></Link>
-                 <button className="btn btn-default" onClick={this.followAllFriends}>Click me to follow all friends</button>
+                 <button className="btn btn-default" onClick={this.followAllFriends}>Follow fb friends</button>
               </ul>
             </div>
         )
