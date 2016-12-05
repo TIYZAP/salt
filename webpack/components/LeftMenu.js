@@ -5,6 +5,21 @@ class LeftMenu extends React.Component {
     constructor(props){
         super(props)
         this.followAllFriends = this.followAllFriends.bind(this)
+        this.state = {
+            name: '',
+            image: '',
+        }
+    }
+    componentDidMount(){
+        fetch('/profile?id=' + sessionStorage.getItem('id'))
+        .then(response => response.json())
+        .then(response => this.setState({
+            name: response.user.name,
+            image: response.user.image
+        }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
     followAllFriends(){
         fetch('/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
@@ -14,7 +29,8 @@ class LeftMenu extends React.Component {
         return(
             <div className="col-sm-2 home-middle-left text-center">
               <div>
-                  <img className="img-circle" src="http://unsplash.it/600/600?random" alt="User Profile Picture" />
+                  <h1 className="text-center">{this.state.name}</h1>
+                  <img className="img-circle" src={this.state.image} alt="User Profile Picture" />
               </div>
               <ul>
                  <Link to="/"><li><i className="fa fa-home" aria-hidden="true">Home</i></li></Link>

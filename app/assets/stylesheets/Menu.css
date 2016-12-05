@@ -10,7 +10,7 @@
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   border-radius: 10px;
-  background: #FF0C2B;
+  background: #4CD2B9;
 }
 
 /* Position and sizing of clickable cross button */
@@ -26,7 +26,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #FF0C2B;
+  background: #252626;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
@@ -48,11 +48,11 @@
 }
 
 .menu-item {
-  color: white;
+  color: #8ca2ad;
   text-decoration: none;
   padding: 15px;
   font-size: 25px;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #8ca2ad;
   text-align: center;
 }
 
@@ -62,4 +62,10 @@
   cursor: pointer;
   color: #FF0C2B;
   text-decoration: none;
+}
+
+@media (min-width: 761px) {
+  .bm-burger-button {
+    display: none;
+  }
 }

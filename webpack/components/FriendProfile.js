@@ -32,7 +32,7 @@ class FriendProfile extends React.Component{
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-12 home-middle-middle-review" key={i}>
                             <div className="col-sm-4">
-                                <img src="http://unsplash.it/400/400?random" alt="" />
+                                <img src={review.image} alt="" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
                             <div className="col-sm-8">
