@@ -16,6 +16,8 @@ get '/:thing' => 'static#index'
 get '/friends/all' => 'user#all_friends'
   root 'static#index'
   get '/search/name' => 'geo_search#name_test'
+
+  get '/email/test' => 'koala#email_test'
 end
 
 
