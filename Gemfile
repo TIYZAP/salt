@@ -49,6 +49,7 @@ gem 'google_places'
 gem "koala", "~> 2.2"
 gem 'simple_token_authentication', '~> 1.0'
 gem 'kaminari'
+gem 'sendgrid'
 
 #Exception / Monitoring!
 gem 'rollbar'
