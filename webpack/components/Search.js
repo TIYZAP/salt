@@ -5,6 +5,7 @@ import LeftMenu from './LeftMenu'
 import Header from './Header'
 import FriendSideBar from './FriendSideBar'
 
+
 class Search extends React.Component{
     constructor(props){
         super(props)
@@ -12,9 +13,11 @@ class Search extends React.Component{
         this.search = this.search.bind(this)
         this.enter = this.enter.bind(this)
         this.updateSearch = this.updateSearch.bind(this)
+        this.handlePageChange = this.handlePageChange.bind(this)
         this.state = {
             searchResults: [],
-            search: ''
+            search: '',
+            activePage: 1,
         }
     }
     typing(e){
@@ -44,6 +47,10 @@ class Search extends React.Component{
         // .then(response => {
         //     console.log(response[0].photos.photo_reference)
         // })
+    }
+    handlePageChange(pageNumber) {
+      console.log(`active page is ${pageNumber}`);
+      this.setState({activePage: pageNumber});
     }
     render(){
         var results = this.state.searchResults.map((result, i) => {
@@ -80,6 +87,7 @@ class Search extends React.Component{
                   </div>
                   <FriendSideBar />
                 </div>
+
               </div>
             </div>
         )
