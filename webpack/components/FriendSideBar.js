@@ -15,6 +15,7 @@ class FriendSideBar extends React.Component{
         .then(response => this.setState({
             friends: response.users
         }))
+
     }
     render(){
         var friendsList = this.state.friends.map((friend, i) =>{
@@ -25,6 +26,7 @@ class FriendSideBar extends React.Component{
                       </div>
                       <div className="col-sm-8">
                         {friend.name}
+                        <span className="badge">{friend.reviews.length}</span>
                       </div>
                     </div>
                 </Link>

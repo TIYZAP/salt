@@ -19,6 +19,7 @@ class Home extends React.Component {
             var url = new urlParse(window.location.href, true)
             sessionStorage.setItem('email', url.query.email)
             sessionStorage.setItem('token', url.query.token)
+            sessionStorage.setItem('id', url.query.id)
         }
         fetch('/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
