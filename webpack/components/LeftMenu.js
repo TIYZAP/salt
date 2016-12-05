@@ -26,6 +26,7 @@ class LeftMenu extends React.Component {
     followAllFriends(){
         fetch('/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
+        .then(response => window.location.href="/")
     }
     render(){
         return(
