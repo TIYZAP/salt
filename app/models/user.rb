@@ -5,6 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers => [:facebook]
   acts_as_token_authenticatable
+  after_create :welcome_email
 
   attachment :image, type: :image
   has_many :reviews
@@ -21,6 +22,12 @@ class User < ApplicationRecord
       user.fb_id = auth.extra.raw_info.id
       puts auth.inspect
     end
+  end
+
+  private
+
+  def welcome_email
+    UserNotifier.send_signup_email(@user).deliver
   end
 
   # def self.find_for_facebook_oauth(response, signed_in_resource=nil)
