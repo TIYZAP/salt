@@ -27,7 +27,7 @@ class User < ApplicationRecord
   private
 
   def welcome_email
-    UserNotifier.send_signup_email(@user).deliver
+    UserNotifier.send_signup_email(self).deliver
   end
 
   # def self.find_for_facebook_oauth(response, signed_in_resource=nil)
