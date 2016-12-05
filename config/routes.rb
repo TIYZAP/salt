@@ -18,6 +18,8 @@ get '/friends/all' => 'user#all_friends'
   get '/search/name' => 'geo_search#name_test'
 
   get '/email/test' => 'user#email_test'
+  post '/unfollow' => 'user#unfollow_user'
+  post '/mention' => 'user#mentions'
 end
 
 
