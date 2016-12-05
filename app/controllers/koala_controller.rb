@@ -23,9 +23,6 @@ class KoalaController < ApplicationController
     render json: friends
   end
 
-  def email_test
-    @user = current_user
-    UserNotifier.send_signup_email(@user).deliver
-  end
+
 
 end
