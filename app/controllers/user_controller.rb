@@ -11,5 +11,9 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     render json: @followees
   end
 
+  def email_test
+    @user = current_user
+    UserNotifier.send_signup_email(@user).deliver
+  end
 
 end
