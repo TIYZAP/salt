@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import Menu from './Menu'
 import LeftMenu from './LeftMenu'
 import Header from './Header'
@@ -25,10 +26,12 @@ class Friends extends React.Component {
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
-        return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
+        return     <Link to={'/friendprofile?id=' + friend.id} key={i}>
+                    <div className="col-sm-3 home-middle-middle-friends">
                       <img className="img-thumbnail" src={friend.image} alt="" />
                       <h1 className="text-center">{friend.name}</h1>
                     </div>
+                    </Link>
         })
         return(
         <div className="container-fluid">
