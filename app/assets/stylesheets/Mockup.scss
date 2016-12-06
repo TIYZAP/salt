@@ -71,19 +71,17 @@ $col7: #E6EFF2;
         }
     }
     .home-middle-middle{
-        background: white;
+        background: $col7;
         height: 93vh;
         overflow: scroll;
         padding: 30px;
         //css for reviews on home page
         .home-middle-middle-review{
-            border: 1px solid $col7;
+            // border: 4px solid white;
             margin: 5px;
             margin-bottom: 15px;
             padding: 20px;
-            box-shadow: 1px 1px 2px 1px;
-            width: 900px;
-            height: 400px;
+            background: white;
             p{
                 font-size: 18px;
                 padding: 10px;
@@ -98,7 +96,8 @@ $col7: #E6EFF2;
 
         //css for friends
         .home-middle-middle-friends{
-            border: 5px solid $col7;
+            // border: 5px solid $col7;
+            background: white;
             margin: 15px;
             padding: 10px;
         }
@@ -120,7 +119,7 @@ $col7: #E6EFF2;
         }
     }
     .home-middle-right{
-        background: $col7;
+        background: white;
         height: 93vh;
         text-align: center;
         h1{
@@ -128,7 +127,7 @@ $col7: #E6EFF2;
         }
         .home-each-friend{
             padding: 20px;
-            background: $col1;
+            background: $col2;
             border-radius: 3px;
             margin-top: 8px;
             img{
