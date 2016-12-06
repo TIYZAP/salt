@@ -32,7 +32,7 @@ class Home extends React.Component {
         if(this.state.allReviews.length){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
-                    <div className="col-sm-10 col-sm-offset-2 home-middle-middle-review" key={i}>
+                    <div className="col-sm-12 home-middle-middle-review" key={i}>
                         <div className="col-sm-4">
                           <h3 className="text-center">{review.user.name}</h3>
                             <img src={review.user.image} alt="Reviewers Picture" />

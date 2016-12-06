@@ -76,20 +76,17 @@
 }
 
 .home-middle-section .home-middle-middle {
-  background: white;
+  background: #E6EFF2;
   height: 93vh;
   overflow: scroll;
   padding: 30px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review {
-  border: 1px solid #E6EFF2;
   margin: 5px;
   margin-bottom: 15px;
   padding: 20px;
-  box-shadow: 1px 1px 2px 1px;
-  width: 900px;
-  height: 400px;
+  background: white;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review p {
@@ -103,7 +100,7 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends {
-  border: 5px solid #E6EFF2;
+  background: white;
   margin: 15px;
   padding: 10px;
 }
@@ -120,7 +117,7 @@
 }
 
 .home-middle-section .home-middle-right {
-  background: #E6EFF2;
+  background: white;
   height: 93vh;
   text-align: center;
 }
@@ -131,7 +128,7 @@
 
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
-  background: #4CD2B9;
+  background: #253240;
   border-radius: 3px;
   margin-top: 8px;
 }

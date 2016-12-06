@@ -55,6 +55,7 @@ class Search extends React.Component{
         })
         return(
             <div>
+                <Menu />
               <div className="row">
                   <Header />
                 <div className="col-sm-12 home-middle-section">
