@@ -9,29 +9,46 @@ import FriendSideBar from './FriendSideBar'
 class Friends extends React.Component {
     constructor(props){
         super(props)
+        this.removeFriend = this.removeFriend.bind(this)
         this.state = {
-            friends: []
+            friends: [],
+            id: ''
         }
     }
     componentDidMount(){
-
         fetch('/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             friends: response.users
         }))
+        // .then(response => this.updateFriends)
         // .then(response => {
         //     console.log(response)
         // })
     }
+
+    removeFriend(id){
+        fetch('/unfollow?' + 'user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token') + '&id=' + id , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(response => window.location.href="/friends")
+    }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
-        return     <Link to={'/friendprofile?id=' + friend.id} key={i}>
-                    <div className="col-sm-3 home-middle-middle-friends">
+        return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
+                        <Link to={'/friendprofile?id=' + friend.id} >
                       <img className="img-thumbnail" src={friend.image} alt="" />
                       <h1 className="text-center">{friend.name}</h1>
+                      </Link>
+                      <div className="text-center">
+                          <button className="btn btn-danger" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
+                      </div>
                     </div>
-                    </Link>
+
         })
         return(
         <div className="container-fluid">

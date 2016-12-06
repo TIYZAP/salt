@@ -106,26 +106,7 @@ class Review extends React.Component{
                       <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
                     </label>
                     <br />
-                    {/* <label className="form-group">
-                      How would you rate it from 1-5?
-                  </label> */}
                   <StarRating updateRating={this.updateRating} />
-                      {/* <ul className="rating-stars">
-                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                          <input type="radio" name="rating" value="1" className="form-control" onChange={this.ratingHandler}/></label></li>
-
-                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                          <input type="radio" name="rating" value="2" className="form-control" onChange={this.ratingHandler}/></label></li>
-
-                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                          <input type="radio" name="rating" value="3" className="form-control" onChange={this.ratingHandler}/></label></li>
-
-                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                          <input type="radio" name="rating" value="4" className="form-control" onChange={this.ratingHandler}/></label></li>
-
-                          <li><label><i className="fa fa-star" aria-hidden="true"></i>
-                          <input type="radio" name="rating" value="5" className="form-control" onChange={this.ratingHandler}/></label></li>
-                      </ul> */}
                     <label htmlFor="review">
                       Please write your review below:
                       <textarea name="name" rows="8" cols="80" name="body" onChange={this.bodyHandler}></textarea>
