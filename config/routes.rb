@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
+  root 'static#index'
   get '/' => 'static#index'
   scope '/api' do
     get '/timeline' => 'reviews#timeline'
@@ -14,7 +15,6 @@ Rails.application.routes.draw do
     get '/koala' => 'koala#test'
     get '/facebook/follow' => 'koala#follow_facebook'
     get '/friends/all' => 'user#all_friends'
-    root 'static#index'
     get '/search/name' => 'geo_search#name_test'
     get '/email/test' => 'user#email_test'
     post '/unfollow' => 'user#unfollow_user'
