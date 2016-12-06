@@ -53,7 +53,9 @@ class Review extends React.Component{
                 place_id: this.state.place_id,
                 rating: this.state.rating,
                 dish: this.state.dish,
-                image: this.state.photo
+                image: this.state.photo,
+                phone: this.state.phone,
+                website: this.state.website
             }),
             method: 'POST',
             headers: {

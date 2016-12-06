@@ -37,6 +37,11 @@
   border: 1px solid white;
 }
 
+.head-nav-wrapper .head-nav-right button:hover {
+  background: #E2624B;
+  transform: scale(1.1);
+}
+
 .head-nav-wrapper .head-nav-right i {
   padding: 5px;
 }
