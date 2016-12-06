@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  resources :reviews
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    omniauth_callbacks: "users/omniauth_callbacks",
-    registrations: 'users/registrations'
-  }
   root 'static#index'
   get '/' => 'static#index'
   scope '/api' do
+    resources :reviews
     get '/timeline' => 'reviews#timeline'
     get '/search' => 'geo_search#search'
     get '/search/place' => 'geo_search#show'
@@ -23,6 +18,12 @@ Rails.application.routes.draw do
     post '/unmention' => 'user#un_mentions'
     post '/mentionable' => 'user#mentionable'
   end
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    omniauth_callbacks: "users/omniauth_callbacks",
+    registrations: 'users/registrations'
+  }
+
   get '/:thing' => 'static#index'
 end
 

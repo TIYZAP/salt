@@ -17,7 +17,7 @@ class FriendProfile extends React.Component{
         }
     }
     componentDidMount(){
-        fetch('/profile?id=' + this.state.id)
+        fetch('/api/profile?id=' + this.state.id)
         .then(response => response.json())
         .then(response => this.setState({
             image: response.user.image,

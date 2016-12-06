@@ -16,7 +16,7 @@ class Friends extends React.Component {
         }
     }
     componentDidMount(){
-        fetch('/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
+        fetch('/api/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             friends: response.users
@@ -28,7 +28,7 @@ class Friends extends React.Component {
     }
 
     removeFriend(id){
-        fetch('/unfollow?' + 'user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token') + '&id=' + id , {
+        fetch('/api/unfollow?' + 'user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token') + '&id=' + id , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ class Friends extends React.Component {
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
-                        <Link to={'/friendprofile?id=' + friend.id} >
+                        <Link to={'/api/friendprofile?id=' + friend.id} >
                       <img className="img-thumbnail" src={friend.image} alt="" />
                       <h1 className="text-center">{friend.name}</h1>
                       </Link>
