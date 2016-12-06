@@ -17,7 +17,7 @@ class Review extends React.Component{
             searchResults: '',
             body: '',
             dish: '',
-            rating: '',
+            rating: 1,
             venue_name: '',
             venue_address: '',
             place_id: '',
@@ -86,7 +86,7 @@ class Review extends React.Component{
     }
     render(){
         return (
-        <div className="container-fluid">
+        <div>
           <div className="row">
               <Header />
             <div className="col-sm-12 home-middle-section">
