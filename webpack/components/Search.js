@@ -41,17 +41,25 @@ class Search extends React.Component{
     }
     render(){
         var results = this.state.searchResults.map((result, i) => {
-            return <Link to={'/review?place_id=' + result.place_id} key={i}>
-            <div className="col-sm-12 home-middle-middle-review" >
-                <div className="col-sm-4">
-                    <img height="200" src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
+            return <div className="col-sm-3 home-middle-middle-search-review" key={i}>
+                    <div className="col-sm-12">
+                        <h4 className="text-center">{result.name}</h4>
+                        <img height="200" src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
+                    </div>
+                    <div className="col-sm-12">
+                        <h5>{result.vicinity}</h5>
+                    </div>
+                    <div className="col-sm-12">
+                        <div className="col-sm-6">
+                            <button className="btn read-review-button btn-primary">Read Review</button>
+                        </div>
+                        <div className="col-sm-6">
+                            <Link to={'/review?place_id=' + result.place_id} >
+                            <button className="btn post-review-button btn-success">Post Review</button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-sm-8">
-                    <h1 className="text-center">{result.name}</h1>
-                    <h4>{result.vicinity}</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div></Link>
         })
         return(
             <div>

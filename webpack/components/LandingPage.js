@@ -14,11 +14,8 @@ class LandingPage extends React.Component {
                                 <h1>Grain of Salt</h1>
                                 <h3>Reviews by your trusted network</h3>
                             </div>
-                            <div className="col-sm-3 col-sm-offset-2">
-                                <Link to="/signin"><button id="signin" type="button" className="btn btn-primary btn-block">SignIn</button></Link>
-                            </div>
-                            <div className="col-sm-3 col-sm-offset-2">
-                                <Link to="/signup"><button id="signup" type="button" className="btn btn-success btn-block">SignUp</button></Link>
+                            <div className="col-sm-3 col-sm-offset-4">
+                            <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i> Signin with Facebook</a>
                             </div>
                         </div>
                 </div>
