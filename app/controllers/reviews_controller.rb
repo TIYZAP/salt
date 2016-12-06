@@ -54,6 +54,19 @@ class ReviewsController < ApplicationController
     render json: "Your review has been removed!"
   end
 
+  def friends_reviews
+    @user = current_user
+    @reviews = []
+    @friends = @user.followees(User)
+    @friends.each do |friend|
+      @container = Review.where(place_id: params[:place_id], user_id: friend.id)
+      @container.each do |cont|
+        @reviews << cont
+      end
+    end
+    render json: @reviews
+  end
+
   private
 
   def review_params
