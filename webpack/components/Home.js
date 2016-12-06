@@ -44,8 +44,8 @@ class Home extends React.Component {
                             <h5>Rating: {review.rating}</h5>
                             <h5>Address: {review.venue_address}</h5>
                             <h5>Phone: {review.phone}</h5>
-                            <h5>Website: {review.website}</h5>
-                            <p>{review.body}</p>
+                            <h5>Website: <a href={review.website}>Link to website</a></h5>
+                            <p>Review: <br />{review.body}</p>
                         </div>
                     </div>
                 )}

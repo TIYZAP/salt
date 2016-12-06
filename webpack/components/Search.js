@@ -51,7 +51,9 @@ class Search extends React.Component{
                     </div>
                     <div className="col-sm-12">
                         <div className="col-sm-6">
+                            <Link to={'/readreview?place_id=' + result.place_id} >
                             <button className="btn read-review-button btn-primary">Read Review</button>
+                            </Link>
                         </div>
                         <div className="col-sm-6">
                             <Link to={'/review?place_id=' + result.place_id} >
