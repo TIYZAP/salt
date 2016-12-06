@@ -13,7 +13,7 @@ class LeftMenu extends React.Component {
     }
     componentWillMount(){
         var url = new urlParse(window.location.href, true)
-        fetch('/profile?id=' + (sessionStorage.getItem('id')?sessionStorage.getItem('id'):url.query.id))
+        fetch('/api/profile?id=' + (sessionStorage.getItem('id')?sessionStorage.getItem('id'):url.query.id))
         .then(response => response.json())
         .then(response => this.setState({
             name: response.user.name,
@@ -24,7 +24,7 @@ class LeftMenu extends React.Component {
         // })
     }
     followAllFriends(){
-        fetch('/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
+        fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
         .then(response => window.location.href="/")
     }
@@ -40,7 +40,6 @@ class LeftMenu extends React.Component {
                  <Link to="/friends"><li><i className="fa fa-users" aria-hidden="true">Friends</i></li></Link>
                  <Link to="/search"><li><i className="fa fa-search" aria-hidden="true">Search</i></li></Link>
                  <Link to="/landingpage"><li>Landing</li></Link>
-                 <Link to="/signin"><li>SignIn</li></Link>
                  <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow fb friends</i></button>
               </ul>
             </div>

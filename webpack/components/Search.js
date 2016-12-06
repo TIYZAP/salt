@@ -32,7 +32,7 @@ class Search extends React.Component{
         e.preventDefault()
     }
     updateSearch(zip, place){
-        fetch('/search?address=' + zip + '&name=' + place)
+        fetch('/api/search?address=' + zip + '&name=' + place)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {

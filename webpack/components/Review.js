@@ -29,7 +29,7 @@ class Review extends React.Component{
     }
 
     componentWillMount(){
-        fetch('/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
+        fetch('/api/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             searchResults: response,
@@ -45,7 +45,7 @@ class Review extends React.Component{
         // })
     }
     submitReview(){
-        fetch('/reviews?'+ '&user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'), {
+        fetch('/api/reviews?'+ '&user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'), {
             body: JSON.stringify({
                 body: this.state.body,
                 venue_name: this.state.name,

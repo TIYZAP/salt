@@ -21,7 +21,7 @@ class Home extends React.Component {
             sessionStorage.setItem('token', url.query.token)
             sessionStorage.setItem('id', url.query.id)
         }
-        fetch('/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
+        fetch('/api/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({allReviews: response.reviews}))
         // .then(response => {
