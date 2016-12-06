@@ -13,7 +13,12 @@
 
 .head-nav-wrapper .head-nav-middle {
   background: #4CD2B9;
-  height: 70px;
+  height: 75px;
+  padding-bottom: 30px;
+}
+
+.head-nav-wrapper .head-nav-middle h1 {
+  font-size: 45px;
 }
 
 .head-nav-wrapper .head-nav-right {
@@ -28,6 +33,8 @@
   height: 40px;
   font-size: 19px;
   padding: 5px;
+  background: #4CD2B9;
+  border: 1px solid white;
 }
 
 .head-nav-wrapper .head-nav-right i {
@@ -72,12 +79,22 @@
   background: white;
   height: 93vh;
   overflow: scroll;
+  padding: 30px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review {
-  border: 4px solid #E6EFF2;
+  border: 1px solid #E6EFF2;
   margin: 5px;
+  margin-bottom: 15px;
   padding: 20px;
+  box-shadow: 1px 1px 2px 1px;
+  width: 900px;
+  height: 400px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-review p {
+  font-size: 18px;
+  padding: 10px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
@@ -94,7 +111,7 @@
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
   background: #E2624B;
   height: 20vh;
-  padding: 20px;
+  padding: 10px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friend-profile-name {
@@ -115,7 +132,7 @@
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
   background: #4CD2B9;
-  border-radius: 10px;
+  border-radius: 3px;
   margin-top: 8px;
 }
 
