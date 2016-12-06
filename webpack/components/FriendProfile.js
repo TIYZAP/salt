@@ -45,7 +45,7 @@ class FriendProfile extends React.Component{
                         </div>
         })
         return (
-            <div className="container-fluid">
+            <div>
               <div className="row">
                   <Header />
                 <div className="col-sm-12 home-middle-section">

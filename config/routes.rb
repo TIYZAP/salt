@@ -20,7 +20,12 @@ get '/friends/all' => 'user#all_friends'
   get '/email/test' => 'user#email_test'
   post '/unfollow' => 'user#unfollow_user'
   post '/mention' => 'user#mentions'
-get '/friends/reviews' => 'reviews#friends_reviews'
+
+  get '/friends/reviews' => 'reviews#friends_reviews'
+
+  post '/unmention' => 'user#un_mentions'
+  post '/mentionable' => 'user#mentionable'
+
 end
 
 

@@ -15,6 +15,7 @@
 .search-wrapper input {
   padding: 10px 5px;
   border: 0;
+  margin-right: 20px;
 }
 
 .search-wrapper button {

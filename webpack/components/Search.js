@@ -9,21 +9,13 @@ import FriendSideBar from './FriendSideBar'
 class Search extends React.Component{
     constructor(props){
         super(props)
-        this.typing = this.typing.bind(this)
         this.search = this.search.bind(this)
         this.enter = this.enter.bind(this)
         this.updateSearch = this.updateSearch.bind(this)
-        this.handlePageChange = this.handlePageChange.bind(this)
         this.state = {
             searchResults: [],
-            search: '',
-            activePage: 1,
+            activePage: 1
         }
-    }
-    typing(e){
-        this.setState({
-            search: e.target.value
-        })
     }
     enter(e){
         if(e.key === 'Enter'){
@@ -31,26 +23,21 @@ class Search extends React.Component{
         }
     }
     search(e){
-        var updateResults = this.state.search
-        this.setState({
-            search: e.target.value
-        })
-        this.updateSearch(updateResults)
-        this.setState({
-            search: ''
-        })
+        var zip = this._inputZip.value
+        var place = this._inputPlace.value
+        console.log(zip, place)
+        this.updateSearch(zip, place)
+        zip = ''
+        place = ''
+        e.preventDefault()
     }
-    updateSearch(updateResults){
-        fetch('/search?address=' + this.state.search)
+    updateSearch(zip, place){
+        fetch('/search?address=' + zip + '&name=' + place)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {
         //     console.log(response[0].photos.photo_reference)
         // })
-    }
-    handlePageChange(pageNumber) {
-      console.log(`active page is ${pageNumber}`);
-      this.setState({activePage: pageNumber});
     }
     render(){
         var results = this.state.searchResults.map((result, i) => {
@@ -67,7 +54,7 @@ class Search extends React.Component{
             </div></Link>
         })
         return(
-            <div className="container-fluid">
+            <div>
               <div className="row">
                   <Header />
                 <div className="col-sm-12 home-middle-section">
@@ -75,12 +62,15 @@ class Search extends React.Component{
                   <div className="col-sm-8 home-middle-middle">
                       <div className="col-sm-12 home-middle-middle-search">
                           <div className="col-sm-6 col-sm-offset-3 search-wrapper">
+                              <form onSubmit={this.search}>
                             <div className="input-group">
-                              <input type="text" className="form-control" placeholder="Enter Zip Code/Address" value={this.state.search} onChange={this.typing} onKeyPress={this.enter} />
+                              <input type="text"  className="form-control" placeholder="Enter Zip Code/Address" ref={(a) => this._inputZip = a} onKeyPress={this.enter} />
+                              <input type="text" className="form-control" placeholder="Enter name of place" ref={(a) => this._inputPlace = a} onKeyPress={this.enter} />
                               <span className="input-group-btn">
-                                <button className="btn" type="button" value={this.state.search} onChange={this.typing} onClick={this.search}>Search</button>
+                                <button className="btn" type="submit">Search</button>
                               </span>
                             </div>
+                            </form>
                           </div>
                           {results}
                       </div>
