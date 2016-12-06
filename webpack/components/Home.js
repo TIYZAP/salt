@@ -32,17 +32,17 @@ class Home extends React.Component {
         if(this.state.allReviews.length){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
-                    <div className="col-sm-12 home-middle-middle-review" key={i}>
+                    <div className="col-sm-10 col-sm-offset-2 home-middle-middle-review" key={i}>
                         <div className="col-sm-4">
-                          <h1 className="text-center">{review.user.name}</h1>
+                          <h3 className="text-center">{review.user.name}</h3>
                             <img src={review.user.image} alt="Reviewers Picture" />
                             <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                         </div>
                         <div className="col-sm-8">
                             <h1 className="text-center">{review.venue_name}</h1>
-                            <h3>Dish: {review.dish}</h3>
-                            <h3>Rating: {review.rating}</h3>
-                            <h3>Address: {review.venue_address}</h3>
+                            <h5>Dish: {review.dish}</h5>
+                            <h5>Rating: {review.rating}</h5>
+                            <h5>Address: {review.venue_address}</h5>
                             <p>{review.body}</p>
                         </div>
                     </div>
