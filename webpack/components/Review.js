@@ -27,7 +27,6 @@ class Review extends React.Component{
             photo:''
         }
     }
-
     componentWillMount(){
         fetch('/api/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
         .then(response => response.json())
