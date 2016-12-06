@@ -5,27 +5,25 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
-get '/timeline' => 'reviews#timeline'
-get '/search' => 'geo_search#search'
-get '/search/place' => 'geo_search#show'
-get '/' => 'static#index'
-get '/profile' => 'user#show'
-get '/koala' => 'koala#test'
-get '/facebook/follow' => 'koala#follow_facebook'
-get '/:thing' => 'static#index'
-get '/friends/all' => 'user#all_friends'
   root 'static#index'
-  get '/search/name' => 'geo_search#name_test'
-
-  get '/email/test' => 'user#email_test'
-  post '/unfollow' => 'user#unfollow_user'
-  post '/mention' => 'user#mentions'
-
-  get '/friends/reviews' => 'reviews#friends_reviews'
-
-  post '/unmention' => 'user#un_mentions'
-  post '/mentionable' => 'user#mentionable'
-
+  get '/' => 'static#index'
+  scope '/api' do
+    get '/timeline' => 'reviews#timeline'
+    get '/search' => 'geo_search#search'
+    get '/search/place' => 'geo_search#show'
+    get '/profile' => 'user#show'
+    get '/koala' => 'koala#test'
+    get '/facebook/follow' => 'koala#follow_facebook'
+    get '/friends/all' => 'user#all_friends'
+    get '/search/name' => 'geo_search#name_test'
+    get '/email/test' => 'user#email_test'
+    post '/unfollow' => 'user#unfollow_user'
+    post '/mention' => 'user#mentions'
+    get '/friends/reviews' => 'reviews#friends_reviews'
+    post '/unmention' => 'user#un_mentions'
+    post '/mentionable' => 'user#mentionable'
+  end
+  get '/:thing' => 'static#index'
 end
 
 
