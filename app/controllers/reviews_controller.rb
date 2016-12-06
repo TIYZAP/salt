@@ -25,6 +25,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @review.remote_image_url = params[:image]
     if current_user.reviews << @review
       render json: @review
     else
@@ -70,7 +71,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:venue_name, :venue_address, :place_id, :dish, :body, :rating, :image)
+    params.permit(:venue_name, :venue_address, :place_id, :dish, :body, :rating, :image, :website, :phone)
   end
 
 
