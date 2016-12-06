@@ -57,7 +57,7 @@ class Home extends React.Component {
                                 </div>
         }
         return(
-            <div className="container-fluid">
+            <div>
                 <Menu />
               <div className="row">
                 <Header />

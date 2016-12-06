@@ -12,17 +12,26 @@ $col7: #E6EFF2;
     text-align: center;
     height: 70px;
     padding: 0;
+    margin: 0;
     .head-nav-left{
         background: $col1;
         height: 70px;
     }
     .head-nav-middle{
-        background: $col8;
+        background: $col1;
         height: 70px;
     }
     .head-nav-right{
-        background: $col3;
+        background: $col1;
         height: 70px;
+        padding: 20px;
+        button{
+            border-radius: 3px;
+            width: 150px;
+            height: 40px;
+            font-size: 19px;
+            padding: 5px;
+        }
         i{
             padding: 5px;
         }
@@ -30,6 +39,7 @@ $col7: #E6EFF2;
 }
 .home-middle-section{
     padding: 0;
+    margin: 0;
     .home-middle-left{
         background: $col8;
         color: $col5;
@@ -111,6 +121,7 @@ $col7: #E6EFF2;
         }
     }
 }
+
 
 @media ( max-width : 760px ) {
     .head-nav-left{

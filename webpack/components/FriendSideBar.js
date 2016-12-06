@@ -18,15 +18,16 @@ class FriendSideBar extends React.Component{
             friends: response.users
         }))
 
+
     }
     render(){
         var friendsList = this.state.friends.map((friend, i) =>{
         return    <Link to={'/friendprofile?id=' + friend.id} key={i}>
                     <div className="col-sm-12 home-each-friend">
-                      <div className="col-sm-4">
+                      <div className="col-sm-5">
                         <img className="img-rounded" src={friend.image} alt="" />
                       </div>
-                      <div className="col-sm-8">
+                      <div className="col-sm-7">
                         {friend.name}
                         <span className="badge">{friend.reviews.length}</span>
                       </div>
