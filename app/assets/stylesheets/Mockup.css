@@ -85,24 +85,47 @@
 .home-middle-section .home-middle-middle .home-middle-middle-review {
   margin: 5px;
   margin-bottom: 15px;
-  padding: 20px;
+  padding: 10px;
   background: white;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-review p {
-  font-size: 18px;
-  padding: 10px;
+.home-middle-section .home-middle-middle .home-middle-middle-review h4 {
+  padding: 0;
+  text-overflow: ellipsis;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends {
   background: white;
   margin: 15px;
   padding: 10px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
+  margin: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  width: 300px;
+  height: 350px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .read-review-button {
+  background: #0FAF9B;
+  color: white;
+  border: 1px solid white;
+  border-radius: 1px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .post-review-button {
+  background: #e54040;
+  color: white;
+  border: 1px solid white;
+  border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
