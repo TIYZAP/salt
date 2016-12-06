@@ -2,15 +2,17 @@ class GeoSearchController < ApplicationController
   include Geokit::Geocoders
 
   def search
-    res = MultiGeocoder.geocode(params[:address])
-    @lat = res.lat
-    @lng = res.lng
-    @client = GooglePlaces::Client.new(ENV['GOOGLE_API'])
-    if params[:name].present?
-      @name = params[:name]
-      render json: @client.spots(@lat, @lng, :name => @name, :types => 'restaurant',:radius => 8046).map{|this_one| build_hash_for_output(this_one) }
-    else
-      render json: @client.spots(@lat, @lng, :types => 'restaurant', :radius => 8046).map{|this_one| build_hash_for_output(this_one) }
+    if params[:address].present?
+      res = MultiGeocoder.geocode(params[:address])
+      @lat = res.lat
+      @lng = res.lng
+      @client = GooglePlaces::Client.new(ENV['GOOGLE_API'])
+      if params[:name].present?
+        @name = params[:name]
+        render json: @client.spots(@lat, @lng, :name => @name, :types => 'restaurant',:radius => 8046).map{|this_one| build_hash_for_output(this_one) }
+      else
+        render json: @client.spots(@lat, @lng, :types => 'restaurant', :radius => 8046).map{|this_one| build_hash_for_output(this_one) }
+      end
     end
   end
 
