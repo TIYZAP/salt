@@ -40,7 +40,7 @@ class Friends extends React.Component {
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
-                        <Link to={'/api/friendprofile?id=' + friend.id} >
+                      <Link to={'/friendprofile?id=' + friend.id} >
                       <img className="img-thumbnail" src={friend.image} alt="" />
                       <h1 className="text-center">{friend.name}</h1>
                       </Link>
