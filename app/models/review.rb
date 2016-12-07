@@ -14,8 +14,11 @@ class Review < ApplicationRecord
     Review.where(user_id: all_ids).order("created_at DESC")
   end
 
+
+  private
+
   def send_recs
-    if params[:rec]
+    if params[:rec].present?
       RecNotifier.send_rec_email(@review.user).deliver
     end
   end
