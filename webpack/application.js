@@ -9,6 +9,7 @@ import Friends from './components/Friends'
 import Search from './components/Search'
 import FriendProfile from './components/FriendProfile'
 import Review from './components/Review'
+import ReadReview from './components/ReadReview'
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             <Route path="/search" component={Search} />
             <Route path="/friendprofile" component={FriendProfile} />
             <Route path="/review" component={Review} />
+            <Route path="/readreview" component={ReadReview} />
         </Router>
         ,document.getElementById('app')
     )
