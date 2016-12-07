@@ -6,7 +6,6 @@ import urlParse from 'url-parse'
 class FriendSideBar extends React.Component{
     constructor(props){
         super(props)
-        this.handLinkClick = this.handLinkClick.bind(this)
         this.state = {
             friends: []
         }
@@ -19,14 +18,10 @@ class FriendSideBar extends React.Component{
             friends: response.users
         }))
     }
-    handLinkClick (e) {
-      if (this.props.refresh === true) {
-        window.location.href = e.target.href;
-      }
-    }
+
     render(){
         var friendsList = this.state.friends.map((friend, i) =>{
-        return    <Link to={'/friendprofile/' + friend.id} onClick={this.handLinkClick} key={i}>
+        return    <Link to={'/friendprofile/' + friend.id} key={i}>
                     <div className="col-sm-12 home-each-friend">
                       <div className="col-sm-5">
                         <img className="img-rounded" src={friend.image} alt="" />
