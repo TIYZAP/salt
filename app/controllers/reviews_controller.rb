@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   acts_as_token_authentication_handler_for User, except: [:show]
-  after_create :send_recs
+  
 
   def timeline
     if current_user
@@ -75,10 +75,6 @@ class ReviewsController < ApplicationController
     params.permit(:venue_name, :venue_address, :place_id, :dish, :body, :rating, :image, :website, :phone)
   end
 
-  def send_recs
-    if params[:rec]
-      RecNotifier.send_rec_email(@review.user).deliver
-    end
-  end
+
 
 end
