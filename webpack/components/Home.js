@@ -21,7 +21,7 @@ class Home extends React.Component {
             sessionStorage.setItem('token', url.query.token)
             sessionStorage.setItem('id', url.query.id)
         }
-        fetch('/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
+        fetch('/api/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({allReviews: response.reviews}))
         // .then(response => {
@@ -43,7 +43,9 @@ class Home extends React.Component {
                             <h5>Dish: {review.dish}</h5>
                             <h5>Rating: {review.rating}</h5>
                             <h5>Address: {review.venue_address}</h5>
-                            <p>{review.body}</p>
+                            <h5>Phone: {review.phone}</h5>
+                            <h5>Website: <a href={review.website}>Link to website</a></h5>
+                            <p>Review: <br />{review.body}</p>
                         </div>
                     </div>
                 )}

@@ -23,6 +23,4 @@ class KoalaController < ApplicationController
     render json: friends
   end
 
-
-
 end

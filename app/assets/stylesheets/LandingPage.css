@@ -4,20 +4,19 @@
 }
 
 .landing-container {
-  background: url(/images/salt2.jpg);
+  background: #253240;
   background-size: cover;
-  color: #FF0C2B;
+  color: white;
   font-weight: bolder;
   height: 100vh;
   padding-top: 90px;
 }
 
 .landingpage-box {
-  background: white;
+  background: #4CD2B9;
   padding: 20px;
   opacity: .9;
   margin-top: 20px;
-  box-shadow: 1px 1px 2px 2px white;
 }
 
 .landingpage-box h1 {

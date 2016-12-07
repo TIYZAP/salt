@@ -37,6 +37,10 @@ $col7: #E6EFF2;
             padding: 5px;
             background: $col1;
             border: 1px solid white;
+            &:hover{
+                background: $col3;
+                transform: scale(1.1);
+            }
         }
         i{
             padding: 5px;
@@ -80,17 +84,17 @@ $col7: #E6EFF2;
             // border: 4px solid white;
             margin: 5px;
             margin-bottom: 15px;
-            padding: 20px;
+            padding: 10px;
             background: white;
-            p{
-                font-size: 18px;
-                padding: 10px;
-                // border: 2px solid $col7;
-                // height: 300px;
+            // width: 300px;
+            // height: 300px;
+            h4{
+                padding: 0;
+                text-overflow: ellipsis;
             }
             img{
                 width: 100%;
-                padding: 10px;
+                padding: 5px;
             }
         }
 
@@ -104,7 +108,26 @@ $col7: #E6EFF2;
 
         //css for search
         .home-middle-middle-search{
-
+            .home-middle-middle-search-review{
+                margin: 5px;
+                margin-bottom: 15px;
+                padding: 10px;
+                background: white;
+                width: 300px;
+                height: 350px;
+                .read-review-button{
+                    background: #0FAF9B;
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 1px;
+                }
+                .post-review-button{
+                    background: #e54040;
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 1px;
+                }
+            }
         }
 
         //css for friends profile

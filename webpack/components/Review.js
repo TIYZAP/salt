@@ -27,9 +27,8 @@ class Review extends React.Component{
             photo:''
         }
     }
-
     componentWillMount(){
-        fetch('/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
+        fetch('/api/search/place?place_id=' + window.location.href.split('?')[1].replace('place_id=','') + '&user_token=' + sessionStorage.getItem('token') + '&user_email' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             searchResults: response,
@@ -38,14 +37,14 @@ class Review extends React.Component{
             place_id: response.place_id,
             website: response.website,
             phone: response.formatted_phone_number,
-            photo: (response.photos && response.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + response.photos[0].photo_reference + '&key=' + response.photos[0].api_key :'http://unsplash.it/600?random')
+            photo: (response.photos && response.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + response.photos[0].photo_reference + '&key=' + response.photos[0].api_key :'https://unsplash.it/600?random')
         }))
         // .then(response => {
         //     console.log(response.photos[0].photo_reference)
         // })
     }
     submitReview(){
-        fetch('/reviews?'+ '&user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'), {
+        fetch('/api/reviews?'+ '&user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'), {
             body: JSON.stringify({
                 body: this.state.body,
                 venue_name: this.state.name,
@@ -53,7 +52,9 @@ class Review extends React.Component{
                 place_id: this.state.place_id,
                 rating: this.state.rating,
                 dish: this.state.dish,
-                image: this.state.photo
+                image: this.state.photo,
+                phone: this.state.phone,
+                website: this.state.website
             }),
             method: 'POST',
             headers: {
@@ -94,7 +95,7 @@ class Review extends React.Component{
               <div className="col-sm-8 home-middle-middle">
                   <h1 className="text-center">Please leave your review below</h1>
                   <div className="col-sm-5">
-                    <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'http://unsplash.it/600?random'} alt="" />
+                    <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
                     <h4>Venue Name: {this.state.name}</h4>
                     <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
                     <h4>Venue Address: {this.state.address}</h4>

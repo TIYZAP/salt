@@ -12,7 +12,7 @@ class FriendSideBar extends React.Component{
     }
     componentWillMount(){
         var url = new urlParse(window.location.href, true)
-        fetch('/friends/all?' + 'user_token=' + (sessionStorage.getItem('token')?sessionStorage.getItem('token'):url.query.token) + '&user_email=' + (sessionStorage.getItem('email')?sessionStorage.getItem('email'):url.query.email) )
+        fetch('/api/friends/all?' + 'user_token=' + (sessionStorage.getItem('token')?sessionStorage.getItem('token'):url.query.token) + '&user_email=' + (sessionStorage.getItem('email')?sessionStorage.getItem('email'):url.query.email) )
         .then(response => response.json())
         .then(response => this.setState({
             friends: response.users
