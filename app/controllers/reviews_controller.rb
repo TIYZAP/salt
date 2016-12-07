@@ -1,11 +1,6 @@
 class ReviewsController < ApplicationController
 
   acts_as_token_authentication_handler_for User, except: [:show]
-<<<<<<< HEAD
-
-=======
-  
->>>>>>> c3eca1bea3e7cbe9a8d4af761534873e83c8e730
 
   def timeline
     if current_user
