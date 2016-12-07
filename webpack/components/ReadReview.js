@@ -20,6 +20,7 @@ class ReadReview extends React.Component{
         .then(response => this.setState({reviews: response.reviews}))
     }
     render(){
+        console.log(this.state.reviews)
          var friendsReviews = this.state.reviews.map((review, i) => {
             return               <div className="col-sm-12 home-middle-middle-review" key={i}>
                                     <div className="col-sm-4">
