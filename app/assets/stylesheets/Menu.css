@@ -21,7 +21,7 @@
 
 /* Color/shape of close button cross */
 .bm-cross {
-  background: white;
+  background: #8ca2ad;
 }
 
 /* General sidebar styles */
@@ -57,11 +57,28 @@
 }
 
 .menu-item:hover {
-  background: white;
+  background: #4CD2B9;
   transition: all ease 0;
   cursor: pointer;
-  color: #FF0C2B;
+  color: white;
   text-decoration: none;
+}
+
+#menu-logout-button {
+  background: #252626;
+  color: #8ca2ad;
+  width: 230px;
+  font-size: 25px;
+  border: none;
+}
+
+#menu-logout-button:hover {
+  background: #4CD2B9;
+  transition: all ease 0;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  border-radius: 0;
 }
 
 @media (min-width: 761px) {

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             <Route path="/signup" component={SignUp} />
             <Route path="/landingpage" component={LandingPage} />
             <Route path="/search" component={Search} />
-            <Route path="/friendprofile" component={FriendProfile} />
+            <Route path="/friendprofile/:id" component={FriendProfile} />
             <Route path="/review" component={Review} />
             <Route path="/readreview" component={ReadReview} />
         </Router>

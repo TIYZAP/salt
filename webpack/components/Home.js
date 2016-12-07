@@ -10,6 +10,7 @@ import urlParse from 'url-parse'
 class Home extends React.Component {
     constructor(props){
         super(props)
+        this.followAllFriends = this.followAllFriends.bind(this)
         this.state = {
         allReviews:[]
         }
@@ -23,10 +24,16 @@ class Home extends React.Component {
         }
         fetch('/api/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
-        .then(response => this.setState({allReviews: response.reviews}))
+        .then(response => this.setState({
+            allReviews: response.reviews}))
         // .then(response => {
         //     console.log(response.reviews)
         // })
+    }
+    followAllFriends(){
+        fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
+        .then(response => response.json())
+        .then(response => window.location.href="/")
     }
     render(){
         if(this.state.allReviews.length){
@@ -52,9 +59,13 @@ class Home extends React.Component {
             )
         }
         else{
-            var friendsReviews =  <div className="col-sm-8 col-sm-offset-2 reviews">
+            var friendsReviews =  <div className="col-sm-8 col-sm-offset-2 homepage-box">
                                     <div className="col-sm-12">
-                                        <h1>You either have no friends or your friends have not left any reviews yet!</h1>
+                                        <h1 className="text-center">Welcome User!</h1>
+                                        <br />
+                                        <h2 className="text-center">To Get Started:</h2>
+                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow FB friends</i></button></h2>
+                                        <h2 className="text-center">Find a Restaurant and their reviews: <Link to="/search"><button className="btn btn-default my-button">Review Section</button></Link></h2>
                                     </div>
                                 </div>
         }
