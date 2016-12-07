@@ -9,14 +9,23 @@ import moment from 'moment'
 class FriendProfile extends React.Component{
     constructor(props){
         super(props)
+        this.getProfile = this.getProfile.bind(this)
         this.state = {
-            id: window.location.href.split('=')[1],
+            id: props.params.id,
             image: '',
             name: '',
             reviews: []
         }
     }
     componentDidMount(){
+        this.getProfile()
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({id: nextProps.params.id})
+        setTimeout(() => {this.getProfile()}, 0)
+    }
+
+    getProfile() {
         fetch('/api/profile?id=' + this.state.id)
         .then(response => response.json())
         .then(response => this.setState({
@@ -24,15 +33,13 @@ class FriendProfile extends React.Component{
             name: response.user.name,
             reviews: response.user.reviews
         }))
-        // .then(response => {
-        //     console.log(response)
-        // })
     }
+
     render(){
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-12 home-middle-middle-review" key={i}>
                             <div className="col-sm-4">
-                                <img src={review.image} alt="" />
+                                <img  src={review.image} alt="" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
                             <div className="col-sm-8">
@@ -54,7 +61,7 @@ class FriendProfile extends React.Component{
                       <div className="col-sm-12 home-middle-middle-friends-profile">
                         <div className="col-sm-12">
                           <div className="col-sm-4">
-                            <img className="img-rounded" src={this.state.image} alt="" />
+                            <img className="img-circle" src={this.state.image} alt="" />
                           </div>
                           <div className="col-sm-8 text-center">
                             <h1 className="friend-profile-name">{this.state.name}</h1>

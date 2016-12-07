@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'static#index'
   get '/' => 'static#index'
+    get '/home' => 'static#index', as: 'home'
   scope '/api' do
     resources :reviews
     get '/timeline' => 'reviews#timeline'
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  get '/:thing' => 'static#index'
+  get '/:thing/(:thing)' => 'static#index'
 end
 
 

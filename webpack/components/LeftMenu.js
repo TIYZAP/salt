@@ -26,7 +26,7 @@ class LeftMenu extends React.Component {
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
-        .then(response => window.location.href="/")
+        .then(response => window.location.href="/home")
     }
     render(){
         return(
@@ -36,10 +36,9 @@ class LeftMenu extends React.Component {
                   <img className="img-circle" src={this.state.image} alt="User Profile Picture" />
               </div>
               <ul>
-                 <Link to="/"><li><i className="fa fa-home" aria-hidden="true">Home</i></li></Link>
-                 <Link to="/friends"><li><i className="fa fa-users" aria-hidden="true">Friends</i></li></Link>
-                 <Link to="/search"><li><i className="fa fa-search" aria-hidden="true">Search</i></li></Link>
-                 <Link to="/landingpage"><li>Landing</li></Link>
+                 <Link to="/" style={{textDecoration:'none'}}><li><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
+                 <Link to="/friends" style={{textDecoration:'none'}}><li><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</li></Link>
+                 <Link to="/search" style={{textDecoration:'none'}}><li><i className="fa fa-plus fa-2x" aria-hidden="true"></i><br />Review</li></Link>
                  <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow fb friends</i></button>
               </ul>
             </div>

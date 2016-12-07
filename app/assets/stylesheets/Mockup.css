@@ -1,8 +1,33 @@
+@charset "UTF-8";
+/* RGB */
+h1 {
+  font-family: Lobster, sans-serif;
+      font-weight: 400;
+      line-height: 46px;
+      font-size: 40px;
+      margin: 0 0 23px 0;
+}
+
+h2, h4, h5 {
+  font-family: Lobster;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 23px;
+      margin: 0 0 23px 0;
+}
+
+p {
+      font-family: Open Sans, sans-serif;
+      font-size: 14px;
+      line-height: 23px;
+      margin: 0 0 23px 0;
+}
+
 .head-nav-wrapper {
   color: white;
   text-align: center;
   height: 70px;
-  padding: 0;
+  padding: 20;
   margin: 0;
 }
 
@@ -18,23 +43,21 @@
 }
 
 .head-nav-wrapper .head-nav-middle h1 {
-  font-size: 45px;
+  font-size: 40px;
+  font-family: Lobster;
 }
 
 .head-nav-wrapper .head-nav-right {
   background: #4CD2B9;
   height: 70px;
-  padding: 20px;
+  padding: 0px;
 }
 
 .head-nav-wrapper .head-nav-right button {
   border-radius: 3px;
-  width: 150px;
-  height: 40px;
   font-size: 19px;
-  padding: 5px;
   background: #4CD2B9;
-  border: 1px solid white;
+  border: none;
 }
 
 .head-nav-wrapper .head-nav-right button:hover {
@@ -64,7 +87,6 @@
 
 .home-middle-section .home-middle-left ul {
   list-style: none;
-  text-decoration: none;
   padding: 0px;
 }
 
@@ -73,6 +95,8 @@
   font-size: 25px;
   cursor: pointer;
   padding-left: 0;
+  color: #8ca2ad;
+  text-decoration: none;
 }
 
 .home-middle-section .home-middle-left ul li:hover {
@@ -87,11 +111,30 @@
   padding: 30px;
 }
 
+.home-middle-section .home-middle-middle .homepage-box {
+  background: white;
+  padding: 20px;
+}
+
+.home-middle-section .home-middle-middle .homepage-box h2 {
+  padding: 10px;
+}
+
+.home-middle-section .home-middle-middle .homepage-box .my-button {
+  background: #4CD2B9;
+  color: white;
+  border: 1px solid white;
+  border-radius: 1px;
+  padding: 8px;
+  font-size: 18px;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-review {
   margin: 5px;
   margin-bottom: 15px;
   padding: 10px;
   background: white;
+  box-shadow: 5px 5px 10px lightgrey;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review h4 {
@@ -108,6 +151,7 @@
   background: white;
   margin: 15px;
   padding: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
@@ -117,6 +161,18 @@
   background: white;
   width: 300px;
   height: 350px;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h4, .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h5 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h4:hover, .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h5:hover {
+  overflow: visible;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .read-review-button {
@@ -135,7 +191,7 @@
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
   background: #E2624B;
-  height: 20vh;
+  height: 35vh;
   padding: 10px;
 }
 
@@ -151,12 +207,12 @@
 }
 
 .home-middle-section .home-middle-right h1 {
-  color: #353942;
+  color: #8ca2ad;
 }
 
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
-  background: #253240;
+  background: #4CD2B9;
   border-radius: 3px;
   margin-top: 8px;
 }

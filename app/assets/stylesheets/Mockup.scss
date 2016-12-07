@@ -1,17 +1,41 @@
 $col1: #4CD2B9;
-$col2: #253240;
 $col8: #252626;
 $col3: #E2624B;
-$col4: #353942;
 $col5: #8ca2ad;
-$col6: #b2acab;
 $col7: #E6EFF2;
 
+/* RGB */
+// $col5: rgba(220, 220, 221, 1);
+// $col3: rgba(197, 195, 198, 1);
+// $col8: rgba(70, 73, 76, 1);
+// $col7: rgba(76, 92, 104, 1);
+// $col1: rgba(25, 133, 161, 1);
+
+h1 {
+    font-family: Lobster, sans-serif;
+    font-weight: 400;
+    line-height: 46px;
+    font-size: 40px;
+    margin: 0 0 23px 0;
+}
+h2, h4, h5 {
+    font-family: Lobster;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+p {
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
 .head-nav-wrapper{
     color: white;
     text-align: center;
     height: 70px;
-    padding: 0;
+    padding: 20;
     margin: 0;
     .head-nav-left{
         background: $col1;
@@ -22,21 +46,20 @@ $col7: #E6EFF2;
         height: 75px;
         padding-bottom: 30px;
         h1{
-            font-size: 45px;
+            font-size: 40px;
+            font-family: Lobster;
         }
     }
     .head-nav-right{
         background: $col1;
         height: 70px;
-        padding: 20px;
+        padding: 0px;
         button{
             border-radius: 3px;
-            width: 150px;
-            height: 40px;
+
             font-size: 19px;
-            padding: 5px;
             background: $col1;
-            border: 1px solid white;
+            border: none;
             &:hover{
                 background: $col3;
                 transform: scale(1.1);
@@ -60,13 +83,14 @@ $col7: #E6EFF2;
         }
         ul{
             list-style: none;
-            text-decoration: none;
             padding: 0px;
             li{
             padding: 20px;
             font-size: 25px;
             cursor: pointer;
             padding-left: 0;
+            color: $col5;
+            text-decoration: none;
             &:hover{
                 background: $col1;
                 color: white;
@@ -79,6 +103,21 @@ $col7: #E6EFF2;
         height: 93vh;
         overflow: scroll;
         padding: 30px;
+        .homepage-box{
+            background: white;
+            padding: 20px;
+            h2{
+                padding: 10px;
+            }
+            .my-button{
+                background: $col1;
+                color: white;
+                border: 1px solid white;
+                border-radius: 1px;
+                padding: 8px;
+                font-size: 18px;
+            }
+        }
         //css for reviews on home page
         .home-middle-middle-review{
             // border: 4px solid white;
@@ -86,6 +125,8 @@ $col7: #E6EFF2;
             margin-bottom: 15px;
             padding: 10px;
             background: white;
+            box-shadow: 5px 5px 10px lightgrey;
+
             // width: 300px;
             // height: 300px;
             h4{
@@ -104,6 +145,8 @@ $col7: #E6EFF2;
             background: white;
             margin: 15px;
             padding: 10px;
+            box-shadow: 5px 5px 10px lightgrey;
+
         }
 
         //css for search
@@ -115,6 +158,16 @@ $col7: #E6EFF2;
                 background: white;
                 width: 300px;
                 height: 350px;
+                box-shadow: 5px 5px 10px lightgrey;
+                h4, h5{
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow:  hidden;
+                    width: 80%;
+                    &:hover{
+                        overflow: visible;
+                    }
+                }
                 .read-review-button{
                     background: #0FAF9B;
                     color: white;
@@ -127,13 +180,14 @@ $col7: #E6EFF2;
                     border: 1px solid white;
                     border-radius: 1px;
                 }
+
             }
         }
 
         //css for friends profile
         .home-middle-middle-friends-profile{
             background: $col3;
-            height: 20vh;
+            height: 35vh;
             padding: 10px;
             .friend-profile-name{
                 color: white;
@@ -146,11 +200,11 @@ $col7: #E6EFF2;
         height: 93vh;
         text-align: center;
         h1{
-            color: $col4;
+            color: $col5;
         }
         .home-each-friend{
             padding: 20px;
-            background: $col2;
+            background: $col1;
             border-radius: 3px;
             margin-top: 8px;
             img{

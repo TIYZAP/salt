@@ -7,6 +7,7 @@ class User < ApplicationRecord
   acts_as_token_authenticatable
   after_create :welcome_email
 
+
   attachment :image, type: :image
   has_many :reviews
   acts_as_follower
