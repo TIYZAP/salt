@@ -9,6 +9,7 @@ import moment from 'moment'
 class FriendProfile extends React.Component{
     constructor(props){
         super(props)
+        this.getProfile = this.getProfile.bind(this)
         this.state = {
             id: props.params.id,
             image: '',
@@ -17,6 +18,14 @@ class FriendProfile extends React.Component{
         }
     }
     componentDidMount(){
+        this.getProfile()
+    }
+    componentWillReceiveProps(nextProps) {
+        this.setState({id: nextProps.params.id})
+        setTimeout(() => {this.getProfile()}, 0)
+    }
+
+    getProfile() {
         fetch('/api/profile?id=' + this.state.id)
         .then(response => response.json())
         .then(response => this.setState({
@@ -24,10 +33,8 @@ class FriendProfile extends React.Component{
             name: response.user.name,
             reviews: response.user.reviews
         }))
-        // .then(response => {
-        //     console.log(response)
-        // })
     }
+
     render(){
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-12 home-middle-middle-review" key={i}>

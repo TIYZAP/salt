@@ -72,15 +72,13 @@ class Home extends React.Component {
         return(
             <div>
                 <Menu />
-              <div className="row">
                 <Header />
-                <div className="col-sm-12 home-middle-section">
+                <div className="row home-middle-section">
                   <LeftMenu />
-                  <div className="col-sm-8 home-middle-middle">
+                  <div className={this.state.allReviews.length?"col-sm-8 home-middle-middle":"col-sm-10 home-middle-middle"}>
                     {friendsReviews}
                   </div>
-                  <FriendSideBar />
-                </div>
+                  {this.state.allReviews.length?<FriendSideBar />:''}
               </div>
             </div>
         )

@@ -108,6 +108,7 @@
   margin-bottom: 15px;
   padding: 10px;
   background: white;
+  box-shadow: 5px 5px 10px lightgrey;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review h4 {
@@ -124,6 +125,7 @@
   background: white;
   margin: 15px;
   padding: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
@@ -133,6 +135,7 @@
   background: white;
   width: 300px;
   height: 350px;
+  box-shadow: 5px 5px 10px lightgrey;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h4, .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h5 {
@@ -179,7 +182,7 @@
 
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
-  background: #253240;
+  background: #4CD2B9;
   border-radius: 3px;
   margin-top: 8px;
 }
