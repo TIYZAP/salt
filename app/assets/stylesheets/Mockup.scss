@@ -1,12 +1,36 @@
 $col1: #4CD2B9;
-$col2: #253240;
 $col8: #252626;
 $col3: #E2624B;
-$col4: #353942;
 $col5: #8ca2ad;
-$col6: #b2acab;
 $col7: #E6EFF2;
 
+/* RGB */
+// $col5: rgba(220, 220, 221, 1);
+// $col3: rgba(197, 195, 198, 1);
+// $col8: rgba(70, 73, 76, 1);
+// $col7: rgba(76, 92, 104, 1);
+// $col1: rgba(25, 133, 161, 1);
+
+h1 {
+    font-family: Lobster, sans-serif;
+    font-weight: 400;
+    line-height: 46px;
+    font-size: 40px;
+    margin: 0 0 23px 0;
+}
+h2, h4, h5 {
+    font-family: Lobster;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
+p {
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    margin: 0 0 23px 0;
+}
 .head-nav-wrapper{
     color: white;
     text-align: center;
@@ -23,6 +47,7 @@ $col7: #E6EFF2;
         padding-bottom: 30px;
         h1{
             font-size: 40px;
+            font-family: Lobster;
         }
     }
     .head-nav-right{
@@ -139,6 +164,9 @@ $col7: #E6EFF2;
                     white-space: nowrap;
                     overflow:  hidden;
                     width: 80%;
+                    &:hover{
+                        overflow: visible;
+                    }
                 }
                 .read-review-button{
                     background: #0FAF9B;
@@ -172,7 +200,7 @@ $col7: #E6EFF2;
         height: 93vh;
         text-align: center;
         h1{
-            color: $col4;
+            color: $col5;
         }
         .home-each-friend{
             padding: 20px;

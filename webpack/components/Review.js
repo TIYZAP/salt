@@ -110,9 +110,9 @@ class Review extends React.Component{
                   <StarRating updateRating={this.updateRating} />
                     <label htmlFor="review">
                       Please write your review below:
-                      <textarea name="name" rows="8" cols="80" name="body" onChange={this.bodyHandler}></textarea>
+                      <textarea name="name" rows="8" cols="70" name="body" onChange={this.bodyHandler}></textarea>
                     </label>
-                    <button className="btn btn-success" onClick={this.submitReview}>Submit</button>
+                    <button className="btn my-button" onClick={this.submitReview}>Submit</button>
                   </div>
               </div>
               <FriendSideBar />

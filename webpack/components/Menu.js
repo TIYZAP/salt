@@ -11,7 +11,7 @@ export default React.createClass({
     sessionStorage.removeItem('email')
         sessionStorage.removeItem('token')
         sessionStorage.removeItem('id')
-        window.location.href="/landingpage"
+        window.location.href="/"
   },
   render() {
     return (

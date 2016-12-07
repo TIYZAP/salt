@@ -1,3 +1,28 @@
+@charset "UTF-8";
+/* RGB */
+h1 {
+  font-family: Lobster, sans-serif;
+      font-weight: 400;
+      line-height: 46px;
+      font-size: 40px;
+      margin: 0 0 23px 0;
+}
+
+h2, h4, h5 {
+  font-family: Lobster;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 23px;
+      margin: 0 0 23px 0;
+}
+
+p {
+      font-family: Open Sans, sans-serif;
+      font-size: 14px;
+      line-height: 23px;
+      margin: 0 0 23px 0;
+}
+
 .head-nav-wrapper {
   color: white;
   text-align: center;
@@ -19,6 +44,7 @@
 
 .head-nav-wrapper .head-nav-middle h1 {
   font-size: 40px;
+  font-family: Lobster;
 }
 
 .head-nav-wrapper .head-nav-right {
@@ -145,6 +171,10 @@
   width: 80%;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h4:hover, .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review h5:hover {
+  overflow: visible;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .read-review-button {
   background: #0FAF9B;
   color: white;
@@ -177,7 +207,7 @@
 }
 
 .home-middle-section .home-middle-right h1 {
-  color: #353942;
+  color: #8ca2ad;
 }
 
 .home-middle-section .home-middle-right .home-each-friend {

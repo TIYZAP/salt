@@ -8,6 +8,9 @@
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
     <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
     <% if Rails.env == :development %>
     <script src="http://localhost:3808/webpack-dev-server.js"></script>
     <% end %>
