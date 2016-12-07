@@ -15,11 +15,11 @@ import ReadReview from './components/ReadReview'
 document.addEventListener('DOMContentLoaded', function(event) {
     ReactDOM.render(
         <Router history={browserHistory}>
-            <Route path="/" component={Home} />
+            <Route path="/" component={LandingPage} />
+            <Route path="/home" component={Home} />
             <Route path="/friends" component={Friends} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
-            <Route path="/landingpage" component={LandingPage} />
             <Route path="/search" component={Search} />
             <Route path="/friendprofile/:id" component={FriendProfile} />
             <Route path="/review" component={Review} />
