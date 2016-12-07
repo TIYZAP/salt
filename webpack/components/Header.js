@@ -21,7 +21,11 @@ class Header extends React.Component{
                 <h1>Grain Of Salt</h1>
               </div>
               <div className="col-sm-2 head-nav-right">
-                <button className="btn btn-danger" onClick={this.logoutHandler}>Logout<i className="fa fa-sign-out" aria-hidden="true"></i></button>
+                  <div className="col-sm-6 about">
+                  </div>
+                  <div className="col-sm-6"><button className="btn btn-danger" onClick={this.logoutHandler}><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></button>
+                  </div>
+
               </div>
             </div>
         )

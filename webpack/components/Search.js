@@ -17,6 +17,11 @@ class Search extends React.Component{
             activePage: 1
         }
     }
+    componentWillMount() {
+        if (window.cacheSearchZip || window.cacheSearchPlace) {
+            this.updateSearch(window.cacheSearchZip, window.cacheSearchPlace)
+        }
+    }
     enter(e){
         if(e.key === 'Enter'){
             this.search(e)
@@ -32,6 +37,9 @@ class Search extends React.Component{
         e.preventDefault()
     }
     updateSearch(zip, place){
+        window.cacheSearchZip = zip
+        window.cacheSearchPlace = place
+
         fetch('/api/search?address=' + zip + '&name=' + place)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
@@ -75,11 +83,13 @@ class Search extends React.Component{
                           <div className="col-sm-6 col-sm-offset-3 search-wrapper">
                               <form onSubmit={this.search}>
                             <div className="input-group">
-                              <input type="text"  className="form-control" placeholder="Enter Zip Code/Address" ref={(a) => this._inputZip = a} onKeyPress={this.enter} />
-                              <input type="text" className="form-control" placeholder="Enter name of place" ref={(a) => this._inputPlace = a} onKeyPress={this.enter} />
-                              <span className="input-group-btn">
+                                <label>Step 1:  Enter zip or address for restaurant</label>
+                              <input type="text"  className="form-control" placeholder="Enter Zip Code/Address" ref={(a) => this._inputZip = a} onKeyPress={this.enter} defaultValue={window.cacheSearchZip || ''} />
+                              <label className="text-center">Step 2:  Enter name or food type</label>
+                              <input type="text" className="form-control" placeholder="Enter name of place" ref={(a) => this._inputPlace = a} onKeyPress={this.enter} defaultValue={window.cacheSearchPlace || ''} />
+                              <div className="text-center">
                                 <button className="btn" type="submit">Search</button>
-                              </span>
+                              </div>
                             </div>
                             </form>
                           </div>

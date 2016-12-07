@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  get '/:thing' => 'static#index'
+  get '/:thing/(:thing)' => 'static#index'
 end
 
 

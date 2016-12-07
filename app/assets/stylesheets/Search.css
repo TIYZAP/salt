@@ -7,27 +7,26 @@
 }
 
 .search-wrapper {
-  padding: 10px;
+  padding: 15px;
   background: #0FAF9B;
   border-radius: 10px;
 }
 
 .search-wrapper input {
-  padding: 10px 5px;
+  padding: 15px;
   border: 0;
   margin-right: 20px;
 }
 
+.search-wrapper label {
+  padding: 5px;
+}
+
 .search-wrapper button {
+  margin-top: 5px;
   background: #e54040;
   border: 1px solid white;
   color: white;
-  width: 70px;
-}
-
-.search-results {
-  padding: 10px;
-  margin-top: 10px;
-  background: white;
-  border-radius: 10px 30px 10px 30px;
+  width: 80px;
+  font-size: 18px;
 }

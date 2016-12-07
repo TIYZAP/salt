@@ -11,7 +11,7 @@ $col7: #E6EFF2;
     color: white;
     text-align: center;
     height: 70px;
-    padding: 0;
+    padding: 20;
     margin: 0;
     .head-nav-left{
         background: $col1;
@@ -22,21 +22,19 @@ $col7: #E6EFF2;
         height: 75px;
         padding-bottom: 30px;
         h1{
-            font-size: 45px;
+            font-size: 40px;
         }
     }
     .head-nav-right{
         background: $col1;
         height: 70px;
-        padding: 20px;
+        padding: 0px;
         button{
             border-radius: 3px;
-            width: 150px;
-            height: 40px;
+
             font-size: 19px;
-            padding: 5px;
             background: $col1;
-            border: 1px solid white;
+            border: none;
             &:hover{
                 background: $col3;
                 transform: scale(1.1);
@@ -60,13 +58,14 @@ $col7: #E6EFF2;
         }
         ul{
             list-style: none;
-            text-decoration: none;
             padding: 0px;
             li{
             padding: 20px;
             font-size: 25px;
             cursor: pointer;
             padding-left: 0;
+            color: $col5;
+            text-decoration: none;
             &:hover{
                 background: $col1;
                 color: white;
@@ -79,6 +78,21 @@ $col7: #E6EFF2;
         height: 93vh;
         overflow: scroll;
         padding: 30px;
+        .homepage-box{
+            background: white;
+            padding: 20px;
+            h2{
+                padding: 10px;
+            }
+            .my-button{
+                background: $col1;
+                color: white;
+                border: 1px solid white;
+                border-radius: 1px;
+                padding: 8px;
+                font-size: 18px;
+            }
+        }
         //css for reviews on home page
         .home-middle-middle-review{
             // border: 4px solid white;
@@ -115,6 +129,12 @@ $col7: #E6EFF2;
                 background: white;
                 width: 300px;
                 height: 350px;
+                h4, h5{
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow:  hidden;
+                    width: 80%;
+                }
                 .read-review-button{
                     background: #0FAF9B;
                     color: white;
@@ -127,13 +147,14 @@ $col7: #E6EFF2;
                     border: 1px solid white;
                     border-radius: 1px;
                 }
+
             }
         }
 
         //css for friends profile
         .home-middle-middle-friends-profile{
             background: $col3;
-            height: 20vh;
+            height: 35vh;
             padding: 10px;
             .friend-profile-name{
                 color: white;
