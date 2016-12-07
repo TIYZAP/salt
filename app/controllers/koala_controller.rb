@@ -10,7 +10,7 @@ class KoalaController < ApplicationController
       @thing = User.find_by(fb_id: f['id'])
       puts f['name'].inspect
       puts f.inspect
-      @user.follow!(@thing)
+      @user.follow!(@thing) if @thing
     end
     @followees = @user.followees(User)
     render json: @followees
