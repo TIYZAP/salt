@@ -37,6 +37,10 @@ $col7: #E6EFF2;
             padding: 5px;
             background: $col1;
             border: 1px solid white;
+            &:hover{
+                background: $col3;
+                transform: scale(1.1);
+            }
         }
         i{
             padding: 5px;
