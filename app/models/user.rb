@@ -5,7 +5,7 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :trackable, :validatable,
   :omniauthable, :omniauth_providers => [:facebook]
   acts_as_token_authenticatable
-  # after_create :welcome_email
+  after_create :welcome_emailafter 
 
   attachment :image, type: :image
   has_many :reviews
