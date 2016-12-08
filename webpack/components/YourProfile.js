@@ -68,7 +68,7 @@ class YourProfile extends React.Component{
               body: JSON.stringify({
                   user_email: sessionStorage.getItem('email'),
                   user_token: sessionStorage.getItem('token'),
-                  review_id: '',
+                  review_id: this.state.myReviews[0].id,
                   friend_id: this.state.friends[0].id
               }),
               method: 'POST',
