@@ -36,7 +36,8 @@ class User < ApplicationRecord
   def review_check
     User.all.each do |user|
       if user.reviews.last.created_at > 7.day.ago
-      UserNotifier.send_signup_email(self).deliver
+        UserNotifier.send_signup_email(self).deliver
+      end
     end
   end
 
