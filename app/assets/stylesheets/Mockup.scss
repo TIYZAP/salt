@@ -127,8 +127,6 @@ p {
             background: white;
             box-shadow: 5px 5px 10px lightgrey;
 
-            // width: 300px;
-            // height: 300px;
             h4{
                 padding: 0;
                 text-overflow: ellipsis;
@@ -146,7 +144,15 @@ p {
             margin: 15px;
             padding: 10px;
             box-shadow: 5px 5px 10px lightgrey;
-
+            h1{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow:  hidden;
+                width: 80%;
+                &:hover{
+                    overflow: visible;
+                }
+            }
         }
 
         //css for search

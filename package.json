@@ -17,6 +17,7 @@
     "react-helpers": "https://github.com/tiyindyfee/react-helpers.git",
     "react-localstorage": "^0.3.0",
     "react-mixin": "^3.0.5",
+    "react-modal": "^1.6.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",

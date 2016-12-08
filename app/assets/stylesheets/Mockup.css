@@ -154,6 +154,17 @@ p {
   box-shadow: 5px 5px 10px lightgrey;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-friends h1 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends h1:hover {
+  overflow: visible;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
   margin: 5px;
   margin-bottom: 15px;

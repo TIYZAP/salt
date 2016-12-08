@@ -36,7 +36,6 @@ class Home extends React.Component {
         .then(response => window.location.href="/")
     }
     render(){
-        console.log(this.state.allReviews)
         if(this.state.allReviews.length){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
