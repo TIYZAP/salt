@@ -24,11 +24,12 @@ class FriendSideBar extends React.Component{
         return    <Link to={'/friendprofile/' + friend.id} key={i}>
                     <div className="col-sm-12 home-each-friend">
                       <div className="col-sm-5">
-                        <img className="img-rounded" src={friend.image} alt="" />
+                        <img className="img-circle" src={friend.image} alt="" />
                       </div>
                       <div className="col-sm-7">
-                        {friend.name}
-                        <span className="badge">{friend.reviews.length}</span>
+                          <h5>{friend.name}</h5>
+
+                        <span className="badge">Points: {friend.reviews.length}0</span>
                       </div>
                     </div>
                 </Link>

@@ -39,20 +39,25 @@ class Home extends React.Component {
         if(this.state.allReviews.length){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
-                    <div className="col-sm-12 home-middle-middle-review" key={i}>
-                        <div className="col-sm-4">
-                          <h3 className="text-center">{review.user.name}</h3>
-                            <img src={review.user.image} alt="Reviewers Picture" />
-                            <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
-                        </div>
-                        <div className="col-sm-8">
-                            <h1 className="text-center">{review.venue_name}</h1>
-                            <h5>Dish: {review.dish}</h5>
-                            <h5>Rating: {review.rating}</h5>
-                            <h5>Address: {review.venue_address}</h5>
-                            <h5>Phone: {review.phone}</h5>
-                            <h5>Website: <a href={review.website}>Link to website</a></h5>
-                            <p>Review: <br />{review.body}</p>
+                    <div className="col-sm-5 home-middle-middle-review" key={i}>
+                        <div className="row">
+                            <div className="col-sm-4">
+                              <h4 className="text-center">{review.user.name}</h4>
+                                <img src={review.image} alt="Reviewers Picture" />
+                                <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                            </div>
+                            <div className="col-sm-8">
+                                <h4 className="text-center">{review.venue_name}</h4>
+                                {/* <h5>Address: {review.venue_address}</h5>
+                                <h5>Phone: {review.phone}</h5>
+                                <h5>Website: <a href={review.website}>Link to website</a></h5> */}
+                                <p>Rating: {review.rating}</p>
+                                <p>Dish: {review.dish}</p>
+                                <h5>Review: <br />{review.body}</h5>
+
+                            </div>
+                            <div className="row">
+                            </div>
                         </div>
                     </div>
                 )}

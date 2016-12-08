@@ -35,8 +35,7 @@ class YourProfile extends React.Component{
             myReviews: [],
             modalIsOpen: false,
             modalCurrentReview: undefined,
-            friends: [],
-            sentFriends: {}
+            friends: []
         }
     }
     componentWillMount(){
@@ -58,12 +57,9 @@ class YourProfile extends React.Component{
       //   console.log(response)
       // })
     }
-    sendId(friend){
+    sendId(friend, target){
       let sentFriends = this.state.sentFriends
-      if (!sentFriends[this.state.modalCurrentReview.id]) {
-        sentFriends[this.state.modalCurrentReview.id] = []
-      }
-      sentFriends[this.state.modalCurrentReview.id].push(friend.id)
+      target.disabled = true
 
       fetch('/api/send/rec', {
               body: JSON.stringify({
@@ -93,7 +89,7 @@ class YourProfile extends React.Component{
                               <img className="img-circle" src={friend.image} alt="" />
                               <h4 className="text-center">{friend.name}</h4>
                               <div className="text-center">
-                                  <button className="btn btn-danger" onClick={() => this.sendId(friend)}>Recommend</button>
+                                  <button className="btn btn-danger" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
                               </div>
                         </div>
       })
@@ -123,7 +119,7 @@ class YourProfile extends React.Component{
                                   </div>
                                   <div className="row">
                                     {recFriends}
-                        </div>
+                                  </div>
                                 </Modal>
                             </div>
                         </div>

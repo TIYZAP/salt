@@ -4,7 +4,7 @@
 }
 
 .landing-container {
-  background: #253240;
+  background: url(/images/landingpage1.jpg);
   background-size: cover;
   color: white;
   font-weight: bolder;
@@ -13,32 +13,33 @@
 }
 
 .landingpage-box {
-  background: #4CD2B9;
   padding: 20px;
   opacity: .9;
   margin-top: 20px;
 }
 
 .landingpage-box h1 {
-  font-family: 'Eczar', serif;
+  font-family: lobster, serif;
   font-size: 130px;
 }
 
 .landingpage-box h3 {
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 
-.landingpage-box button {
+.landingpage-box a {
   border-radius: 24px;
-  background: #4CD2B9;
+  background: transparent;
   border: 1px solid #4CD2B9;
   color: white;
   padding: 10px;
-  border-radius: 10px;
+  font-size: 25px;
+  margin-left: 40px;
 }
 
-.landingpage-box button:hover {
-  background: #4CD2B9;
-  color: white;
+.landingpage-box a:hover {
+  background: transparent;
+  border: 1px solid white;
+  color: #4CD2B9;
   text-decoration: none;
 }
