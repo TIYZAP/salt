@@ -90,14 +90,7 @@ $col7: #E6EFF2;
             h2{
                 padding: 10px;
             }
-            .my-button{
-                background: $col1;
-                color: white;
-                border: 1px solid white;
-                border-radius: 1px;
-                padding: 8px;
-                font-size: 18px;
-            }
+
         }
         //css for reviews on home page
         .home-middle-middle-review{
@@ -202,6 +195,14 @@ $col7: #E6EFF2;
     }
 }
 
+.my-button{
+    background: $col1;
+    color: white;
+    border: 1px solid white;
+    border-radius: 1px;
+    padding: 8px;
+    font-size: 18px;
+}
 
 @media ( max-width : 760px ) {
     .head-nav-left{

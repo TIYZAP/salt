@@ -34,7 +34,9 @@ class YourProfile extends React.Component{
         this.state = {
             myReviews: [],
             modalIsOpen: false,
-            friends: []
+            modalCurrentReview: undefined,
+            friends: [],
+            sentFriends: {}
         }
     }
     componentWillMount(){
@@ -56,13 +58,19 @@ class YourProfile extends React.Component{
       //   console.log(response)
       // })
     }
-    sendId(){
+    sendId(friend){
+      let sentFriends = this.state.sentFriends
+      if (!sentFriends[this.state.modalCurrentReview.id]) {
+        sentFriends[this.state.modalCurrentReview.id] = []
+      }
+      sentFriends[this.state.modalCurrentReview.id].push(friend.id)
+
       fetch('/api/send/rec', {
               body: JSON.stringify({
                   user_email: sessionStorage.getItem('email'),
                   user_token: sessionStorage.getItem('token'),
-                  review_id: this.state.myReviews[0].id,
-                  friend_id: this.state.friends[0].id
+                  review_id: this.state.modalCurrentReview.id,
+                  friend_id: friend.id
               }),
               method: 'POST',
               headers: {
@@ -70,8 +78,8 @@ class YourProfile extends React.Component{
               }})
       .then(response => response.json())
   }
-    openModal() {
-      this.setState({modalIsOpen: true});
+    openModal(review) {
+      this.setState({modalIsOpen: true, modalCurrentReview: review});
     }
     closeModal() {
       this.setState({modalIsOpen: false});
@@ -85,11 +93,9 @@ class YourProfile extends React.Component{
                               <img className="img-circle" src={friend.image} alt="" />
                               <h4 className="text-center">{friend.name}</h4>
                               <div className="text-center">
-                                  <button className="btn btn-danger" onClick={this.sendId}>Recommend</button>
+                                  <button className="btn btn-danger" onClick={() => this.sendId(friend)}>Recommend</button>
                               </div>
                         </div>
-
-
       })
         var displayMyReviews = this.state.myReviews.map((review, i) => {
             return <div className="col-sm-12 home-middle-middle-review" key={i}>
@@ -104,7 +110,7 @@ class YourProfile extends React.Component{
                                 <h3>Rating: {review.rating}</h3>
                                 <h3>website</h3>
                                 <p>{review.body}</p>
-                                <button className="btn btn-default" onClick={this.openModal}>Recommend</button>
+                                <button className="btn btn-default" onClick={() => this.openModal(review)}>Recommend</button>
                                 <Modal
                                   isOpen={this.state.modalIsOpen}
                                   onAfterOpen={this.afterOpenModal}
