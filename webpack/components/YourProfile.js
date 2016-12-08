@@ -56,13 +56,6 @@ class YourProfile extends React.Component{
       //   console.log(response)
       // })
     }
-
-    // friendsList(response){
-    //   console.log(response)
-    //   var friends = response.users.map((friend,i) =>{
-    //     return <div></div>
-    //   })
-    // }
     sendId(){
       fetch('/api/send/rec', {
               body: JSON.stringify({
@@ -76,7 +69,6 @@ class YourProfile extends React.Component{
                   'Content-Type': 'application/json'
               }})
       .then(response => response.json())
-
   }
     openModal() {
       this.setState({modalIsOpen: true});
@@ -88,6 +80,17 @@ class YourProfile extends React.Component{
     }
     render(){
       console.log(this.state.myReviews)
+      var recFriends = this.state.friends.map((friend, i) => {
+        return          <div style={{background:'white', padding: '10px', margin:'5px'}} className="col-sm-3" key={i}>
+                              <img className="img-circle" src={friend.image} alt="" />
+                              <h4 className="text-center">{friend.name}</h4>
+                              <div className="text-center">
+                                  <button className="btn btn-danger" onClick={this.sendId}>Recommend</button>
+                              </div>
+                        </div>
+
+
+      })
         var displayMyReviews = this.state.myReviews.map((review, i) => {
             return <div className="col-sm-12 home-middle-middle-review" key={i}>
                         <div className="row">
@@ -113,14 +116,8 @@ class YourProfile extends React.Component{
                                     </button>
                                   </div>
                                   <div className="row">
-                                    <div className="col-sm-3 home-middle-middle-friends">
-                                        <img className="img-circle" src={this.state.friends[0].image} alt="" />
-                                        <h1 className="text-center">{this.state.friends[0].name}</h1>
-                                        <div className="text-center">
-                                            <button className="btn btn-danger" onClick={this.sendId}>Send Recommendation</button>
-                                        </div>
-                                      </div>
-                                  </div>
+                                    {recFriends}
+                        </div>
                                 </Modal>
                             </div>
                         </div>
