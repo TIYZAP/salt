@@ -68,11 +68,11 @@ class Friends extends React.Component {
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                       <Link to={'/friendprofile?id=' + friend.id} >
-                      <img className="img-thumbnail" src={friend.image} alt="" />
+                      <img className="img-rounded" src={friend.image} alt="" />
                       <h3 className="text-center">{friend.name}</h3>
                       </Link>
                       <div className="text-center">
-                          <button className="btn btn-danger" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
+                          <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
                       </div>
                     </div>
         })

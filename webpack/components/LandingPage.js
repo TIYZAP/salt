@@ -15,7 +15,7 @@ class LandingPage extends React.Component {
                                 <h3>Reviews by your trusted network</h3>
                             </div>
                             <div className="col-sm-4 col-sm-offset-3">
-                            <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i> Signin with Facebook</a>
+                            <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i> Log In with Facebook</a>
                             </div>
                         </div>
                 </div>
