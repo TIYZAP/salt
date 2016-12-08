@@ -103,10 +103,17 @@ $col7: #E6EFF2;
             padding: 10px;
             background: rgba(220, 220, 221, 1);
             box-shadow: 5px 5px 10px lightgrey;
-
+            height: 200px;
+            width: 500px;
             h4{
                 padding: 0;
                 text-overflow: ellipsis;
+            }
+            p{
+                margin: 0;
+            }
+            h5{
+                margin: 0;
             }
             img{
                 width: 100%;
@@ -114,10 +121,26 @@ $col7: #E6EFF2;
             }
         }
 
+        //css for myreviews on myprofile
+        .home-middle-middle-myreview{
+            background: $col2;
+            margin: 10px;
+            height: 500px;
+            width: 300px;
+            box-shadow: 5px 5px 10px lightgrey;
+            p{
+                margin: 0;
+            }
+            img{
+                width: 100%;
+                height: 200px;
+            }
+        }
+
         //css for friends
         .home-middle-middle-friends{
             // border: 5px solid $col7;
-            background: white;
+            background: $col2;
             margin: 15px;
             padding: 10px;
             box-shadow: 5px 5px 10px lightgrey;
@@ -169,14 +192,25 @@ $col7: #E6EFF2;
 
         //css for friends profile
         .home-middle-middle-friends-profile{
-            background: $col3;
-            height: 35vh;
             padding: 10px;
+            img{
+                width: 300px;
+                height: 300px;
+            }
             .friend-profile-name{
-                color: white;
+                color: $col1;
                 font-size: 60px;
             }
+            .home-middle-middle-friendsreview{
+                background: $col2;
+                margin: 10px;
+                box-shadow: 5px 5px 10px lightgrey;
+                img{
+                    padding: 10px;
+                }
+            }
         }
+
     }
     .home-middle-right{
         // background: white;

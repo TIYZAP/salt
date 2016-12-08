@@ -33,7 +33,7 @@ class Home extends React.Component {
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
-        .then(response => window.location.href="/")
+        .then(response => window.location.href="/home")
     }
     render(){
         if(this.state.allReviews.length){
@@ -42,8 +42,8 @@ class Home extends React.Component {
                     <div className="col-sm-5 home-middle-middle-review" key={i}>
                         <div className="row">
                             <div className="col-sm-4">
-                              <h4 className="text-center">{review.user.name}</h4>
-                                <img src={review.image} alt="Reviewers Picture" />
+                              <h5 className="text-center">{review.user.name}</h5>
+                                <img height="100" className="img-rounded" src={review.image} alt="Reviewers Picture" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
                             <div className="col-sm-8">
@@ -54,9 +54,6 @@ class Home extends React.Component {
                                 <p>Rating: {review.rating}</p>
                                 <p>Dish: {review.dish}</p>
                                 <h5>Review: <br />{review.body}</h5>
-
-                            </div>
-                            <div className="row">
                             </div>
                         </div>
                     </div>
