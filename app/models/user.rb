@@ -33,6 +33,13 @@ class User < ApplicationRecord
     UserNotifier.send_signup_email(self).deliver
   end
 
+  def review_check
+    User.all.each do |user|
+      if user.reviews.last.created_at > 7.day.ago
+      UserNotifier.send_signup_email(self).deliver
+    end
+  end
+
   # def self.find_for_facebook_oauth(response, signed_in_resource=nil)
   #  data = response['extra']['user_hash']
   #  access_token = response['credentials']['token']
