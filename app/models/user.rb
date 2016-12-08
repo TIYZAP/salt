@@ -38,7 +38,7 @@ class User < ApplicationRecord
       if (user.reviews.last == nil)&&(user.created_at < 7.day.ago)
         RemindersMailer.no_reviews(user).deliver
       elsif user.reviews.last == nil
-        puts 'doh'
+        RemindersMailer.no_reviews(user).deliver
       elsif user.reviews.last.created_at < 7.day.ago
         RemindersMailer.send_reminder(user).deliver
       end
