@@ -96,15 +96,6 @@
   padding: 10px;
 }
 
-.home-middle-section .home-middle-middle .homepage-box .my-button {
-  background: #4CD2B9;
-  color: white;
-  border: 1px solid white;
-  border-radius: 1px;
-  padding: 8px;
-  font-size: 18px;
-}
-
 .home-middle-section .home-middle-middle .home-middle-middle-review {
   margin: 5px;
   margin-bottom: 15px;
@@ -206,6 +197,15 @@
 
 .home-middle-section .home-middle-right .home-each-friend img {
   width: 100%;
+}
+
+.my-button {
+  background: #4CD2B9;
+  color: white;
+  border: 1px solid white;
+  border-radius: 1px;
+  padding: 8px;
+  font-size: 18px;
 }
 
 @media (max-width: 760px) {

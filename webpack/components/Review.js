@@ -39,9 +39,6 @@ class Review extends React.Component{
             phone: response.formatted_phone_number,
             photo: (response.photos && response.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + response.photos[0].photo_reference + '&key=' + response.photos[0].api_key :'https://unsplash.it/600?random')
         }))
-        // .then(response => {
-        //     console.log(response.photos[0].photo_reference)
-        // })
     }
     submitReview(){
         fetch('/api/reviews?'+ '&user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'), {
