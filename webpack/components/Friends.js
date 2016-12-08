@@ -12,6 +12,7 @@ class Friends extends React.Component {
         this.removeFriend = this.removeFriend.bind(this)
         this.emailsHandler = this.emailsHandler.bind(this)
         this.enter = this.enter.bind(this)
+        this.clickHandler = this.clickHandler.bind(this)
         this.state = {
             friends: [],
             id: '',
@@ -46,8 +47,10 @@ class Friends extends React.Component {
             email: e.target.value
         })
     }
-    inviteFriends(){
-        console.log(this.state.email)
+    clickHandler(){
+        this.inviteFriends()
+    }
+    inviteFriends(e){
         fetch('/api/invite/friends', {
             body: JSON.stringify({
                 user_email: sessionStorage.getItem('email'),
@@ -72,7 +75,6 @@ class Friends extends React.Component {
                           <button className="btn btn-danger" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
                       </div>
                     </div>
-
         })
         return(
         <div>
@@ -84,9 +86,9 @@ class Friends extends React.Component {
                   <div className="row">
                       <div className="col-sm-6 col-sm-offset-3">
                               <div className="input-group">
-                                  <input type="text" name="email" className="form-control" placeholder="Enter friends email to invite them" onChange={this.emailsHandler} value={this.state.email} onKeyPress={this.enter}/>
+                                  <input type="text" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
                                   <span className="input-group-btn">
-                                      <button type="button" className="btn my-button btn-md" onClick={this.inviteFriends}>Invite</button>
+                                      <button className="btn my-button btn-md" onClick={this.clickHandler}>Invite</button>
                                   </span>
                               </div>
                       </div>
