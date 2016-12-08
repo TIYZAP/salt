@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
 
   acts_as_token_authentication_handler_for User, except: [:show]
-  
 
   def timeline
     if current_user
@@ -36,6 +35,13 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find(params[:id])
+    render json: @review
+  end
+
+  def send_rec
+    @review = Review.find(params[:review_id])
+    @user = User.find(params[:friend_id])
+    RecNotifierMailer.send_rec_email(@user, @review).deliver
     render json: @review
   end
 
