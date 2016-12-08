@@ -36,9 +36,9 @@ class User < ApplicationRecord
   def self.send_reminders
     User.all.each do |user|
       if user.reviews.last == nil
-        puts hey leave a review
+        puts 'hey leave a review'
       else user.reviews.last.created_at > 7.days.ago
-        puts hey comeback
+        puts 'hey comeback'
       end
     end
   end
