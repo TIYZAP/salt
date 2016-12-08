@@ -1,0 +1,145 @@
+import React from 'react'
+import { Link } from 'react-router'
+import Menu from './Menu'
+import LeftMenu from './LeftMenu'
+import Header from './Header'
+import FriendSideBar from './FriendSideBar'
+import moment from 'moment'
+import Modal from 'react-modal'
+
+
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    background            : '#E6EFF2',
+    width                 : '800px',
+    height                : '800px',
+    overflow              : 'scroll',
+    transform             : 'translate(-50%, -50%)'
+  }
+}
+
+class YourProfile extends React.Component{
+    constructor(props) {
+        super(props)
+        this.openModal = this.openModal.bind(this)
+        this.closeModal = this.closeModal.bind(this)
+        this.afterOpenModal = this.afterOpenModal.bind(this)
+        this.sendId = this.sendId.bind(this)
+        // this.friendsList = this.friendsList.bind(this)
+        this.state = {
+            myReviews: [],
+            modalIsOpen: false,
+            friends: []
+        }
+    }
+    componentWillMount(){
+        Modal.setAppElement('#app');
+        fetch('/api/profile?id=' + sessionStorage.getItem('id'))
+        .then(response => response.json())
+        .then(response => this.setState({
+            myReviews: response.user.reviews
+        }))
+    }
+    componentDidMount(){
+      fetch('/api/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
+      .then(response => response.json())
+      // .then(this.friendsList)
+      .then(response => this.setState({
+        friends: response.users
+      }))
+      // .then(response => {
+      //   console.log(response)
+      // })
+    }
+
+    // friendsList(response){
+    //   console.log(response)
+    //   var friends = response.users.map((friend,i) =>{
+    //     return <div></div>
+    //   })
+    // }
+    sendId(){
+      fetch('/api/send/rec', {
+              body: JSON.stringify({
+                  user_email: sessionStorage.getItem('email'),
+                  user_token: sessionStorage.getItem('token'),
+                  review_id: '',
+                  friend_id: this.state.friends[0].id
+              }),
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              }})
+      .then(response => response.json())
+
+  }
+    openModal() {
+      this.setState({modalIsOpen: true});
+    }
+    closeModal() {
+      this.setState({modalIsOpen: false});
+    }
+    afterOpenModal() {
+    }
+    render(){
+      console.log(this.state.myReviews)
+        var displayMyReviews = this.state.myReviews.map((review, i) => {
+            return <div className="col-sm-12 home-middle-middle-review" key={i}>
+                        <div className="row">
+                            <div className="col-sm-4">
+                                <img  src={review.image} alt="" />
+                                <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                            </div>
+                            <div className="col-sm-8">
+                                <h1 className="text-center">{review.venue_name}</h1>
+                                <h3>Dish: {review.dish}</h3>
+                                <h3>Rating: {review.rating}</h3>
+                                <h3>website</h3>
+                                <p>{review.body}</p>
+                                <button className="btn btn-default" onClick={this.openModal}>Recommend</button>
+                                <Modal
+                                  isOpen={this.state.modalIsOpen}
+                                  onAfterOpen={this.afterOpenModal}
+                                  onRequestClose={this.closeModal}
+                                  style={customStyles}
+                                  contentLabel="Example Modal">
+                                  <div className="text-right">
+                                    <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+                                  </div>
+                                  <div className="row">
+                                    <div className="col-sm-3 home-middle-middle-friends">
+                                        <img className="img-circle" src={this.state.friends[0].image} alt="" />
+                                        <h1 className="text-center">{this.state.friends[0].name}</h1>
+                                        <div className="text-center">
+                                            <button className="btn btn-danger" onClick={this.sendId}>Send Recommendation</button>
+                                        </div>
+                                      </div>
+                                  </div>
+                                </Modal>
+                            </div>
+                        </div>
+
+                    </div>
+        })
+        return(
+            <div>
+                <Menu />
+                <Header />
+                <div className="row home-middle-section">
+                  <LeftMenu />
+                  <div className="col-sm-8 home-middle-middle">
+                     {displayMyReviews}
+                  </div>
+                  <FriendSideBar />
+              </div>
+            </div>
+        )
+    }
+}
+export default YourProfile

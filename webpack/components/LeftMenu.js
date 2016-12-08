@@ -36,7 +36,8 @@ class LeftMenu extends React.Component {
                   <img className="img-circle" src={this.state.image} alt="User Profile Picture" />
               </div>
               <ul>
-                 <Link to="/" style={{textDecoration:'none'}}><li><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
+                 <Link to="/home" style={{textDecoration:'none'}}><li><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
+                 <Link to="/yourprofile" style={{textDecoration:'none'}}><li><i className="fa fa-user fa-2x" aria-hidden="true"></i><br />Your Profile</li></Link>
                  <Link to="/friends" style={{textDecoration:'none'}}><li><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</li></Link>
                  <Link to="/search" style={{textDecoration:'none'}}><li><i className="fa fa-plus fa-2x" aria-hidden="true"></i><br />Review</li></Link>
                  <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow fb friends</i></button>

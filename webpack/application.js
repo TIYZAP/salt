@@ -10,6 +10,7 @@ import Search from './components/Search'
 import FriendProfile from './components/FriendProfile'
 import Review from './components/Review'
 import ReadReview from './components/ReadReview'
+import YourProfile from './components/YourProfile'
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             <Route path="/" component={LandingPage} />
             <Route path="/home" component={Home} />
             <Route path="/friends" component={Friends} />
+            <Route path="/yourprofile" component={YourProfile} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
             <Route path="/search" component={Search} />
