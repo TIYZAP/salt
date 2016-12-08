@@ -38,6 +38,13 @@ class ReviewsController < ApplicationController
     render json: @review
   end
 
+  def send_rec
+    @review = Review.find(params[:review_id])
+    @user = User.find(params[:friend_id])
+    RecNotifier.send_rec_email(@user, @review).deliver
+    render json: @review
+  end
+
 
   def update
     @review = Review.find(params[:id])
