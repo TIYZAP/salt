@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get '/friends/reviews' => 'reviews#friends_reviews'
     post '/unmention' => 'user#un_mentions'
     post '/mentionable' => 'user#mentionable'
+    get '/send/rec' => 'reviews#send_rec'
   end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
