@@ -42,4 +42,14 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     UserNotifier.send_signup_email(@user).deliver
   end
 
+  def send_invites
+    @user = current_user
+    @invitees = params[:emails].split(",").collect(&:strip)
+    puts @emails.inspect
+    @invitees.each do |email|
+      InviteMailer.send_friends_invites(email, @user).deliver
+    end
+    render json: @user
+  end
+
 end
