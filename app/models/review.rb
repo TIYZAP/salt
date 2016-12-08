@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   validates_inclusion_of :rating, :in => 0..5
 
   attachment :image, type: :image
-  after_create :send_recs
+
 
   def self.timeline(user)
     following_ids = user.followees(User).pluck(:id)
@@ -14,13 +14,5 @@ class Review < ApplicationRecord
     Review.where(user_id: all_ids).order("created_at DESC")
   end
 
-
-  private
-
-  def send_recs
-    if params[:rec].present?
-      RecNotifier.send_rec_email(@review.user).deliver
-    end
-  end
 
 end
