@@ -24,15 +24,15 @@
   a{
     border-radius: 24px;
     background: transparent;
-    border: 1px solid #4CD2B9;
-    color: white;
+    border: 1px solid rgba(25, 133, 161, 1);
+    color: rgba(25, 133, 161, 1);
     padding: 10px;
     font-size: 25px;
     margin-left: 40px;
     &:hover{
-      background: transparent;
+      background: rgba(25, 133, 161, 1);
       border: 1px solid white;
-      color: #4CD2B9;
+      color: white;
       text-decoration: none;
     }
   }

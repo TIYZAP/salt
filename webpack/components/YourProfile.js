@@ -94,19 +94,21 @@ class YourProfile extends React.Component{
                         </div>
       })
         var displayMyReviews = this.state.myReviews.map((review, i) => {
-            return <div className="col-sm-12 home-middle-middle-review" key={i}>
+            return <div className="col-sm-12 home-middle-middle-myreview" key={i}>
                         <div className="row">
-                            <div className="col-sm-4">
+                            <div className="col-sm-12">
+                              <h3 className="text-center">{review.venue_name}</h3>
                                 <img  src={review.image} alt="" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
-                            <div className="col-sm-8">
-                                <h1 className="text-center">{review.venue_name}</h1>
-                                <h3>Dish: {review.dish}</h3>
-                                <h3>Rating: {review.rating}</h3>
-                                <h3>website</h3>
+                            <div className="col-sm-12">
+                                <p>Dish: {review.dish}</p>
+                                <p>Rating: {review.rating}</p>
+                                <p>website</p>
                                 <p>{review.body}</p>
-                                <button className="btn btn-default" onClick={() => this.openModal(review)}>Recommend</button>
+                              </div>
+                              <div className="col-sm-12 text-center">
+                                <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
                                 <Modal
                                   isOpen={this.state.modalIsOpen}
                                   onAfterOpen={this.afterOpenModal}
