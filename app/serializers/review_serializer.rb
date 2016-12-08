@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :venue_name, :venue_address, :dish, :body, :rating, :created_at, :image, :website, :phone
+  attributes :venue_name, :venue_address, :dish, :body, :rating, :created_at, :image, :website, :phone, :id
   has_one :user
 
   def image
