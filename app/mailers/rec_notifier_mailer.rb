@@ -1,5 +1,5 @@
 class RecNotifierMailer < ActionMailer::Base
-  default :from => ''
+  default :from => 'TheSaltyTeam@grainofsalt-app.com'
 
   def send_rec_email(user, review)
     @user = user
