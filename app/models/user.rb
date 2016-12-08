@@ -35,10 +35,10 @@ class User < ApplicationRecord
 
   def self.send_reminders
     User.all.each do |user|
-      if user.reviews.last == nil
-        puts 'hey leave a review'
+      if (user.reviews.last == nil)&&(user.created_at < 7.day.ago)
+        RemindersMailer.no_reviews(user).deliver
       elsif user.reviews.last.created_at < 7.day.ago
-        puts user.reviews.last.inspect
+        RemindersMailer.send_reminder(user).deliver
       end
     end
   end
