@@ -37,7 +37,7 @@ class User < ApplicationRecord
     User.all.each do |user|
       if user.reviews.last == nil
         puts 'hey leave a review'
-      else user.reviews.last.created_at < 7.day.ago
+      elsif user.reviews.last.created_at < 7.day.ago
         puts user.reviews.last.inspect
       end
     end
