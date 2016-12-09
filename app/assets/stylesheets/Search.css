@@ -8,14 +8,12 @@
 
 .search-wrapper {
   padding: 15px;
-  background: #0FAF9B;
+  background: #DCDCDD;
   border-radius: 10px;
-}
-
-.search-wrapper input {
-  padding: 15px;
-  border: 0;
-  margin-right: 20px;
+  box-shadow: 5px 5px 10px lightgrey input;
+  box-shadow-padding: 15px;
+  box-shadow-border: 0;
+  box-shadow-margin-right: 20px;
 }
 
 .search-wrapper label {
@@ -24,7 +22,7 @@
 
 .search-wrapper button {
   margin-top: 5px;
-  background: #e54040;
+  background: #1985a1;
   border: 1px solid white;
   color: white;
   width: 80px;

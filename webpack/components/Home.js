@@ -26,9 +26,6 @@ class Home extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             allReviews: response.reviews}))
-        // .then(response => {
-        //     console.log(response.reviews)
-        // })
     }
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
@@ -66,7 +63,7 @@ class Home extends React.Component {
                                         <h1 className="text-center">Welcome User!</h1>
                                         <br />
                                         <h2 className="text-center">To Get Started:</h2>
-                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow FB friends</i></button></h2>
+                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i>Follow FB friends</button></h2>
                                         <h2 className="text-center">Find a Restaurant and their reviews: <Link to="/search"><button className="btn btn-default my-button">Review Section</button></Link></h2>
                                     </div>
                                 </div>
