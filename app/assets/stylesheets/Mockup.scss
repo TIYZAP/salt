@@ -5,6 +5,42 @@ $col3: #E2624B;
 $col5: #8ca2ad;
 $col7: #E6EFF2;
 
+//style 2
+// $col1: #D24136;
+// $col8: #Eb8a3e;
+// $col2: #Ebb582;
+// $col7: #f2e6e6;
+// $col5: #D24136;
+
+//style 3
+// $col1: #F67849;
+// $col5: #EE8972;
+// $col2: #BF9989;
+// $col7: #F9D9C7;
+// $col8: #9C9396;
+
+//style 4
+// $col2: #Ebb582;
+// $col1: #C69343;
+// $col8: #7C8C8B;
+// $col7: #CEC9C4;
+// $col5: #2A3339;
+
+//style 5
+// $col2: #B39A94;
+// $col1: #5C4540;
+// $col7: #EBEBE2;
+// $col5: #5C4540;
+// $col8: #B39A94;
+
+
+//style 6
+// $col2: #B39A94;
+// $col1: #5C4540;
+// $col7: #EBEBE2;
+// $col5: #5C4540;
+// $col8: #B39A94;
+
 /* RGB */
 // $col5: rgba(220, 220, 221, 1);
 // $col3: rgba(197, 195, 198, 1);
@@ -17,7 +53,7 @@ $col7: #E6EFF2;
     color: white;
     text-align: center;
     height: 70px;
-    padding: 20;
+    // padding: 20;
     margin: 0;
     .head-nav-left{
         background: $col1;
@@ -70,7 +106,7 @@ $col7: #E6EFF2;
             padding: 0px;
             li{
             padding: 20px;
-            font-size: 25px;
+            font-size: 20px;
             cursor: pointer;
             padding-left: 0;
             color: $col5;
@@ -84,7 +120,7 @@ $col7: #E6EFF2;
     }
     .home-middle-middle{
         background: $col7;
-        height: 93vh;
+        height: 94.7vh;
         overflow: scroll;
         padding: 30px;
         .homepage-box{
@@ -97,14 +133,10 @@ $col7: #E6EFF2;
         }
         //css for reviews on home page
         .home-middle-middle-review{
-            // border: 4px solid white;
-            margin: 15px;
-            margin-bottom: 15px;
+            margin: 10px;
             padding: 10px;
-            background: rgba(220, 220, 221, 1);
+            background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
-            height: 200px;
-            width: 500px;
             h4{
                 padding: 0;
                 text-overflow: ellipsis;
@@ -175,13 +207,13 @@ $col7: #E6EFF2;
                     }
                 }
                 .read-review-button{
-                    background: #0FAF9B;
+                    background: $col5;
                     color: white;
                     border: 1px solid white;
                     border-radius: 1px;
                 }
                 .post-review-button{
-                    background: #e54040;
+                    background: $col1;
                     color: white;
                     border: 1px solid white;
                     border-radius: 1px;
@@ -210,7 +242,6 @@ $col7: #E6EFF2;
                 }
             }
         }
-
     }
     .home-middle-right{
         // background: white;
@@ -218,7 +249,8 @@ $col7: #E6EFF2;
         height: 93vh;
         text-align: center;
         h1{
-            color: $col5;
+            // color: $col5;
+            color: #6A8795;
         }
         .home-each-friend{
             padding: 20px;
@@ -242,9 +274,27 @@ $col7: #E6EFF2;
     padding: 8px;
     font-size: 18px;
 }
+#invite-input{
+    height: 40px;
+    font-size: 20px;
+}
+#invite-friend-button{
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    &:hover{
+        color: white;
+    }
+}
 
-@media ( max-width : 760px ) {
+.row{
+    margin-right: 0;
+}
+@media ( max-width : 768px ) {
     .head-nav-left{
+        display: none;
+    }
+    .head-nav-right{
         display: none;
     }
     .home-middle-left{
@@ -253,4 +303,13 @@ $col7: #E6EFF2;
     .home-middle-right{
         display: none;
     }
+
+}
+.friend-button-changer{
+    background: grey;
+}
+
+
+@media ( max-width : 375px ) {
+
 }

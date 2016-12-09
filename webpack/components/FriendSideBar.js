@@ -28,7 +28,6 @@ class FriendSideBar extends React.Component{
                       </div>
                       <div className="col-sm-7">
                           <h5>{friend.name}</h5>
-
                         <span className="badge">Points: {friend.reviews.length}0</span>
                       </div>
                     </div>
