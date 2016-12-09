@@ -51,6 +51,7 @@ gem "koala", "~> 2.2"
 gem 'simple_token_authentication', '~> 1.0'
 gem 'kaminari'
 gem 'sendgrid'
+gem 'merit'
 
 #Exception / Monitoring!
 gem 'rollbar'
