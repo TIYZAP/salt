@@ -3,7 +3,6 @@
   color: white;
   text-align: center;
   height: 70px;
-  padding: 20;
   margin: 0;
 }
 
@@ -71,7 +70,7 @@
 
 .home-middle-section .home-middle-left ul li {
   padding: 20px;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   padding-left: 0;
   color: #8ca2ad;
@@ -85,7 +84,7 @@
 
 .home-middle-section .home-middle-middle {
   background: #E6EFF2;
-  height: 93vh;
+  height: 94.7vh;
   overflow: scroll;
   padding: 30px;
 }
@@ -100,13 +99,10 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review {
-  margin: 15px;
-  margin-bottom: 15px;
+  margin: 10px;
   padding: 10px;
   background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
-  height: 200px;
-  width: 500px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review h4 {
@@ -184,14 +180,14 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .read-review-button {
-  background: #0FAF9B;
+  background: #8ca2ad;
   color: white;
   border: 1px solid white;
   border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .post-review-button {
-  background: #e54040;
+  background: #1985a1;
   color: white;
   border: 1px solid white;
   border-radius: 1px;
@@ -228,7 +224,7 @@
 }
 
 .home-middle-section .home-middle-right h1 {
-  color: #8ca2ad;
+  color: #6A8795;
 }
 
 .home-middle-section .home-middle-right .home-each-friend {
@@ -252,8 +248,30 @@
   font-size: 18px;
 }
 
-@media (max-width: 760px) {
+#invite-input {
+  height: 40px;
+  font-size: 20px;
+}
+
+#invite-friend-button {
+  height: 40px;
+  font-size: 20px;
+  color: white;
+}
+
+#invite-friend-button:hover {
+  color: white;
+}
+
+.row {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
   .head-nav-left {
+    display: none;
+  }
+  .head-nav-right {
     display: none;
   }
   .home-middle-left {
@@ -262,4 +280,8 @@
   .home-middle-right {
     display: none;
   }
+}
+
+.friend-button-changer {
+  background: grey;
 }

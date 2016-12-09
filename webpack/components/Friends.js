@@ -63,6 +63,7 @@ class Friends extends React.Component {
             }
         })
         .then(response => response.json())
+        setTimeout(() => document.getElementById('invite-friend-button').classList.add('friend-button-changer'),100)
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
@@ -86,9 +87,9 @@ class Friends extends React.Component {
                   <div className="row">
                       <div className="col-sm-6 col-sm-offset-3">
                               <div className="input-group">
-                                  <input type="text" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
+                                  <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
                                   <span className="input-group-btn">
-                                      <button className="btn my-button btn-md" onClick={this.clickHandler}>Invite</button>
+                                      <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
                                   </span>
                               </div>
                       </div>

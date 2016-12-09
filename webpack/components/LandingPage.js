@@ -12,7 +12,7 @@ class LandingPage extends React.Component {
                         <div className="col-sm-6 col-sm-offset-3 landingpage-box">
                             <div className="col-sm-12 text-center">
                                 <h1>Grain of Salt</h1>
-                                <h3>Reviews by your trusted network</h3>
+                                <h3>Restaurant reviews from your Facebook friends</h3>
                             </div>
                             <div className="col-sm-4 col-sm-offset-3">
                             <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i> Log In with Facebook</a>
