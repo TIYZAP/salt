@@ -5,6 +5,7 @@ $col3: #E2624B;
 $col5: #8ca2ad;
 $col7: #E6EFF2;
 
+$br: 10px;
 //style 2
 // $col1: #D24136;
 // $col8: #Eb8a3e;
@@ -196,6 +197,7 @@ $col7: #E6EFF2;
             margin: 15px;
             padding: 10px;
             box-shadow: 5px 5px 10px lightgrey;
+            border-radius: 10px;
             h1{
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -204,6 +206,10 @@ $col7: #E6EFF2;
                 &:hover{
                     overflow: visible;
                 }
+            }
+            img{
+                // width: 100%;
+                height: 200px;
             }
         }
 

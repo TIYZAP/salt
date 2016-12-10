@@ -84,13 +84,19 @@ class YourProfile extends React.Component{
     afterOpenModal() {
     }
     render(){
+      var eachFriend = {
+        boxShadow: '5px 5px 5px lightgrey',
+        background: 'rgba(220, 220, 221, 1)',
+        padding: 10,
+        margin: 10
+      }
       console.log(this.state.myReviews)
       var recFriends = this.state.friends.map((friend, i) => {
-        return          <div style={{background:'white', padding: '10px', margin:'5px'}} className="col-sm-3" key={i}>
-                              <img className="img-circle" src={friend.image} alt="" />
+        return          <div style={eachFriend} className="col-sm-3" key={i}>
+                              <img height="200"  width="200" className="img-rounded" src={friend.image} alt="" />
                               <h4 className="text-center">{friend.name}</h4>
                               <div className="text-center">
-                                  <button className="btn btn-danger" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
+                                  <button className="btn btn-info" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
                               </div>
                         </div>
       })
