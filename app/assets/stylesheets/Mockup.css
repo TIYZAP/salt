@@ -165,6 +165,7 @@
   margin: 15px;
   padding: 10px;
   box-shadow: 5px 5px 10px lightgrey;
+  border-radius: 10px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends h1 {
@@ -176,6 +177,10 @@
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends h1:hover {
   overflow: visible;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends img {
+  height: 200px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
