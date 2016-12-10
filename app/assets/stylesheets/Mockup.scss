@@ -137,15 +137,22 @@ $col7: #E6EFF2;
             padding: 10px;
             background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
+            overflow: hidden;
+            line-height: 15px;
+            // height: 160px;
             h4{
                 padding: 0;
-                text-overflow: ellipsis;
             }
             p{
                 margin: 0;
+
             }
             h5{
                 margin: 0;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                height: 90px;
+                white-space: nowrap;
             }
             img{
                 width: 100%;
@@ -166,6 +173,19 @@ $col7: #E6EFF2;
             img{
                 width: 100%;
                 height: 200px;
+            }
+            h3{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 80%;
+            }
+            h5{
+                height: 80px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 80%;
             }
         }
 
@@ -300,6 +320,9 @@ $col7: #E6EFF2;
     .home-middle-left{
         display: none;
     }
+    .home-middle-middle{
+        overflow: visible;
+    }
     .home-middle-right{
         display: none;
     }
@@ -311,5 +334,5 @@ $col7: #E6EFF2;
 
 
 @media ( max-width : 375px ) {
-    
+
 }

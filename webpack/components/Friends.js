@@ -68,7 +68,7 @@ class Friends extends React.Component {
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
-                      <Link to={'/friendprofile?id=' + friend.id} >
+                      <Link to={'/friendprofile/' + friend.id} >
                       <img className="img-rounded" src={friend.image} alt="" />
                       <h3 className="text-center">{friend.name}</h3>
                       </Link>

@@ -44,7 +44,7 @@ class Search extends React.Component{
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
         // .then(response => {
-        //     console.log(response[0].photos.photo_reference)
+        //     console.log(response)
         // })
     }
     render(){

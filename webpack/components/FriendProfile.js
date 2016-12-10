@@ -5,6 +5,8 @@ import LeftMenu from './LeftMenu'
 import Header from './Header'
 import FriendSideBar from './FriendSideBar'
 import moment from 'moment'
+import ReactStars from 'react-stars'
+
 
 class FriendProfile extends React.Component{
     constructor(props){
@@ -33,6 +35,9 @@ class FriendProfile extends React.Component{
             name: response.user.name,
             reviews: response.user.reviews
         }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
 
     render(){
@@ -40,14 +45,16 @@ class FriendProfile extends React.Component{
             return       <div className="col-sm-12 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
                                 <img  src={review.image} alt="" />
-                                <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                                <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
+                                <Link to={"/readreview?place_id=" + review.place_id}>
                                 <h1 className="text-center">{review.venue_name}</h1>
-                                <h5>Dish: {review.dish}</h5>
-                                <h5>Rating: {review.rating}</h5>
-                                <h5>website: <a href={review.website}>Link to website</a></h5>
-                                <h4>Review: <br />{review.body}</h4>
+                                </Link>
+                                <p>Dish: {review.dish}</p>
+                                <p>Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/></p>
+                                <p>website: <a href={review.website}>Link to website</a></p>
+                                <h5>Review: <br />{review.body}</h5>
                             </div>
                         </div>
         })
