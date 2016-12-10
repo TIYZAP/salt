@@ -1,14 +1,12 @@
-.signup-page-text{
-  font-family: 'Eczar', serif;
-  font-size: 130px;
-}
+
 .landing-container{
-  background: url(/images/landingpage1.jpg);
+  background: url(/images/landingpage1920.jpeg);
   background-size: cover;
+  background-position: center;
   color: white;
   font-weight: bolder;
   height: 100vh;
-  padding-top: 90px;
+  padding-top: 50px;
 }
 .landingpage-box{
   padding: 20px;
@@ -21,6 +19,14 @@
   h3{
     padding-bottom: 50px;
   }
+  .down-arrow{
+    top: 190px;
+    font-size: 1.9em;
+    i{
+      font-size: 2.5em;
+
+    }
+  }
   a{
     border-radius: 24px;
     background: transparent;
@@ -28,7 +34,6 @@
     color: #d6eff5;
     padding: 10px;
     font-size: 25px;
-    margin-left: 40px;
     &:hover{
       background: rgba(25, 133, 161, 1);
       border: 1px solid white;
@@ -36,4 +41,56 @@
       text-decoration: none;
     }
   }
+}
+.about-container{
+  // background: #d6eff5;
+  height: 60vmax;
+    img{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+
+
+@media ( max-width : 375px ) {
+    .landing-container{
+      // background: url(/images/landingpage1250.jpeg);
+      h1{
+        font-size: 60px;
+      }
+      h3{
+        font-size: 20px;
+      }
+      a{
+        font-size: 20px;
+      }
+      .down-arrow{
+        i{
+          font-size: 2em;
+        }
+      }
+    }
+}
+
+@media (min-width: 376px) and (max-width: 678px ) {
+  .landing-container{
+    background-image: url(/images/landingpage1250.jpeg);
+  }
+    .landingpage-box{
+      h1{
+        font-size: 5em;
+      }
+      h3{
+        font-size: 1.5em;
+      }
+      a{
+        font-size: 1.5em;
+      }
+      .down-arrow{
+        i{
+          font-size: 2em;
+        }
+      }
+    }
 }

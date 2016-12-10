@@ -15,17 +15,24 @@ class Home extends React.Component {
         allReviews:[]
         }
     }
+    componentWillMount(){
+        if(sessionStorage.getItem('token') === null){
+            window.location.href = "/"
+        }
+    }
     componentDidMount(){
         if(window.location.href.includes('email')){
             var url = new urlParse(window.location.href, true)
             sessionStorage.setItem('email', url.query.email)
             sessionStorage.setItem('token', url.query.token)
             sessionStorage.setItem('id', url.query.id)
+            window.location.href = '/home'
         }
         fetch('/api/timeline?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
         .then(response => response.json())
         .then(response => this.setState({
             allReviews: response.reviews}))
+        // .then(response => {console.log(response)})
     }
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
@@ -44,7 +51,9 @@ class Home extends React.Component {
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
                             <div className="col-sm-8">
+                                <Link to={'/readreview?place_id=' + review.place_id} >
                                 <h4 className="text-center">{review.venue_name}</h4>
+                                </Link>
                                 {/* <h5>Address: {review.venue_address}</h5>
                                 <h5>Phone: {review.phone}</h5>
                                 <h5>Website: <a href={review.website}>Link to website</a></h5> */}
