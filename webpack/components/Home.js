@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router'
 import moment from 'moment'
+import ReactStars from 'react-stars'
 import Menu from './Menu'
 import LeftMenu from './LeftMenu'
 import Header from './Header'
 import FriendSideBar from './FriendSideBar'
 import urlParse from 'url-parse'
+import StarRating from './StarRating'
+
 
 class Home extends React.Component {
     constructor(props){
@@ -46,9 +49,9 @@ class Home extends React.Component {
                     <div className="col-sm-5 home-middle-middle-review" key={i}>
                         <div className="row">
                             <div className="col-sm-4">
-                              <h5 className="text-center">{review.user.name}</h5>
+                              <p className="text-center">{review.user.name}</p>
                                 <img height="100" className="img-rounded" src={review.image} alt="Reviewers Picture" />
-                                <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                                <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
                                 <Link to={'/readreview?place_id=' + review.place_id} >
@@ -57,7 +60,7 @@ class Home extends React.Component {
                                 {/* <h5>Address: {review.venue_address}</h5>
                                 <h5>Phone: {review.phone}</h5>
                                 <h5>Website: <a href={review.website}>Link to website</a></h5> */}
-                                <p>Rating: {review.rating}</p>
+                                <p>Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/></p>
                                 <p>Dish: {review.dish}</p>
                                 <h5>Review: <br />{review.body}</h5>
                             </div>

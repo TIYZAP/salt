@@ -6,6 +6,7 @@ import Header from './Header'
 import FriendSideBar from './FriendSideBar'
 import moment from 'moment'
 import Modal from 'react-modal'
+import ReactStars from 'react-stars'
 
 
 const customStyles = {
@@ -97,15 +98,17 @@ class YourProfile extends React.Component{
             return <div className="col-sm-12 home-middle-middle-myreview" key={i}>
                         <div className="row">
                             <div className="col-sm-12">
+                              <Link to={'/readreview?place_id=' + review.place_id}>
                               <h3 className="text-center">{review.venue_name}</h3>
+                              </Link>
                                 <img  src={review.image} alt="" />
-                                <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                                <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-12">
                                 <p>Dish: {review.dish}</p>
-                                <p>Rating: {review.rating}</p>
-                                <p>website</p>
-                                <p>{review.body}</p>
+                                Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
+                                <p>website: <a href={review.website}>Link to website</a></p>
+                                <h5>Review: <br/>{review.body}</h5>
                               </div>
                               <div className="col-sm-12 text-center">
                                 <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
