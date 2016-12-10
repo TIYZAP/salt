@@ -5,6 +5,8 @@ import LeftMenu from './LeftMenu'
 import Header from './Header'
 import FriendSideBar from './FriendSideBar'
 import moment from 'moment'
+import ReactStars from 'react-stars'
+
 
 class ReadReview extends React.Component{
     constructor(props){
@@ -26,16 +28,16 @@ class ReadReview extends React.Component{
                                     <div className="col-sm-4">
                                       <h3 className="text-center">{review.user.name}</h3>
                                         <img src={review.user.image} alt="Reviewers Picture" />
-                                        <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
+                                        <p className="text-center">{moment(review.created_at).fromNow()}</p>
                                     </div>
                                     <div className="col-sm-8">
                                         <h1 className="text-center">{review.venue_name}</h1>
-                                        <h5>Dish: {review.dish}</h5>
-                                        <h5>Rating: {review.rating}</h5>
-                                        <h5>Address: {review.venue_address}</h5>
-                                        <h5>Phone: {review.phone}</h5>
-                                        <h5>Website: <a href={review.website}>Link to website</a></h5>
-                                        <p>Review: <br />{review.body}</p>
+                                        <p>Dish: {review.dish}</p>
+                                        <p>Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'} /></p>
+                                        <p>Address: {review.venue_address}</p>
+                                        <p>Phone: {review.phone}</p>
+                                        <p>Website: <a href={review.website}>Link to website</a></p>
+                                        <h4>Review: <br />{review.body}</h4>
                                     </div>
                                 </div>
         })
