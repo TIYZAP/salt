@@ -73,7 +73,7 @@ class Friends extends React.Component {
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                       <Link to={'/friendprofile/' + friend.id} >
                       <img className="img-rounded" src={friend.image} alt="" />
-                      <h3 className="text-center">{friend.name}</h3>
+                      <h4 className="text-center">{friend.name}</h4>
                       </Link>
                       <div className="text-center">
                           <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
