@@ -25,6 +25,9 @@ class Friends extends React.Component {
         .then(response => this.setState({
             friends: response.users
         }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
 
     removeFriend(id){
