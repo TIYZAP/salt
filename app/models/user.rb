@@ -14,8 +14,7 @@ class User < ApplicationRecord
   has_many :reviews
   acts_as_follower
   acts_as_followable
-  acts_as_mentionable
-  acts_as_mentioner
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
