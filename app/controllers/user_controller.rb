@@ -18,9 +18,15 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     render json: @user
   end
 
-  def email_test
+  def search_for_friends
+  @users =   User.where("name ilike ?", "%#{params[:name]}%")
+  render json: @users
+  end
+
+  def follow_one_friend
     @user = current_user
-    UserNotifier.send_signup_email(@user).deliver
+    @user.follow!(User.find(params[:id]))
+    render json: @user
   end
 
   def send_invites
@@ -31,6 +37,20 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
       InviteMailer.send_friends_invites(email, @user).deliver
     end
     render json: @user
+  end
+
+  def follow_facebook
+    @user = current_user
+    @graph = Koala::Facebook::API.new(@user.fb_token)
+    friends = @graph.get_connections("me", "friends")
+    friends.each do |f|
+      @thing = User.find_by(fb_id: f['id'])
+      puts f['name'].inspect
+      puts f.inspect
+      @user.follow!(@thing) if @thing
+    end
+    @followees = @user.followees(User)
+    render json: @followees
   end
 
 end

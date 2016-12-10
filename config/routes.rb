@@ -9,14 +9,14 @@ Rails.application.routes.draw do
     get '/search/place' => 'geo_search#show'
     get '/profile' => 'user#show'
     get '/koala' => 'koala#test'
-    get '/facebook/follow' => 'koala#follow_facebook'
+    get '/facebook/follow' => 'userfollow_facebook'
     get '/friends/all' => 'user#all_friends'
-    get '/search/name' => 'geo_search#name_test'
-    get '/email/test' => 'user#email_test'
     post '/unfollow' => 'user#unfollow_user'
     get '/friends/reviews' => 'reviews#friends_reviews'
     post '/send/rec' => 'reviews#send_rec'
     post '/invite/friends' => 'user#send_invites'
+    post '/search/friends' => 'user#search_for_friends'
+    post '/follow/friend' => 'user#follow_one_friend'
   end
   devise_for :users, controllers: {
     sessions: 'users/sessions',
