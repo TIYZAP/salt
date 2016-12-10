@@ -2,11 +2,12 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.4
--- Dumped by pg_dump version 9.5.4
+-- Dumped from database version 9.6.1
+-- Dumped by pg_dump version 9.6.1
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -43,6 +44,38 @@ CREATE TABLE ar_internal_metadata (
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
+
+
+--
+-- Name: badges_sashes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE badges_sashes (
+    id integer NOT NULL,
+    badge_id integer,
+    sash_id integer,
+    notified_user boolean DEFAULT false,
+    created_at timestamp without time zone
+);
+
+
+--
+-- Name: badges_sashes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE badges_sashes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: badges_sashes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE badges_sashes_id_seq OWNED BY badges_sashes.id;
 
 
 --
@@ -145,6 +178,139 @@ ALTER SEQUENCE mentions_id_seq OWNED BY mentions.id;
 
 
 --
+-- Name: merit_actions; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE merit_actions (
+    id integer NOT NULL,
+    user_id integer,
+    action_method character varying,
+    action_value integer,
+    had_errors boolean DEFAULT false,
+    target_model character varying,
+    target_id integer,
+    target_data text,
+    processed boolean DEFAULT false,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: merit_actions_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE merit_actions_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: merit_actions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE merit_actions_id_seq OWNED BY merit_actions.id;
+
+
+--
+-- Name: merit_activity_logs; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE merit_activity_logs (
+    id integer NOT NULL,
+    action_id integer,
+    related_change_type character varying,
+    related_change_id integer,
+    description character varying,
+    created_at timestamp without time zone
+);
+
+
+--
+-- Name: merit_activity_logs_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE merit_activity_logs_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: merit_activity_logs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE merit_activity_logs_id_seq OWNED BY merit_activity_logs.id;
+
+
+--
+-- Name: merit_score_points; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE merit_score_points (
+    id integer NOT NULL,
+    score_id integer,
+    num_points integer DEFAULT 0,
+    log character varying,
+    created_at timestamp without time zone
+);
+
+
+--
+-- Name: merit_score_points_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE merit_score_points_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: merit_score_points_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE merit_score_points_id_seq OWNED BY merit_score_points.id;
+
+
+--
+-- Name: merit_scores; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE merit_scores (
+    id integer NOT NULL,
+    sash_id integer,
+    category character varying DEFAULT 'default'::character varying
+);
+
+
+--
+-- Name: merit_scores_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE merit_scores_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: merit_scores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE merit_scores_id_seq OWNED BY merit_scores.id;
+
+
+--
 -- Name: refile_attachments; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -216,6 +382,36 @@ ALTER SEQUENCE reviews_id_seq OWNED BY reviews.id;
 
 
 --
+-- Name: sashes; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE sashes (
+    id integer NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
+);
+
+
+--
+-- Name: sashes_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE sashes_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: sashes_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE sashes_id_seq OWNED BY sashes.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -248,7 +444,9 @@ CREATE TABLE users (
     image_id character varying,
     fb_token character varying,
     fb_id character varying,
-    authentication_token character varying(30)
+    authentication_token character varying(30),
+    sash_id integer,
+    level integer DEFAULT 0
 );
 
 
@@ -272,49 +470,91 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: badges_sashes id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY badges_sashes ALTER COLUMN id SET DEFAULT nextval('badges_sashes_id_seq'::regclass);
+
+
+--
+-- Name: follows id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY follows ALTER COLUMN id SET DEFAULT nextval('follows_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: likes id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY likes ALTER COLUMN id SET DEFAULT nextval('likes_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: mentions id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY mentions ALTER COLUMN id SET DEFAULT nextval('mentions_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: merit_actions id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_actions ALTER COLUMN id SET DEFAULT nextval('merit_actions_id_seq'::regclass);
+
+
+--
+-- Name: merit_activity_logs id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_activity_logs ALTER COLUMN id SET DEFAULT nextval('merit_activity_logs_id_seq'::regclass);
+
+
+--
+-- Name: merit_score_points id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_score_points ALTER COLUMN id SET DEFAULT nextval('merit_score_points_id_seq'::regclass);
+
+
+--
+-- Name: merit_scores id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_scores ALTER COLUMN id SET DEFAULT nextval('merit_scores_id_seq'::regclass);
+
+
+--
+-- Name: refile_attachments id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY refile_attachments ALTER COLUMN id SET DEFAULT nextval('refile_attachments_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: reviews id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY reviews ALTER COLUMN id SET DEFAULT nextval('reviews_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: sashes id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sashes ALTER COLUMN id SET DEFAULT nextval('sashes_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regclass);
 
 
 --
--- Name: ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY ar_internal_metadata
@@ -322,7 +562,15 @@ ALTER TABLE ONLY ar_internal_metadata
 
 
 --
--- Name: follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: badges_sashes badges_sashes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY badges_sashes
+    ADD CONSTRAINT badges_sashes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: follows follows_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY follows
@@ -330,7 +578,7 @@ ALTER TABLE ONLY follows
 
 
 --
--- Name: likes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: likes likes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY likes
@@ -338,7 +586,7 @@ ALTER TABLE ONLY likes
 
 
 --
--- Name: mentions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: mentions mentions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY mentions
@@ -346,7 +594,39 @@ ALTER TABLE ONLY mentions
 
 
 --
--- Name: refile_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: merit_actions merit_actions_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_actions
+    ADD CONSTRAINT merit_actions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: merit_activity_logs merit_activity_logs_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_activity_logs
+    ADD CONSTRAINT merit_activity_logs_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: merit_score_points merit_score_points_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_score_points
+    ADD CONSTRAINT merit_score_points_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: merit_scores merit_scores_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY merit_scores
+    ADD CONSTRAINT merit_scores_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: refile_attachments refile_attachments_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY refile_attachments
@@ -354,7 +634,7 @@ ALTER TABLE ONLY refile_attachments
 
 
 --
--- Name: reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: reviews reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY reviews
@@ -362,7 +642,15 @@ ALTER TABLE ONLY reviews
 
 
 --
--- Name: schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: sashes sashes_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY sashes
+    ADD CONSTRAINT sashes_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY schema_migrations
@@ -370,7 +658,7 @@ ALTER TABLE ONLY schema_migrations
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -417,6 +705,27 @@ CREATE INDEX fk_mentionables ON mentions USING btree (mentionable_id, mentionabl
 --
 
 CREATE INDEX fk_mentions ON mentions USING btree (mentioner_id, mentioner_type);
+
+
+--
+-- Name: index_badges_sashes_on_badge_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_badges_sashes_on_badge_id ON badges_sashes USING btree (badge_id);
+
+
+--
+-- Name: index_badges_sashes_on_badge_id_and_sash_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_badges_sashes_on_badge_id_and_sash_id ON badges_sashes USING btree (badge_id, sash_id);
+
+
+--
+-- Name: index_badges_sashes_on_sash_id; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_badges_sashes_on_sash_id ON badges_sashes USING btree (sash_id);
 
 
 --
@@ -467,6 +776,6 @@ CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (re
 
 SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107'), ('20161130184930'), ('20161201142147'), ('20161202144944'), ('20161206201601');
+INSERT INTO schema_migrations (version) VALUES ('20161128030940'), ('20161128030941'), ('20161128030942'), ('20161128171540'), ('20161128172752'), ('20161128184058'), ('20161128205034'), ('20161129161858'), ('20161129162231'), ('20161130180107'), ('20161130184930'), ('20161201142147'), ('20161202144944'), ('20161206201601'), ('20161209135117'), ('20161209135118'), ('20161209135119'), ('20161209135120'), ('20161209135121'), ('20161209135139');
 
 

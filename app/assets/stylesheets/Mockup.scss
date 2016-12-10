@@ -1,8 +1,45 @@
-$col1: #4CD2B9;
+$col1: rgba(25, 133, 161, 1);
+$col2: rgba(220, 220, 221, 1);
 $col8: #252626;
 $col3: #E2624B;
 $col5: #8ca2ad;
 $col7: #E6EFF2;
+
+//style 2
+// $col1: #D24136;
+// $col8: #Eb8a3e;
+// $col2: #Ebb582;
+// $col7: #f2e6e6;
+// $col5: #D24136;
+
+//style 3
+// $col1: #F67849;
+// $col5: #EE8972;
+// $col2: #BF9989;
+// $col7: #F9D9C7;
+// $col8: #9C9396;
+
+//style 4
+// $col2: #Ebb582;
+// $col1: #C69343;
+// $col8: #7C8C8B;
+// $col7: #CEC9C4;
+// $col5: #2A3339;
+
+//style 5
+// $col2: #B39A94;
+// $col1: #5C4540;
+// $col7: #EBEBE2;
+// $col5: #5C4540;
+// $col8: #B39A94;
+
+
+//style 6
+// $col2: #B39A94;
+// $col1: #5C4540;
+// $col7: #EBEBE2;
+// $col5: #5C4540;
+// $col8: #B39A94;
 
 /* RGB */
 // $col5: rgba(220, 220, 221, 1);
@@ -16,7 +53,7 @@ $col7: #E6EFF2;
     color: white;
     text-align: center;
     height: 70px;
-    padding: 20;
+    // padding: 20;
     margin: 0;
     .head-nav-left{
         background: $col1;
@@ -29,6 +66,8 @@ $col7: #E6EFF2;
         h1{
             font-size: 40px;
             font-family: Lobster;
+            padding: 10px;
+            margin: 0;
         }
     }
     .head-nav-right{
@@ -37,13 +76,13 @@ $col7: #E6EFF2;
         padding: 0px;
         button{
             border-radius: 3px;
-
             font-size: 19px;
             background: $col1;
             border: none;
             &:hover{
-                background: $col3;
+                background: transparent;
                 transform: scale(1.1);
+                border: 1px solid white;
             }
         }
         i{
@@ -67,7 +106,7 @@ $col7: #E6EFF2;
             padding: 0px;
             li{
             padding: 20px;
-            font-size: 25px;
+            font-size: 20px;
             cursor: pointer;
             padding-left: 0;
             color: $col5;
@@ -81,7 +120,7 @@ $col7: #E6EFF2;
     }
     .home-middle-middle{
         background: $col7;
-        height: 93vh;
+        height: 94.7vh;
         overflow: scroll;
         padding: 30px;
         .homepage-box{
@@ -94,16 +133,19 @@ $col7: #E6EFF2;
         }
         //css for reviews on home page
         .home-middle-middle-review{
-            // border: 4px solid white;
-            margin: 5px;
-            margin-bottom: 15px;
+            margin: 10px;
             padding: 10px;
-            background: white;
+            background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
-
             h4{
                 padding: 0;
                 text-overflow: ellipsis;
+            }
+            p{
+                margin: 0;
+            }
+            h5{
+                margin: 0;
             }
             img{
                 width: 100%;
@@ -111,10 +153,26 @@ $col7: #E6EFF2;
             }
         }
 
+        //css for myreviews on myprofile
+        .home-middle-middle-myreview{
+            background: $col2;
+            margin: 10px;
+            height: 500px;
+            width: 300px;
+            box-shadow: 5px 5px 10px lightgrey;
+            p{
+                margin: 0;
+            }
+            img{
+                width: 100%;
+                height: 200px;
+            }
+        }
+
         //css for friends
         .home-middle-middle-friends{
             // border: 5px solid $col7;
-            background: white;
+            background: $col2;
             margin: 15px;
             padding: 10px;
             box-shadow: 5px 5px 10px lightgrey;
@@ -149,13 +207,13 @@ $col7: #E6EFF2;
                     }
                 }
                 .read-review-button{
-                    background: #0FAF9B;
+                    background: $col5;
                     color: white;
                     border: 1px solid white;
                     border-radius: 1px;
                 }
                 .post-review-button{
-                    background: #e54040;
+                    background: $col1;
                     color: white;
                     border: 1px solid white;
                     border-radius: 1px;
@@ -166,27 +224,40 @@ $col7: #E6EFF2;
 
         //css for friends profile
         .home-middle-middle-friends-profile{
-            background: $col3;
-            height: 35vh;
             padding: 10px;
+            img{
+                width: 300px;
+                height: 300px;
+            }
             .friend-profile-name{
-                color: white;
+                color: $col1;
                 font-size: 60px;
+            }
+            .home-middle-middle-friendsreview{
+                background: $col2;
+                margin: 10px;
+                box-shadow: 5px 5px 10px lightgrey;
+                img{
+                    padding: 10px;
+                }
             }
         }
     }
     .home-middle-right{
-        background: white;
+        // background: white;
+        background: $col2;
         height: 93vh;
         text-align: center;
         h1{
-            color: $col5;
+            // color: $col5;
+            color: #6A8795;
         }
         .home-each-friend{
             padding: 20px;
             background: $col1;
-            border-radius: 3px;
+            border-radius: 50px;
             margin-top: 8px;
+            color: white;
             img{
                 width: 100%;
                 // border-radius: 24px;
@@ -203,9 +274,27 @@ $col7: #E6EFF2;
     padding: 8px;
     font-size: 18px;
 }
+#invite-input{
+    height: 40px;
+    font-size: 20px;
+}
+#invite-friend-button{
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    &:hover{
+        color: white;
+    }
+}
 
-@media ( max-width : 760px ) {
+.row{
+    margin-right: 0;
+}
+@media ( max-width : 768px ) {
     .head-nav-left{
+        display: none;
+    }
+    .head-nav-right{
         display: none;
     }
     .home-middle-left{
@@ -214,4 +303,13 @@ $col7: #E6EFF2;
     .home-middle-right{
         display: none;
     }
+
+}
+.friend-button-changer{
+    background: grey;
+}
+
+
+@media ( max-width : 375px ) {
+    
 }

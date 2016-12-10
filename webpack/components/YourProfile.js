@@ -35,8 +35,7 @@ class YourProfile extends React.Component{
             myReviews: [],
             modalIsOpen: false,
             modalCurrentReview: undefined,
-            friends: [],
-            sentFriends: {}
+            friends: []
         }
     }
     componentWillMount(){
@@ -58,12 +57,9 @@ class YourProfile extends React.Component{
       //   console.log(response)
       // })
     }
-    sendId(friend){
+    sendId(friend, target){
       let sentFriends = this.state.sentFriends
-      if (!sentFriends[this.state.modalCurrentReview.id]) {
-        sentFriends[this.state.modalCurrentReview.id] = []
-      }
-      sentFriends[this.state.modalCurrentReview.id].push(friend.id)
+      target.disabled = true
 
       fetch('/api/send/rec', {
               body: JSON.stringify({
@@ -93,24 +89,26 @@ class YourProfile extends React.Component{
                               <img className="img-circle" src={friend.image} alt="" />
                               <h4 className="text-center">{friend.name}</h4>
                               <div className="text-center">
-                                  <button className="btn btn-danger" onClick={() => this.sendId(friend)}>Recommend</button>
+                                  <button className="btn btn-danger" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
                               </div>
                         </div>
       })
         var displayMyReviews = this.state.myReviews.map((review, i) => {
-            return <div className="col-sm-12 home-middle-middle-review" key={i}>
+            return <div className="col-sm-12 home-middle-middle-myreview" key={i}>
                         <div className="row">
-                            <div className="col-sm-4">
+                            <div className="col-sm-12">
+                              <h3 className="text-center">{review.venue_name}</h3>
                                 <img  src={review.image} alt="" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
-                            <div className="col-sm-8">
-                                <h1 className="text-center">{review.venue_name}</h1>
-                                <h3>Dish: {review.dish}</h3>
-                                <h3>Rating: {review.rating}</h3>
-                                <h3>website</h3>
+                            <div className="col-sm-12">
+                                <p>Dish: {review.dish}</p>
+                                <p>Rating: {review.rating}</p>
+                                <p>website</p>
                                 <p>{review.body}</p>
-                                <button className="btn btn-default" onClick={() => this.openModal(review)}>Recommend</button>
+                              </div>
+                              <div className="col-sm-12 text-center">
+                                <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
                                 <Modal
                                   isOpen={this.state.modalIsOpen}
                                   onAfterOpen={this.afterOpenModal}
@@ -123,7 +121,7 @@ class YourProfile extends React.Component{
                                   </div>
                                   <div className="row">
                                     {recFriends}
-                        </div>
+                                  </div>
                                 </Modal>
                             </div>
                         </div>

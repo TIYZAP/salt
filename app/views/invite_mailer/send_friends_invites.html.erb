@@ -2,10 +2,27 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+    body{
+      background: #E6EFF2;
+    }
+    h1{
+        text-align: center;
+        color: white;
+        background: #4CD2B9;
+    }
+    span{
+      text-align: center;
+    }
+    </style>
   </head>
   <body>
     <h1>Hey there!</h1>
-    <p> Your friend  <%= @user.name %> has invited you to join Grain of Salt.  Please sign-up using the following link!</p>
-    <%=link_to "Sign-up", root_url %>
+    <br/>
+  </br/>
+    <p> Your friend <b><%= @user.name %></b>  has invited you to join Grain of Salt.  Please sign-up using the following link!</p>
+  </br/>
+
+    <span><%=link_to "Sign-up", root_url %></span>
   </body>
 </html>

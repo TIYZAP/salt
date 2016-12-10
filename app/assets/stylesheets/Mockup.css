@@ -3,17 +3,16 @@
   color: white;
   text-align: center;
   height: 70px;
-  padding: 20;
   margin: 0;
 }
 
 .head-nav-wrapper .head-nav-left {
-  background: #4CD2B9;
+  background: #1985a1;
   height: 70px;
 }
 
 .head-nav-wrapper .head-nav-middle {
-  background: #4CD2B9;
+  background: #1985a1;
   height: 75px;
   padding-bottom: 30px;
 }
@@ -21,10 +20,12 @@
 .head-nav-wrapper .head-nav-middle h1 {
   font-size: 40px;
   font-family: Lobster;
+  padding: 10px;
+  margin: 0;
 }
 
 .head-nav-wrapper .head-nav-right {
-  background: #4CD2B9;
+  background: #1985a1;
   height: 70px;
   padding: 0px;
 }
@@ -32,13 +33,14 @@
 .head-nav-wrapper .head-nav-right button {
   border-radius: 3px;
   font-size: 19px;
-  background: #4CD2B9;
+  background: #1985a1;
   border: none;
 }
 
 .head-nav-wrapper .head-nav-right button:hover {
-  background: #E2624B;
+  background: transparent;
   transform: scale(1.1);
+  border: 1px solid white;
 }
 
 .head-nav-wrapper .head-nav-right i {
@@ -68,7 +70,7 @@
 
 .home-middle-section .home-middle-left ul li {
   padding: 20px;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   padding-left: 0;
   color: #8ca2ad;
@@ -76,13 +78,13 @@
 }
 
 .home-middle-section .home-middle-left ul li:hover {
-  background: #4CD2B9;
+  background: #1985a1;
   color: white;
 }
 
 .home-middle-section .home-middle-middle {
   background: #E6EFF2;
-  height: 93vh;
+  height: 94.7vh;
   overflow: scroll;
   padding: 30px;
 }
@@ -97,10 +99,9 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review {
-  margin: 5px;
-  margin-bottom: 15px;
+  margin: 10px;
   padding: 10px;
-  background: white;
+  background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
 }
 
@@ -109,13 +110,38 @@
   text-overflow: ellipsis;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-review p {
+  margin: 0;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-review h5 {
+  margin: 0;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
   width: 100%;
   padding: 5px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-myreview {
+  background: #dcdcdd;
+  margin: 10px;
+  height: 500px;
+  width: 300px;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-myreview p {
+  margin: 0;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-myreview img {
+  width: 100%;
+  height: 200px;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-friends {
-  background: white;
+  background: #dcdcdd;
   margin: 15px;
   padding: 10px;
   box-shadow: 5px 5px 10px lightgrey;
@@ -154,45 +180,59 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .read-review-button {
-  background: #0FAF9B;
+  background: #8ca2ad;
   color: white;
   border: 1px solid white;
   border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .post-review-button {
-  background: #e54040;
+  background: #1985a1;
   color: white;
   border: 1px solid white;
   border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
-  background: #E2624B;
-  height: 35vh;
   padding: 10px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile img {
+  width: 300px;
+  height: 300px;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friend-profile-name {
-  color: white;
+  color: #1985a1;
   font-size: 60px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .home-middle-middle-friendsreview {
+  background: #dcdcdd;
+  margin: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .home-middle-middle-friendsreview img {
+  padding: 10px;
+}
+
 .home-middle-section .home-middle-right {
-  background: white;
+  background: #dcdcdd;
   height: 93vh;
   text-align: center;
 }
 
 .home-middle-section .home-middle-right h1 {
-  color: #8ca2ad;
+  color: #6A8795;
 }
 
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
-  background: #4CD2B9;
-  border-radius: 3px;
+  background: #1985a1;
+  border-radius: 50px;
   margin-top: 8px;
+  color: white;
 }
 
 .home-middle-section .home-middle-right .home-each-friend img {
@@ -200,7 +240,7 @@
 }
 
 .my-button {
-  background: #4CD2B9;
+  background: #1985a1;
   color: white;
   border: 1px solid white;
   border-radius: 1px;
@@ -208,8 +248,30 @@
   font-size: 18px;
 }
 
-@media (max-width: 760px) {
+#invite-input {
+  height: 40px;
+  font-size: 20px;
+}
+
+#invite-friend-button {
+  height: 40px;
+  font-size: 20px;
+  color: white;
+}
+
+#invite-friend-button:hover {
+  color: white;
+}
+
+.row {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
   .head-nav-left {
+    display: none;
+  }
+  .head-nav-right {
     display: none;
   }
   .home-middle-left {
@@ -218,4 +280,8 @@
   .home-middle-right {
     display: none;
   }
+}
+
+.friend-button-changer {
+  background: grey;
 }

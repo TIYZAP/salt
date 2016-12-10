@@ -3,14 +3,14 @@
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 26px;
-  top: 36px;
+  left: 20px;
+  top: 20px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   border-radius: 10px;
-  background: #252626;
+  background: #dcdcdd;
 }
 
 /* Position and sizing of clickable cross button */
@@ -81,7 +81,7 @@
   border-radius: 0;
 }
 
-@media (min-width: 761px) {
+@media (min-width: 768px) {
   .bm-burger-button {
     display: none;
   }

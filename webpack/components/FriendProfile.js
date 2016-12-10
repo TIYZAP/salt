@@ -37,17 +37,17 @@ class FriendProfile extends React.Component{
 
     render(){
         var userReviews = this.state.reviews.map((review, i) => {
-            return       <div className="col-sm-12 home-middle-middle-review" key={i}>
+            return       <div className="col-sm-12 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
                                 <img  src={review.image} alt="" />
                                 <h5 className="text-center">{moment(review.created_at).fromNow()}</h5>
                             </div>
                             <div className="col-sm-8">
                                 <h1 className="text-center">{review.venue_name}</h1>
-                                <h3>Dish: {review.dish}</h3>
-                                <h3>Rating: {review.rating}</h3>
-                                <h3>website</h3>
-                                <p>{review.body}</p>
+                                <h5>Dish: {review.dish}</h5>
+                                <h5>Rating: {review.rating}</h5>
+                                <h5>website: <a href={review.website}>Link to website</a></h5>
+                                <h4>Review: <br />{review.body}</h4>
                             </div>
                         </div>
         })
@@ -59,15 +59,15 @@ class FriendProfile extends React.Component{
                     <LeftMenu />
                   <div className="col-sm-8 home-middle-middle">
                       <div className="col-sm-12 home-middle-middle-friends-profile">
-                        <div className="col-sm-12">
-                          <div className="col-sm-4">
-                            <img className="img-circle" src={this.state.image} alt="" />
-                          </div>
-                          <div className="col-sm-8 text-center">
-                            <h1 className="friend-profile-name">{this.state.name}</h1>
-                          </div>
-                        </div>
-                        {userReviews}
+                            <div className="col-sm-12 text-center">
+                                <img className="img-circle" src={this.state.image} alt="" />
+                            </div>
+                            <div className="col-sm-12 text-center">
+                                <h3 className="friend-profile-name">{this.state.name}</h3>
+                            </div>
+                            <div className="row">
+                                {userReviews}
+                            </div>
                       </div>
                   </div>
                   <FriendSideBar />
