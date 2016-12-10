@@ -10,7 +10,7 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
   def all_friends
     @user = current_user
     @followees = @user.followees(User)
-    render json: @followees
+    render json: @followees.order(review_count: :desc)
   end
 
   def unfollow_user
