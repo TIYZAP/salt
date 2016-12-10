@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get '/search/place' => 'geo_search#show'
     get '/profile' => 'user#show'
     get '/koala' => 'koala#test'
-    get '/facebook/follow' => 'userfollow_facebook'
+    get '/facebook/follow' => 'user#follow_facebook'
     get '/friends/all' => 'user#all_friends'
     post '/unfollow' => 'user#unfollow_user'
     get '/friends/reviews' => 'reviews#friends_reviews'
