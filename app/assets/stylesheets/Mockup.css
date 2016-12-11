@@ -31,7 +31,7 @@
 }
 
 .head-nav-wrapper .head-nav-right button {
-  border-radius: 3px;
+  border-radius: 10px;
   font-size: 19px;
   background: #1985a1;
   border: none;
@@ -123,6 +123,11 @@
   white-space: nowrap;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-review h5:hover, .home-middle-section .home-middle-middle .home-middle-middle-review h5:focus {
+  white-space: normal;
+  transition: all 0.9s ease;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
   width: 100%;
   padding: 5px;
@@ -208,14 +213,12 @@
   background: #8ca2ad;
   color: white;
   border: 1px solid white;
-  border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .post-review-button {
   background: #1985a1;
   color: white;
   border: 1px solid white;
-  border-radius: 1px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
@@ -255,7 +258,7 @@
 .home-middle-section .home-middle-right .home-each-friend {
   padding: 20px;
   background: #1985a1;
-  border-radius: 50px;
+  border-radius: 10px;
   margin-top: 8px;
   color: white;
 }
@@ -268,7 +271,7 @@
   background: #1985a1;
   color: white;
   border: 1px solid white;
-  border-radius: 1px;
+  border-radius: 10px;
   padding: 8px;
   font-size: 18px;
 }
@@ -286,10 +289,6 @@
 
 #invite-friend-button:hover {
   color: white;
-}
-
-.row {
-  margin-right: 0;
 }
 
 @media (max-width: 768px) {

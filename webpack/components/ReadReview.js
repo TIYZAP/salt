@@ -44,9 +44,9 @@ class ReadReview extends React.Component{
         return(
             <div>
                 <Menu />
-              <div className="row">
                 <Header />
-                <div className="col-sm-12 home-middle-section">
+              <div className="row">
+                <div className="home-middle-section">
                   <LeftMenu />
                   <div className="col-sm-8 home-middle-middle">
                     {friendsReviews}

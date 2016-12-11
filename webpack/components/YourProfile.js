@@ -19,7 +19,7 @@ const customStyles = {
     background            : '#E6EFF2',
     width                 : '800px',
     height                : '800px',
-    overflow              : 'scroll',
+    // overflow              : 'scroll',
     transform             : 'translate(-50%, -50%)'
   }
 }

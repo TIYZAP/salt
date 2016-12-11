@@ -43,7 +43,7 @@ class Home extends React.Component {
         .then(response => window.location.href="/home")
     }
     render(){
-        if(this.state.allReviews.length){
+        if(this.state.allReviews.length ){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
                     <div className="col-sm-5 home-middle-middle-review" key={i}>
@@ -60,7 +60,7 @@ class Home extends React.Component {
                                 {/* <h5>Address: {review.venue_address}</h5>
                                 <h5>Phone: {review.phone}</h5>
                                 <h5>Website: <a href={review.website}>Link to website</a></h5> */}
-                                <p>Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/></p>
+                                Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
                                 <h5>Review: <br />{review.body}</h5>
                             </div>
@@ -75,7 +75,7 @@ class Home extends React.Component {
                                         <h1 className="text-center">Welcome User!</h1>
                                         <br />
                                         <h2 className="text-center">To Get Started:</h2>
-                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-primary" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i>Follow FB friends</button></h2>
+                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-info" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i>Follow FB friends</button></h2>
                                         <h2 className="text-center">Find a Restaurant and their reviews: <Link to="/search"><button className="btn btn-default my-button">Review Section</button></Link></h2>
                                     </div>
                                 </div>

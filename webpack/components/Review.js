@@ -84,38 +84,41 @@ class Review extends React.Component{
     }
     render(){
         return (
-        <div>
           <div className="row">
               <Header />
-            <div className="col-sm-12 home-middle-section">
-                <LeftMenu />
-              <div className="col-sm-8 home-middle-middle">
-                  <h1 className="text-center">Please leave your review below</h1>
-                  <div className="col-sm-5">
-                    <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
-                    <h4>Venue Name: {this.state.name}</h4>
-                    <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
-                    <h4>Venue Address: {this.state.address}</h4>
-                    <h4>Venue Phone: {this.state.phone}</h4>
+              <Menu />
+            <div className="home-middle-section">
+                <div className="row">
+                  <LeftMenu />
+                  <div className="col-sm-8 home-middle-middle">
+                      <div className="row">
+                      <h1 className="text-center">Please leave your review below</h1>
+                      <div className="col-sm-5">
+                        <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
+                        <h4>Venue Name: {this.state.name}</h4>
+                        <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
+                        <h4>Venue Address: {this.state.address}</h4>
+                        <h4>Venue Phone: {this.state.phone}</h4>
+                      </div>
+                      <div className="col-sm-7">
+                        <label className="form-group">
+                          What dish did you have?
+                          <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
+                        </label>
+                        <br />
+                      <StarRating updateRating={this.updateRating} />
+                        <label htmlFor="review">
+                          Please write your review below:
+                          <textarea name="name" rows="8" cols="70" name="body" onChange={this.bodyHandler}></textarea>
+                        </label>
+                        <button className="btn my-button" onClick={this.submitReview}>Submit</button>
+                      </div>
+                      </div>
                   </div>
-                  <div className="col-sm-7">
-                    <label className="form-group">
-                      What dish did you have?
-                      <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
-                    </label>
-                    <br />
-                  <StarRating updateRating={this.updateRating} />
-                    <label htmlFor="review">
-                      Please write your review below:
-                      <textarea name="name" rows="8" cols="70" name="body" onChange={this.bodyHandler}></textarea>
-                    </label>
-                    <button className="btn my-button" onClick={this.submitReview}>Submit</button>
-                  </div>
+                 <FriendSideBar />
               </div>
-              <FriendSideBar />
             </div>
           </div>
-        </div>
         )
     }
 }

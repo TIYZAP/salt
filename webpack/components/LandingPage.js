@@ -7,7 +7,7 @@ class LandingPage extends React.Component {
         this.scrollHandler = this.scrollHandler.bind(this)
     }
     scrollHandler(){
-        window.scrollTo(0,900)
+        window.scrollTo(0,800)
     }
     render(){
         return(
@@ -26,20 +26,18 @@ class LandingPage extends React.Component {
             </div>
             <div className="container-fluid about-container">
                 <div className="row">
-                    <div className="col-sm-12">
-                        <h1 className="text-center">About Us</h1>
-                    </div>
                     <div className="col-sm-12 text-center">
-                        <h3>Mission</h3>
-                        <p>We made this website as a final project at The Iron Yard. Our goal was to produce an social website like experience for reviews that you can trust from your network.</p>
+                        <h1>Mission</h1>
+                        <h4>We made this website as a final project at The Iron Yard. Our goal was to make an social website where you and your trusted network can share reviews.</h4>
                     </div>
+
                     <div className="col-sm-4 text-center">
-                        <img className="img-circle" src="https://robohash.org/manny"></img>
-                        <h5>Manpreet Singh</h5>
+                        <img className="img-circle" src="/images/manny.jpg"></img>
+                        <h5>Manpreet Singh (Manny)</h5>
                         <h5>Front-End Engineering Student</h5>
-                        <h5>LinkedIn-</h5>
-                        <h5>GitHub-</h5>
-                        <h5>Email-</h5>
+                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/mannyy91s">https://www.linkedin.com/in/mannyy91s</a></h5>
+                        <h5>GitHub-<a href="https://github.com/mannyy91s">https://github.com/mannyy91s</a></h5>
+                        <h5>Email-<a href="mannyy91s@gmail.com">mannyy91s@gmail.com</a></h5>
                     </div>
                     <div className="col-sm-4 text-center">
                         <img className="img-circle" src="https://robohash.org/zach"></img>
@@ -58,6 +56,27 @@ class LandingPage extends React.Component {
                         <h5>Email-</h5>
                     </div>
                 </div>
+            </div>
+            <div className="container-fluid landing2">
+            </div>
+            <div className="container-fluid tech-used">
+                <h1 className="text-center">Technology Used</h1>
+                <ul>
+                    <li><i className="devicon-html5-plain-wordmark"></i></li>
+                    <li><i className="devicon-css3-plain-wordmark"></i></li>
+                    <li><i className="devicon-sass-original"></i></li>
+                    <li><i className="devicon-bootstrap-plain-wordmark"></i></li>
+                    <li><i className="devicon-javascript-plain"></i></li>
+                    <li><i className="devicon-react-original-wordmark"></i></li>
+                    <br/>
+                    {/* <li><i className="devicon-atom-original-wordmark"></i></li> */}
+                    <li><i className="devicon-git-plain-wordmark"></i></li>
+                    <li><i className="devicon-github-plain-wordmark"></i></li>
+                    <li><i className="devicon-heroku-plain-wordmark"></i></li>
+                    <li><i className="devicon-ruby-plain-wordmark"></i></li>
+                    <li><i className="devicon-rails-plain-wordmark"></i></li>
+                    <li></li>
+                </ul>
             </div>
             </div>
         )
