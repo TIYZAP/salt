@@ -66,7 +66,8 @@ class Friends extends React.Component {
             }
         })
         .then(response => response.json())
-        setTimeout(() => document.getElementById('invite-friend-button').classList.add('friend-button-changer'),100)
+        .then(response => alert('Invite Sent'))
+        // setTimeout(() => document.getElementById('invite-friend-button').classList.add('friend-button-changer'),100)
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
@@ -82,9 +83,10 @@ class Friends extends React.Component {
         })
         return(
         <div>
+            <Header />
+            <Menu />
           <div className="row">
-              <Header />
-            <div className="col-sm-12 home-middle-section">
+            <div className="home-middle-section">
                 <LeftMenu />
               <div className="col-sm-8 home-middle-middle">
                   <div className="row">

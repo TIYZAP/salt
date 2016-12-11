@@ -74,9 +74,9 @@ class Search extends React.Component{
         return(
             <div>
                 <Menu />
+                <Header />
               <div className="row">
-                  <Header />
-                <div className="col-sm-12 home-middle-section">
+                <div className="home-middle-section">
                     <LeftMenu />
                   <div className="col-sm-8 home-middle-middle">
                       <div className="col-sm-12 home-middle-middle-search">

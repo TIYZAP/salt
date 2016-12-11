@@ -3,6 +3,7 @@
   background: url(/images/landingpage1920.jpeg);
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   color: white;
   font-weight: bolder;
   height: 100vh;
@@ -43,14 +44,43 @@
   }
 }
 .about-container{
-  // background: #d6eff5;
-  height: 60vmax;
+  height: 100%;
     img{
         width: 300px;
         height: 300px;
     }
+    h1{
+      font-size: 80px;
+    }
 }
-
+.landing2{
+  background-image: url(/images/landingpage2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+.tech-used{
+  height: 100%;
+  margin: 20px;
+  h1{
+    font-size: 70px;
+  }
+  ul{
+    list-style: none;
+    padding: 20px;
+    text-align: center;
+    li{
+      padding: 20px;
+      display: inline-block;
+      font-size: 120px;
+      margin: 10px;
+    }
+  }
+}
 
 
 @media ( max-width : 375px ) {
