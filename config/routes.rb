@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     get '/friends/reviews' => 'reviews#friends_reviews'
     post '/send/rec' => 'reviews#send_rec'
     post '/invite/friends' => 'user#send_invites'
-    post '/search/friends' => 'user#search_for_friends'
+    get '/search/friends' => 'user#search_for_friends'
     post '/follow/friend' => 'user#follow_one_friend'
   end
   devise_for :users, controllers: {
