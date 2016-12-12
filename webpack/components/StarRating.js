@@ -19,7 +19,6 @@ class StarRating extends React.Component {
         const { rating } = this.state;
         return (
             <div>
-                <h2>Rating: {rating}</h2>
                 <StarRatingComponent
                     name="rating"
                     starCount={5}

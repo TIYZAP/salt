@@ -43,9 +43,6 @@ class Search extends React.Component{
         fetch('/api/search?address=' + zip + '&name=' + place)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))
-        // .then(response => {
-        //     console.log(response)
-        // })
     }
     render(){
         var results = this.state.searchResults.map((result, i) => {
@@ -77,7 +74,7 @@ class Search extends React.Component{
                 <Header />
               <div className="row">
                 <div className="home-middle-section">
-                    <LeftMenu />
+                    <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
                       <div className="col-sm-12 home-middle-middle-search">
                           <div className="col-sm-6 col-sm-offset-3 search-wrapper">

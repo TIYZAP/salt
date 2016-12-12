@@ -112,6 +112,10 @@ $br: 10px;
             padding-left: 0;
             color: $col5;
             text-decoration: none;
+            &.active{
+                background: $col3;
+                color: white;
+            }
             &:hover{
                 background: $col1;
                 color: white;
@@ -125,7 +129,8 @@ $br: 10px;
         overflow: scroll;
         padding: 30px;
         .homepage-box{
-            background: white;
+            background: $col2;
+            box-shadow: 5px 5px 10px lightgrey;
             padding: 20px;
             h2{
                 padding: 10px;
@@ -294,6 +299,9 @@ $br: 10px;
         }
     }
 }
+.input-group{
+  z-index: 0;
+}
 
 .my-button{
     background: $col1;
@@ -326,14 +334,16 @@ $br: 10px;
     .home-middle-left{
         display: none;
     }
-    .home-middle-middle{
-        overflow: visible;
+    .home-middle-section{
+        .home-middle-middle{
+            overflow: visible;
+        }
     }
     .home-middle-right{
         display: none;
     }
-
 }
+
 .friend-button-changer{
     background: grey;
 }
@@ -341,4 +351,14 @@ $br: 10px;
 
 @media ( max-width : 375px ) {
 
+}
+
+.middle-nav{
+    font-size: 40px;
+    color: #6A8795;
+    padding-bottom: 20px;
+    .divider{
+        border-left: 2px solid grey;
+        padding: 5px;
+    }
 }

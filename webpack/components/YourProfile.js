@@ -107,7 +107,7 @@ class YourProfile extends React.Component{
                               <Link to={'/readreview?place_id=' + review.place_id}>
                               <h3 className="text-center">{review.venue_name}</h3>
                               </Link>
-                                <img  src={review.image} alt="" />
+                                <img  className="img-rounded" src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-12">
@@ -123,7 +123,7 @@ class YourProfile extends React.Component{
                                   onAfterOpen={this.afterOpenModal}
                                   onRequestClose={this.closeModal}
                                   style={customStyles}
-                                  contentLabel="Example Modal">
+                                  contentLabel="Recommend Friends">
                                   <div className="text-right">
                                     <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
                                     </button>
@@ -142,7 +142,7 @@ class YourProfile extends React.Component{
                 <Menu />
                 <Header />
                 <div className="row home-middle-section">
-                  <LeftMenu />
+                  <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
                      {displayMyReviews}
                   </div>

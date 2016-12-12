@@ -77,6 +77,11 @@
   text-decoration: none;
 }
 
+.home-middle-section .home-middle-left ul li.active {
+  background: #E2624B;
+  color: white;
+}
+
 .home-middle-section .home-middle-left ul li:hover {
   background: #1985a1;
   color: white;
@@ -90,7 +95,8 @@
 }
 
 .home-middle-section .home-middle-middle .homepage-box {
-  background: white;
+  background: #dcdcdd;
+  box-shadow: 5px 5px 10px lightgrey;
   padding: 20px;
 }
 
@@ -267,6 +273,10 @@
   width: 100%;
 }
 
+.input-group {
+  z-index: 0;
+}
+
 .my-button {
   background: #1985a1;
   color: white;
@@ -301,7 +311,7 @@
   .home-middle-left {
     display: none;
   }
-  .home-middle-middle {
+  .home-middle-section .home-middle-middle {
     overflow: visible;
   }
   .home-middle-right {
@@ -311,4 +321,15 @@
 
 .friend-button-changer {
   background: grey;
+}
+
+.middle-nav {
+  font-size: 40px;
+  color: #6A8795;
+  padding-bottom: 20px;
+}
+
+.middle-nav .divider {
+  border-left: 2px solid grey;
+  padding: 5px;
 }

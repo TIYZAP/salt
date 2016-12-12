@@ -15,7 +15,7 @@ class Home extends React.Component {
         super(props)
         this.followAllFriends = this.followAllFriends.bind(this)
         this.state = {
-        allReviews:[]
+            allReviews:[]
         }
     }
     componentWillMount(){
@@ -75,8 +75,8 @@ class Home extends React.Component {
                                         <h1 className="text-center">Welcome User!</h1>
                                         <br />
                                         <h2 className="text-center">To Get Started:</h2>
-                                        <h2 className="text-center">Add Facebook friends using this app <button className="btn btn-info" onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i>Follow FB friends</button></h2>
-                                        <h2 className="text-center">Find a Restaurant and their reviews: <Link to="/search"><button className="btn btn-default my-button">Review Section</button></Link></h2>
+                                        <h2 className="text-center">1.) Add Facebook friends: <button className="btn btn-info"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i> Friends</button></h2>
+                                        <h2 className="text-center">2.) Leave a Review: <Link to="/search"><button className="btn btn-info my-button">Review</button></Link></h2>
                                     </div>
                                 </div>
         }
@@ -85,7 +85,7 @@ class Home extends React.Component {
                 <Menu />
                 <Header />
                 <div className="row home-middle-section">
-                  <LeftMenu />
+                  <LeftMenu {...this.props} />
                   <div className={this.state.allReviews.length?"col-sm-8 home-middle-middle":"col-sm-10 home-middle-middle"}>
                     {friendsReviews}
                   </div>
