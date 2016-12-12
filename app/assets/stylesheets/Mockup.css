@@ -340,6 +340,11 @@
   .head-nav-left {
     display: none;
   }
+  .head-nav-wrapper .head-nav-middle {
+    width: 100%;
+    position: fixed;
+    z-index: 0;
+  }
   .head-nav-right {
     display: none;
   }
@@ -348,6 +353,8 @@
   }
   .home-middle-section .home-middle-middle {
     overflow: visible;
+    height: 100%;
+    z-index: -1;
   }
   .home-middle-right {
     display: none;
