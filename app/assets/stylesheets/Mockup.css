@@ -104,6 +104,37 @@
   padding: 10px;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-readreview-inner {
+  margin: 10px;
+  padding: 10px;
+  background: #dcdcdd;
+  box-shadow: 5px 5px 10px lightgrey;
+  line-height: 15px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-readreview-inner p {
+  padding: 0;
+  margin: 0;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-readreview-inner .readreview-img img {
+  height: 100px;
+  width: 90px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-readreview-place {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  background: #dcdcdd;
+  box-shadow: 5px 5px 10px lightgrey;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-readreview-place img {
+  height: 200px;
+  width: 300px;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-review {
   margin: 10px;
   padding: 10px;

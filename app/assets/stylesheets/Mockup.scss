@@ -137,6 +137,36 @@ $br: 10px;
             }
 
         }
+
+        .home-middle-middle-readreview-inner{
+            margin: 10px;
+            padding: 10px;
+            background: $col2;
+            box-shadow: 5px 5px 10px lightgrey;
+            line-height: 15px;
+            p{
+                padding: 0;
+                margin: 0;
+            }
+            .readreview-img{
+                img{
+                    height: 100px;
+                    width: 90px;
+                }
+            }
+        }
+        .home-middle-middle-readreview-place{
+            width: 100%;
+            margin: 10px;
+            padding: 10px;
+            background: $col2;
+            box-shadow: 5px 5px 10px lightgrey;
+            img{
+                height: 200px;
+                width: 300px;
+            }
+        }
+
         //css for reviews on home page
         .home-middle-middle-review{
             margin: 10px;
@@ -146,7 +176,6 @@ $br: 10px;
             overflow: hidden;
             line-height: 15px;
             // height: 160px;
-
             h4{
                 padding: 0;
             }
