@@ -54,7 +54,6 @@ $br: 10px;
     color: white;
     text-align: center;
     height: 70px;
-    // padding: 20;
     margin: 0;
     .head-nav-left{
         background: $col1;
@@ -360,6 +359,14 @@ $br: 10px;
     .head-nav-left{
         display: none;
     }
+    .head-nav-wrapper{
+        .head-nav-middle{
+            width: 100%;
+            position: fixed;
+            z-index: 0;
+        }
+    }
+
     .head-nav-right{
         display: none;
     }
@@ -369,6 +376,8 @@ $br: 10px;
     .home-middle-section{
         .home-middle-middle{
             overflow: visible;
+            height: 100%;
+            z-index: -1;
         }
     }
     .home-middle-right{
