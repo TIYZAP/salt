@@ -14,6 +14,6 @@ module Salt
 
     # config/application.rb
     config.active_record.schema_format = :sql
-    config.action_mailer.default_url_options = { host: 'https://grainofsalt.herokuapp.com/' }
+    config.action_mailer.default_url_options = { host: 'https://grainofsalt.herokuapp.com' }
   end
 end
