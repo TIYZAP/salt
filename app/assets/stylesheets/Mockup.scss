@@ -5,6 +5,7 @@ $col3: #E2624B;
 $col5: #8ca2ad;
 $col7: #E6EFF2;
 
+$br: 10px;
 //style 2
 // $col1: #D24136;
 // $col8: #Eb8a3e;
@@ -75,7 +76,7 @@ $col7: #E6EFF2;
         height: 70px;
         padding: 0px;
         button{
-            border-radius: 3px;
+            border-radius: $br;
             font-size: 19px;
             background: $col1;
             border: none;
@@ -140,6 +141,7 @@ $col7: #E6EFF2;
             overflow: hidden;
             line-height: 15px;
             // height: 160px;
+
             h4{
                 padding: 0;
             }
@@ -153,6 +155,11 @@ $col7: #E6EFF2;
                 overflow: hidden;
                 height: 90px;
                 white-space: nowrap;
+                &:hover, &:focus{
+                    // overflow: visible;
+                    white-space: normal;
+                    transition: all 0.9s ease;
+                }
             }
             img{
                 width: 100%;
@@ -196,6 +203,7 @@ $col7: #E6EFF2;
             margin: 15px;
             padding: 10px;
             box-shadow: 5px 5px 10px lightgrey;
+            border-radius: $br;
             h1{
                 text-overflow: ellipsis;
                 white-space: nowrap;
@@ -204,6 +212,9 @@ $col7: #E6EFF2;
                 &:hover{
                     overflow: visible;
                 }
+            }
+            img{
+                height: 200px;
             }
         }
 
@@ -226,17 +237,16 @@ $col7: #E6EFF2;
                         overflow: visible;
                     }
                 }
+
                 .read-review-button{
                     background: $col5;
                     color: white;
                     border: 1px solid white;
-                    border-radius: 1px;
                 }
                 .post-review-button{
                     background: $col1;
                     color: white;
                     border: 1px solid white;
-                    border-radius: 1px;
                 }
 
             }
@@ -275,12 +285,11 @@ $col7: #E6EFF2;
         .home-each-friend{
             padding: 20px;
             background: $col1;
-            border-radius: 50px;
+            border-radius: $br;
             margin-top: 8px;
             color: white;
             img{
                 width: 100%;
-                // border-radius: 24px;
             }
         }
     }
@@ -290,7 +299,7 @@ $col7: #E6EFF2;
     background: $col1;
     color: white;
     border: 1px solid white;
-    border-radius: 1px;
+    border-radius: $br;
     padding: 8px;
     font-size: 18px;
 }
@@ -307,9 +316,6 @@ $col7: #E6EFF2;
     }
 }
 
-.row{
-    margin-right: 0;
-}
 @media ( max-width : 768px ) {
     .head-nav-left{
         display: none;

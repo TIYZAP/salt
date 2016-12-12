@@ -25,6 +25,9 @@ class Friends extends React.Component {
         .then(response => this.setState({
             friends: response.users
         }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
 
     removeFriend(id){
@@ -63,14 +66,15 @@ class Friends extends React.Component {
             }
         })
         .then(response => response.json())
-        setTimeout(() => document.getElementById('invite-friend-button').classList.add('friend-button-changer'),100)
+        .then(response => alert('Invite Sent'))
+        // setTimeout(() => document.getElementById('invite-friend-button').classList.add('friend-button-changer'),100)
     }
     render(){
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                       <Link to={'/friendprofile/' + friend.id} >
                       <img className="img-rounded" src={friend.image} alt="" />
-                      <h3 className="text-center">{friend.name}</h3>
+                      <h4 className="text-center">{friend.name}</h4>
                       </Link>
                       <div className="text-center">
                           <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
@@ -79,9 +83,10 @@ class Friends extends React.Component {
         })
         return(
         <div>
+            <Header />
+            <Menu />
           <div className="row">
-              <Header />
-            <div className="col-sm-12 home-middle-section">
+            <div className="home-middle-section">
                 <LeftMenu />
               <div className="col-sm-8 home-middle-middle">
                   <div className="row">
