@@ -129,9 +129,6 @@ class Friends extends React.Component {
       .then(response => this.setState({
         searchFriends: response.users
       }))
-      // .then(response => {
-      //   console.log(response)
-      // })
     }
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
@@ -153,6 +150,7 @@ class Friends extends React.Component {
       .then(response => response.json())
     }
     render(){
+      console.log(this.state.friends)
       var eachFriend = {
         boxShadow: '5px 5px 5px lightgrey',
         background: 'rgba(220, 220, 221, 1)',
@@ -168,17 +166,27 @@ class Friends extends React.Component {
                                 </div>
                           </div>
         })
-        var myFriends = this.state.friends.map((friend, i) =>{
-        return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
-                      <Link to={'/friendprofile/' + friend.id} >
-                      <img className="img-rounded" src={friend.image} alt="" />
-                      <h4 className="text-center">{friend.name}</h4>
-                      </Link>
-                      <div className="text-center">
-                          <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
+        if(this.state.friends){
+          var myFriends = this.state.friends.map((friend, i) =>{
+          return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
+                        <Link to={'/friendprofile/' + friend.id} >
+                        <img className="img-rounded" src={friend.image} alt="" />
+                        <h4 className="text-center">{friend.name}</h4>
+                        </Link>
+                        <div className="text-center">
+                            <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
+                        </div>
                       </div>
-                    </div>
-        })
+          })
+        } else {
+          var myFriends =   <div className="col-sm-6 no-friends">
+                              <h1 className="text-center">Please add friends!</h1>
+                            </div>
+
+
+
+        }
+
         return(
         <div>
             <Header />
