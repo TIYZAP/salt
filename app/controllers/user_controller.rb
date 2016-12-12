@@ -33,7 +33,7 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     @user = current_user
     @invitees = params[:emails].split(",").collect(&:strip)
     @invitees .each do |email|
-      if vaild_email?(email)
+      if valid_email?(email)
         InviteMailer.send_friends_invites(email, @user).deliver
         render json: @user
       else
