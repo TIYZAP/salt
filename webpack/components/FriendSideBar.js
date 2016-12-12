@@ -17,22 +17,29 @@ class FriendSideBar extends React.Component{
         .then(response => this.setState({
             friends: response.users
         }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
 
     render(){
-        var friendsList = this.state.friends.map((friend, i) =>{
-        return    <Link to={'/friendprofile/' + friend.id} key={i}>
-                    <div className="col-sm-12 home-each-friend">
-                      <div className="col-sm-5">
-                        <img className="img-rounded" src={friend.image} alt="" />
-                      </div>
-                      <div className="col-sm-7">
-                          <h5>{friend.name}</h5>
-                        <span className="badge">Points: {friend.reviews.length}0</span>
-                      </div>
-                    </div>
-                </Link>
-        })
+        if(this.state.friends.length){
+            var friendsList = this.state.friends.map((friend, i) =>{
+            return    <Link to={'/friendprofile/' + friend.id} key={i}>
+                        <div className="col-sm-12 home-each-friend">
+                          <div className="col-sm-5">
+                            <img className="img-rounded" src={friend.image} alt="" />
+                          </div>
+                          <div className="col-sm-7">
+                              <h5>{friend.name}</h5>
+                            <span className="badge">Points: {friend.reviews.length}0</span>
+                          </div>
+                        </div>
+                    </Link>
+        })}
+        else {
+            var friendsList = <Link to="/friends"><button className="btn btn-primary">Add Friends</button></Link>
+        }
         return(
             <div className="col-sm-2 home-middle-right">
                 <h1>Friends</h1>

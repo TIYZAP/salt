@@ -1,4 +1,4 @@
-//sidebar menu
+//sidebar popout menu
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -75,10 +75,6 @@
 }
 @media (max-width: 767px) {
   .menu-item{
-    font-size: 16px;
+    font-size: 14px;
   }
-  .input-group{
-    z-index: 0;
-  }
-
 }

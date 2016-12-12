@@ -6,6 +6,7 @@ class LeftMenu extends React.Component {
     constructor(props){
         super(props)
         this.followAllFriends = this.followAllFriends.bind(this)
+        this.activeHandler = this.activeHandler.bind(this)
         this.state = {
             name: '',
             image: '',
@@ -25,7 +26,11 @@ class LeftMenu extends React.Component {
         .then(response => response.json())
         .then(response => window.location.href="/friends")
     }
+    activeHandler(){
+
+    }
     render(){
+        // console.log(this.props)
         return(
             <div className="col-sm-2 home-middle-left text-center">
               <div>
@@ -33,11 +38,11 @@ class LeftMenu extends React.Component {
                   <img className="img-responsive" src={this.state.image} alt="User Profile Picture" />
               </div>
               <ul>
-                 <Link to="/home" style={{textDecoration:'none'}}><li><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
-                 <Link to="/yourprofile" style={{textDecoration:'none'}}><li><i className="fa fa-user fa-2x" aria-hidden="true"></i><br />Your Profile</li></Link>
-                 <Link to="/friends" style={{textDecoration:'none'}}><li><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</li></Link>
-                 <Link to="/search" style={{textDecoration:'none'}}><li><i className="fa fa-plus fa-2x" aria-hidden="true"></i><br />Review</li></Link>
-                 <li onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow fb friends</i></li>
+                 <Link to="/home" style={{textDecoration:'none'}}><li className={this.props.route.path === '/home'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
+                 <Link to="/search" style={{textDecoration:'none'}}><li className={this.props.route.path === '/search'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-file-text-o fa-2x" aria-hidden="true"></i><br />Post Review</li></Link>
+                 <Link to="/yourprofile" style={{textDecoration:'none'}}><li className={this.props.route.path === '/yourprofile'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-star fa-2x" aria-hidden="true"></i><br />Your Reviews</li></Link>
+                 <Link to="/friends" style={{textDecoration:'none'}}><li className={this.props.route.path === '/friends'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</li></Link>
+                 {/* <li onClick={this.followAllFriends}><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> Follow fb friends</i></li> */}
               </ul>
             </div>
         )
