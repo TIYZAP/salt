@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'static#index'
     get '/home' => 'static#index', as: 'home'
-  scope 'api' do
+  scope '/api' do
     resources :reviews
     get '/timeline' => 'reviews#timeline'
     get '/search' => 'geo_search#search'
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     post '/follow/friend' => 'user#follow_one_friend'
   end
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
     omniauth_callbacks: "users/omniauth_callbacks",
     registrations: 'users/registrations'
   }
