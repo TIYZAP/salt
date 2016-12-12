@@ -33,12 +33,15 @@ class Friends extends React.Component {
         this.inputHandler = this.inputHandler.bind(this)
         this.findFriend = this.findFriend.bind(this)
         this.enterHandler = this.enterHandler.bind(this)
+        this.followAllFriends = this.followAllFriends.bind(this)
+        this.followSingleFriend = this.followSingleFriend.bind(this)
         this.state = {
             friends: [],
             id: '',
             email: '',
             modalIsOpen: false,
-            input: ''
+            name: '',
+            searchFriends: []
           }
     }
     componentWillMount() {
@@ -97,8 +100,7 @@ class Friends extends React.Component {
               alert('Invite Sent')
             } else{
               alert('Error: ' + response.status + ' Please enter valid Email')
-            }}
-          )
+            }})
         }
         else {
 
@@ -109,6 +111,7 @@ class Friends extends React.Component {
     }
     closeModal() {
       this.setState({modalIsOpen: false});
+      window.location.href="/friends"
     }
     enterHandler(e){
       if(e.key === 'Enter'){
@@ -117,15 +120,30 @@ class Friends extends React.Component {
     }
     inputHandler(e){
       this.setState({
-        input: e.target.value
+        name: e.target.value
       })
     }
     findFriend(e){
-      fetch('/api/search/friends', {
+      fetch('/api/search/friends?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token') + '&name=' + this.state.name)
+      .then(response => response.json())
+      .then(response => this.setState({
+        searchFriends: response.users
+      }))
+      // .then(response => {
+      //   console.log(response)
+      // })
+    }
+    followAllFriends(){
+        fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
+        .then(response => response.json())
+        .then(response => window.location.href="/friends")
+    }
+    followSingleFriend(search){
+      fetch('/api/follow/friend', {
         body: JSON.stringify({
           user_email: sessionStorage.getItem('email'),
           user_token: sessionStorage.getItem('token'),
-          input: this.state.input
+          id: search.id
         }),
         method: 'POST',
         headers: {
@@ -133,9 +151,23 @@ class Friends extends React.Component {
         }
       })
       .then(response => response.json())
-
     }
     render(){
+      var eachFriend = {
+        boxShadow: '5px 5px 5px lightgrey',
+        background: 'rgba(220, 220, 221, 1)',
+        padding: 10,
+        margin: 10
+      }
+        var lookupFriends = this.state.searchFriends.map((search, i) => {
+          return <div style={eachFriend} className="col-sm-3" key={i}>
+                                <img height="200"  width="200" className="img-rounded" src={search.image} alt="" />
+                                <h4 className="text-center">{search.name}</h4>
+                                <div className="text-center">
+                                    <button className="btn btn-info" onClick={this.followSingleFriend(search)}>Follow</button>
+                                </div>
+                          </div>
+        })
         var myFriends = this.state.friends.map((friend, i) =>{
         return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                       <Link to={'/friendprofile/' + friend.id} >
@@ -156,7 +188,7 @@ class Friends extends React.Component {
                 <LeftMenu  {...this.props}/>
               <div className="col-sm-8 home-middle-middle">
                   <div className="row">
-                      <div className="col-sm-12 text-center middle-nav">
+                      <div className="col-sm-6 text-right">
                           <button className="btn btn-primary" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Search for Friends</button>
                           <Modal
                             isOpen={this.state.modalIsOpen}
@@ -168,7 +200,7 @@ class Friends extends React.Component {
                               <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
                               </button>
                             </div>
-                            <div className="col-sm-6 col-sm-offset-3">
+                            <div className="col-sm-6 col-sm-offset-3 well">
                                     <div className="input-group">
                                         <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler}  onKeyPress={this.enterHandler}/>
                                         <span className="input-group-btn">
@@ -176,9 +208,17 @@ class Friends extends React.Component {
                                         </span>
                                     </div>
                             </div>
+                            <div className="row">
+                              {lookupFriends}
+                            </div>
                           </Modal>
                       </div>
-                      <div className="col-sm-6 col-sm-offset-3">
+                      <div className="col-sm-6">
+                        <button className="btn btn-primary" onClick={this.followAllFriends}>Add All FB Friends</button>
+                      </div>
+                      <br />
+                      <br />
+                      <div className="col-sm-6 col-sm-offset-3 invite-section">
                               <div className="input-group">
                                   <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
                                   <span className="input-group-btn">
