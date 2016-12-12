@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :name, :image, :email, :id
+  attributes :name, :image, :email, :id, :review_count
   has_many :reviews
 
   def image

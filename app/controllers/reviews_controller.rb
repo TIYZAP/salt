@@ -65,12 +65,16 @@ class ReviewsController < ApplicationController
   def friends_reviews
     @user = current_user
     @reviews = []
+    @mine = Review.where(place_id: params[:place_id], user_id: @user.id)
     @friends = @user.followees(User)
     @friends.each do |friend|
       @container = Review.where(place_id: params[:place_id], user_id: friend.id)
       @container.each do |cont|
         @reviews << cont
       end
+    end
+    @mine.each do |mine|
+      @reviews << mine
     end
     render json: @reviews
   end
