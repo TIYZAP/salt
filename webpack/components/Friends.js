@@ -90,10 +90,15 @@ class Friends extends React.Component {
             })
             .then(response => {
                 console.log(response)
-                // let statusCode = response.status
-                // return {json: response.json(), status: statusCode}
+                let statusCode = response.status
+                return {json: response.json(), status: statusCode}
             })
-            // .then(response => alert(response.status))
+            .then(response => {if(response.status >= 200 && response.status < 300){
+              alert('Invite Sent')
+            } else{
+              alert('Error: ' + response.status + ' Please enter valid Email')
+            }}
+          )
         }
         else {
 
