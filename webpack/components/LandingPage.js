@@ -61,7 +61,7 @@ class LandingPage extends React.Component {
                         <h5>Email-<a href="mannyy91s@gmail.com">mannyy91s@gmail.com</a></h5>
                     </div>
                     <div className="col-sm-4 text-center">
-                        <img className="img-circle" src="https://robohash.org/zach"></img>
+                        <img className="img-circle" src="/images/Zach Pinner.jpg"></img>
                         <h5>Zach Pinner</h5>
                         <h5>Back-End Engineering Student</h5>
                         <h5>LinkedIn-<a href="https://www.linkedin.com/in/zapinner">https://www.linkedin.com/in/zapinner</a></h5>
@@ -69,7 +69,7 @@ class LandingPage extends React.Component {
                         <h5>Email-<a href="zapinner@gmail.com">zapinner@gmail.com</a></h5>
                     </div>
                     <div className="col-sm-4 text-center">
-                        <img className="img-circle" src="https://robohash.org/jon"></img>
+                        <img className="img-circle" src="/images/Jon Krouse.jpg"></img>
                         <h5>Jon Krouse</h5>
                         <h5>Back-End Engineering Student</h5>
                         <h5>LinkedIn-<a href="https://www.linkedin.com/in/jon-krouse13">https://www.linkedin.com/in/jon-krouse13</a></h5>

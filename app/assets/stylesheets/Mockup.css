@@ -311,7 +311,7 @@
   .home-middle-left {
     display: none;
   }
-  .home-middle-middle {
+  .home-middle-section .home-middle-middle {
     overflow: visible;
   }
   .home-middle-right {

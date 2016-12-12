@@ -334,8 +334,10 @@ $br: 10px;
     .home-middle-left{
         display: none;
     }
-    .home-middle-middle{
-        overflow: visible;
+    .home-middle-section{
+        .home-middle-middle{
+            overflow: visible;
+        }
     }
     .home-middle-right{
         display: none;
