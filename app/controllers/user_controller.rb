@@ -32,11 +32,14 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
   def send_invites
     @user = current_user
     @invitees = params[:emails].split(",").collect(&:strip)
-    puts @emails.inspect
-    @invitees.each do |email|
-      InviteMailer.send_friends_invites(email, @user).deliver
+    @invitees .each do |email|
+      if vaild_email?(email)
+        InviteMailer.send_friends_invites(email, @user).deliver
+        render json: @user
+      else
+        render json: 'invalid email', status: :unprocessable_entity
+      end
     end
-    render json: @user
   end
 
   def follow_facebook
@@ -51,6 +54,13 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     end
     @followees = @user.followees(User)
     render json: @followees
+  end
+
+  private
+
+  def valid_email?(email)
+    valid_regex = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+    email.present? && (email =~ valid_regex)
   end
 
 end
