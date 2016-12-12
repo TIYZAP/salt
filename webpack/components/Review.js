@@ -89,16 +89,16 @@ class Review extends React.Component{
               <Menu />
             <div className="home-middle-section">
                 <div className="row">
-                  <LeftMenu />
+                  <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
                       <div className="row">
-                      <h1 className="text-center">Please leave your review below</h1>
+                      <h1 className="text-center">Post a Review</h1>
                       <div className="col-sm-5">
                         <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
-                        <h4>Venue Name: {this.state.name}</h4>
-                        <h4>Venue Website: <a href={this.state.website}>Click here for website!</a></h4>
-                        <h4>Venue Address: {this.state.address}</h4>
-                        <h4>Venue Phone: {this.state.phone}</h4>
+                        <h4>{this.state.name}</h4>
+                        <h4>Website: <a href={this.state.website}>Click here for website!</a></h4>
+                        <h4>Address: {this.state.address}</h4>
+                        <h4>Phone: {this.state.phone}</h4>
                       </div>
                       <div className="col-sm-7">
                         <label className="form-group">

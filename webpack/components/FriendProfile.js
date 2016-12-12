@@ -44,7 +44,7 @@ class FriendProfile extends React.Component{
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-12 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
-                                <img  src={review.image} alt="" />
+                                <img  className="img-rounded" src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
@@ -64,7 +64,7 @@ class FriendProfile extends React.Component{
                 <Menu />
                 <div className="row">
                     <div className="home-middle-section">
-                        <LeftMenu />
+                        <LeftMenu  {...this.props}/>
                         <div className="col-sm-8 home-middle-middle">
                             <div className="row">
                                 <div className="col-sm-12 home-middle-middle-friends-profile">
