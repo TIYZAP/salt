@@ -368,3 +368,7 @@
   border-left: 2px solid grey;
   padding: 5px;
 }
+
+.no-friends {
+  display: none;
+}
