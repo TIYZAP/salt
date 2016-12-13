@@ -52,14 +52,23 @@ class ReviewsController < ApplicationController
     if @review.save
       render json: @review
     else
-      render json: @review.erros.full_messages, status: :unprocessable_entity
+      render json: @review.errors.full_messages, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @review = Review.find(params[:id])
-    @review.destroy!
-    render json: "Your review has been removed!"
+    @user = current_user
+    @review = Review.find_by(id: params[:id], user_id: @user.id)
+
+    if @review.destroy!
+      status = 'success'
+      message = 'Your review was deleted!'
+      render json: {:status => status , :message => message, :user => @user}
+    else
+      status = 'error'
+      message = 'There was a problem deleting your review'
+      render json: {:status => status , :message => message, :user => @user}
+    end
   end
 
   def friends_reviews
