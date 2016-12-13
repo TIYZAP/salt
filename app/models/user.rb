@@ -36,7 +36,7 @@ class User < ApplicationRecord
 
   def self.send_reminders
     User.all.each do |user|
-      if (user.reviews.last == nil)&&(user.created_at < 7.day.ago)
+      if (user.reviews.last == nil) && (user.created_at < 7.day.ago)
         RemindersMailer.no_reviews(user).deliver
       elsif user.reviews.last == nil
         puts 'doh'
@@ -45,17 +45,4 @@ class User < ApplicationRecord
       end
     end
   end
-
-  # def self.find_for_facebook_oauth(response, signed_in_resource=nil)
-  #  data = response['extra']['user_hash']
-  #  access_token = response['credentials']['token']
-  #  user = User.find_by_email(data["email"])
-  #  # only log in confirmed users
-  #  # that way users can't spoof accounts
-  #  if user and user.confirmed?
-  #    user.update_attribute('fb_token', access_token)
-  #    user
-  #  end
-  # end
-
 end
