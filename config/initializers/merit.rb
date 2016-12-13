@@ -24,7 +24,6 @@ Merit.setup do |config|
     description: "Written one review!",
     custom_fields: { difficulty: :silver }
     )
-  end
 
   Merit::Badge.create!(
     id: 2,
@@ -32,7 +31,6 @@ Merit.setup do |config|
     description: "Written five reviews!",
     custom_fields: { difficulty: :silver }
     )
-  end
 
   Merit::Badge.create!(
     id: 3,
@@ -40,7 +38,7 @@ Merit.setup do |config|
     description: "Written twenty reviews!",
     custom_fields: { difficulty: :silver }
     )
-  end
+
 end
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
