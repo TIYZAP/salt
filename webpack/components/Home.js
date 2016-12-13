@@ -35,7 +35,6 @@ class Home extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             allReviews: response.reviews}))
-        // .then(response => {console.log(response)})
     }
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
@@ -53,10 +52,9 @@ class Home extends React.Component {
                                 {review.venue_name}
                             </h4>
                             </Link>
-
                             <div className="col-sm-4">
                               <p className="text-center">{review.user.name}</p>
-                                <img height="100" className="img-rounded" src={review.user.image} alt="Reviewers Picture" />
+                                <img height="100" className="img-responsive" src={review.user.image} alt="Reviewers Picture" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">

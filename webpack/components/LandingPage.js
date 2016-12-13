@@ -12,8 +12,7 @@ class LandingPage extends React.Component {
     render(){
         return(
             <div>
-            <div className="container-fluid landing-container">
-                    <div className="row">
+            <div className="row landing-container">
                         <div className="col-sm-12 landingpage-box text-center">
                                 <h1>Grain of Salt</h1>
                                 <h3>Restaurant reviews from your Facebook friends</h3>
@@ -22,9 +21,8 @@ class LandingPage extends React.Component {
                             </div>
                             <div className="col-sm-12 down-arrow" onClick={this.scrollHandler}><br/><i className="fa fa-angle-double-down fa-4x" aria-hidden="true"></i></div>
                         </div>
-                </div>
             </div>
-            <div className="container-fluid tech-used">
+            <div className="row tech-used">
                 <h1 className="text-center">Tech Stack</h1>
                 <ul>
                     <li><i className="devicon-html5-plain-wordmark"></i></li>
@@ -43,10 +41,9 @@ class LandingPage extends React.Component {
                     <li></li>
                 </ul>
             </div>
-            <div className="container-fluid landing2">
+            <div className="row landing2">
             </div>
-            <div className="container-fluid about-container">
-                <div className="row">
+            <div className="row about-container">
                     <div className="col-sm-12 text-center">
                         <h1>Mission</h1>
                         <h4>We made this website as a final project at The Iron Yard. Our goal was to make an social website where you and your trusted network can share reviews.</h4>
@@ -76,7 +73,6 @@ class LandingPage extends React.Component {
                         <h5>GitHub-<a href="https://github.com/Jkrouse13">https://github.com/Jkrouse13</a></h5>
                         <h5>Email-<a href="jon.krouse@gmail.com">jon.krouse@gmail.com</a></h5>
                     </div>
-                </div>
             </div>
             </div>
         )

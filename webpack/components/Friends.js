@@ -16,7 +16,7 @@ const customStyles = {
     background            : '#E6EFF2',
     width                 : '800px',
     height                : '800px',
-    // overflow              : 'scroll',
+    overflow              : 'scroll',
     transform             : 'translate(-50%, -50%)'
   }
 }
@@ -154,7 +154,6 @@ class Friends extends React.Component {
       .then(response => response.json())
     }
     render(){
-      console.log(this.state.friends)
       var eachFriend = {
         boxShadow: '5px 5px 5px lightgrey',
         background: 'rgba(220, 220, 221, 1)',
@@ -163,7 +162,7 @@ class Friends extends React.Component {
       }
         var lookupFriends = this.state.searchFriends.map((search, i) => {
           return <div style={eachFriend} className="col-sm-3" key={i}>
-                                <img height="200"  width="200" className="img-rounded" src={search.image} alt="" />
+                                <img height="200"  width="200" className="img-responsive" src={search.image} alt="" />
                                 <h4 className="text-center">{search.name}</h4>
                                 <div className="text-center">
                                     <button className="btn btn-info" onClick={() => this.followSingleFriend(search)}>Follow</button>
@@ -174,7 +173,7 @@ class Friends extends React.Component {
           var myFriends = this.state.friends.map((friend, i) =>{
           return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                         <Link to={'/friendprofile/' + friend.id} >
-                        <img className="img-rounded" src={friend.image} alt="" />
+                        <img className="img-responsive" src={friend.image} alt="" />
                         <h4 className="text-center">{friend.name}</h4>
                         </Link>
                         <div className="text-center">
@@ -186,9 +185,6 @@ class Friends extends React.Component {
           var myFriends =   <div className="col-sm-6 no-friends">
                               <h1 className="text-center">Please add friends!</h1>
                             </div>
-
-
-
         }
 
         return(
@@ -199,6 +195,9 @@ class Friends extends React.Component {
             <div className="home-middle-section">
                 <LeftMenu  {...this.props}/>
               <div className="col-sm-8 home-middle-middle">
+                  <div className="post-review-header">
+                      <h1 className="text-center">Most Recent Reviews</h1>
+                  </div>
                   <div className="row">
                       <div className="col-sm-6 text-right">
                           <button className="btn btn-primary" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Search for Friends</button>
