@@ -75,6 +75,9 @@ class Search extends React.Component{
                 <div className="home-middle-section">
                     <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
+                      <div className="row post-review-header">
+                          <h1 className="text-center">Post a Review</h1>
+                      </div>
                       <div className="col-sm-12 home-middle-middle-search">
                           <div className="col-sm-6 col-sm-offset-3 search-wrapper">
                               <form onSubmit={this.search}>

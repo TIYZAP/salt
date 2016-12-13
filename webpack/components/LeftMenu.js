@@ -32,7 +32,7 @@ class LeftMenu extends React.Component {
               <ul>
                  <Link to="/home" style={{textDecoration:'none'}}><li className={this.props.route.path === '/home'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>
                  <Link to="/search" style={{textDecoration:'none'}}><li className={this.props.route.path === '/search'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-file-text-o fa-2x" aria-hidden="true"></i><br />Post Review</li></Link>
-                 <Link to="/yourprofile" style={{textDecoration:'none'}}><li className={this.props.route.path === '/yourprofile'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-star fa-2x" aria-hidden="true"></i><br />Your Reviews</li></Link>
+                 <Link to="/yourprofile" style={{textDecoration:'none'}}><li className={this.props.route.path === '/yourprofile'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-star fa-2x" aria-hidden="true"></i><br />Your Profile</li></Link>
                  <Link to="/friends" style={{textDecoration:'none'}}><li className={this.props.route.path === '/friends'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</li></Link>
               </ul>
             </div>
