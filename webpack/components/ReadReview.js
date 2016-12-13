@@ -26,22 +26,18 @@ class ReadReview extends React.Component{
         .then(response => response.json())
         .then(response => this.setState({
             reviews: response.reviews,
-            image: response.reviews[0].image,
-            name: response.reviews[0].venue_name,
-            address: response.reviews[0].venue_address,
-            website: response.reviews[0].website,
-            phone: response.reviews[0].phone
+            image: (response.reviews?response.reviews[0].image:''),
+            name: (response.reviews?response.reviews[0].venue_name:''),
+            address: (response.reviews?response.reviews[0].venue_address:''),
+            website: (response.reviews?response.reviews[0].website:''),
+            phone: (response.reviews?response.reviews[0].phone:'')
         }))
-        // .then(response => {
-        //     console.log(response)
-        // })
     }
     render(){
-        console.log(this.state.reviews)
-        if(this.state.reviews.length){
+        if(this.state.reviews){
             var reviewPlace =     <div className="row home-middle-middle-readreview-place">
                                       <div className="col-sm-4">
-                                          <img height="300" className="img-rounded" src={this.state.image} alt="Place Picture" />
+                                          <img height="300" className="img-responsive" src={this.state.image} alt="Place Picture" />
                                       </div>
                                       <div className="col-sm-8">
                                           <h4>{this.state.name}</h4>
@@ -51,14 +47,13 @@ class ReadReview extends React.Component{
                                       </div>
                                   </div>
 
-
             var friendsReviews = this.state.reviews.map((review, i) => {
                return             <div key={i}>
                                     <div className="col-sm-12 home-middle-middle-readreview-inner" >
                                         <div className="row">
                                             <div className="col-sm-2 readreview-img">
                                               <p>{review.user.name}</p>
-                                                <img className="img-circle" src={review.user.image} alt="Reviewers Picture" />
+                                                <img className="img-responsive" src={review.user.image} alt="Reviewers Picture" />
                                                 <p>{moment(review.created_at).fromNow()}</p>
                                             </div>
                                             <div className="col-sm-10">

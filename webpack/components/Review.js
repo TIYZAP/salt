@@ -9,7 +9,6 @@ class Review extends React.Component{
     constructor(props){
         super(props)
         this.submitReview = this.submitReview.bind(this)
-        // this.updateForm = this.updateForm.bind(this)
         this.bodyHandler = this.bodyHandler.bind(this)
         this.dishHandler = this.dishHandler.bind(this)
         this.updateRating = this.updateRating.bind(this)
@@ -61,11 +60,6 @@ class Review extends React.Component{
         .then(response => response.json())
         .then(response => window.location.href="/home")
     }
-    // updateForm(){
-    //     var updatedState = {}
-    //     updatedState[event.target.name] = event.target.value
-    //     this.setState(updatedState)
-    // }
     bodyHandler(e){
         this.setState({
             body: e.target.value
@@ -90,27 +84,34 @@ class Review extends React.Component{
                 <div className="row">
                   <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
-                      <div className="row">
-                      <h1 className="text-center">Post a Review</h1>
-                      <div className="col-sm-5">
-                        <img height="300" className="img-rounded" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
-                        <h4>{this.state.name}</h4>
-                        <h4>Website: <a href={this.state.website}>Click here for website!</a></h4>
-                        <h4>Address: {this.state.address}</h4>
-                        <h4>Phone: {this.state.phone}</h4>
+                      <div className="row post-review-header">
+                          <h1 className="text-center">Write a Review</h1>
                       </div>
-                      <div className="col-sm-7">
-                        <label className="form-group">
-                          What dish did you have?
-                          <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
-                        </label>
-                        <br />
-                      <StarRating updateRating={this.updateRating} />
-                        <label htmlFor="review">
-                          Please write your review below:
-                          <textarea name="name" rows="8" cols="70" name="body" onChange={this.bodyHandler}></textarea>
-                        </label>
-                        <button className="btn my-button" onClick={this.submitReview}>Submit</button>
+                      <div className="row post-review-section">
+                      <div className="col-sm-12 post-review">
+                          <div className="row">
+                              <div className="col-sm-5">
+                                <img height="300" width="300" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
+                                <h4>{this.state.name}</h4>
+                                <h4>Website: {this.state.website?<a href={this.state.website}>Click here for website!</a>:<span>No website available</span>}</h4>
+                                <h4>Address: {this.state.address}</h4>
+                                <h4>Phone: {this.state.phone}</h4>
+                              </div>
+                              <div className="col-sm-7">
+                                  <StarRating updateRating={this.updateRating} />
+                                <label className="form-group">
+                                  What dish did you have?
+                                  <input type="text" name="dish" className="form-control" onChange={this.dishHandler}/>
+                                </label>
+                                <br />
+                                <label htmlFor="review">
+                                  Please write your review below:<br/>
+                                  <textarea name="name" rows="8" cols="45" name="body" onChange={this.bodyHandler}></textarea>
+                                </label>
+                                <br/>
+                                <button className="btn my-button" onClick={this.submitReview}>Submit</button>
+                              </div>
+                          </div>
                       </div>
                       </div>
                   </div>
