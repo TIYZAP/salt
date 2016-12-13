@@ -48,8 +48,6 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
     friends = @graph.get_connections("me", "friends")
     friends.each do |f|
       @thing = User.find_by(fb_id: f['id'])
-      puts f['name'].inspect
-      puts f.inspect
       @user.follow!(@thing) if @thing
     end
     @followees = @user.followees(User)
