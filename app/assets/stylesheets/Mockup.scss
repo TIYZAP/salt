@@ -103,7 +103,7 @@ $br: 10px;
             padding: 0px;
             li{
             padding: 20px;
-            font-size: 20px;
+            font-size: 15px;
             cursor: pointer;
             padding-left: 0;
             color: $col5;
@@ -116,6 +116,9 @@ $br: 10px;
                 background: $col1;
                 color: white;
                 }
+                img{
+                    height: 100px;
+                }
             }
         }
     }
@@ -123,7 +126,7 @@ $br: 10px;
         background: $col7;
         height: 93vh;
         overflow: scroll;
-        padding: 30px;
+        // padding: 30px;
         .homepage-box{
             background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
@@ -170,7 +173,6 @@ $br: 10px;
             box-shadow: 5px 5px 10px lightgrey;
             overflow: hidden;
             line-height: 15px;
-            // height: 160px;
             h4{
                 padding: 0;
             }
@@ -300,10 +302,20 @@ $br: 10px;
 
         //css for friends profile
         .home-middle-middle-friends-profile{
-            padding: 10px;
+            // padding: 10px;
             img{
                 width: 300px;
                 height: 300px;
+            }
+            .friends-profile-background{
+                background: url(/images/friendsbackground.jpg);
+                background-position: center;
+                background-size: cover;
+                padding: 10px;
+                h3, h4, h5{
+                    color: white;
+                }
+
             }
             .friend-profile-name{
                 color: $col1;
@@ -318,6 +330,25 @@ $br: 10px;
                 }
             }
         }
+
+        //css for post a review page
+        .post-review-section{
+            padding: 20px;
+            .post-review{
+                padding: 10px;
+                box-shadow: 5px 5px 10px lightgrey;
+                background: $col2;
+                textarea {
+                	box-sizing: border-box;
+                	width: 100%;
+                }
+            }
+        }
+        .post-review-header{
+            background:$col3;
+            color: white;
+        }
+
     }
     .home-middle-right{
         // background: white;
@@ -336,6 +367,10 @@ $br: 10px;
             color: white;
             img{
                 width: 100%;
+            }
+            .badge{
+                background: white;
+                color: black;
             }
         }
     }

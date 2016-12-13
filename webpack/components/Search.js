@@ -48,7 +48,7 @@ class Search extends React.Component{
             return <div className="col-sm-3 home-middle-middle-search-review" key={i}>
                     <div className="col-sm-12">
                         <h4 className="text-center">{result.name}</h4>
-                        <img height="200" src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
+                        <img height="200"  src={result.photo.length?'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + result.photo[0].photo_reference + '&key=' + result.photo[0].api_key :'http://unsplash.it/600?random'} alt="" />
                     </div>
                     <div className="col-sm-12">
                         <h5>{result.vicinity}</h5>

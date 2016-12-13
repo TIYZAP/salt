@@ -16,7 +16,8 @@ class FriendProfile extends React.Component{
             id: props.params.id,
             image: '',
             name: '',
-            reviews: []
+            reviews: [],
+            badges: []
         }
     }
     componentDidMount(){
@@ -33,7 +34,8 @@ class FriendProfile extends React.Component{
         .then(response => this.setState({
             image: response.user.image,
             name: response.user.name,
-            reviews: response.user.reviews
+            reviews: response.user.reviews,
+            badges: response.user.badges
         }))
         // .then(response => {
         //     console.log(response)
@@ -41,6 +43,9 @@ class FriendProfile extends React.Component{
     }
 
     render(){
+        var userBadges = this.state.badges.map((badge, i) => {
+            return <h5 key={i}>{badge.description}</h5>
+        })
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-11 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
@@ -68,11 +73,16 @@ class FriendProfile extends React.Component{
                         <div className="col-sm-8 home-middle-middle">
                             <div className="row">
                                 <div className="col-sm-12 home-middle-middle-friends-profile">
-                                    <div className="col-sm-12 text-center">
-                                        <img className="img-circle" src={this.state.image} alt="" />
-                                    </div>
-                                    <div className="col-sm-12 text-center">
-                                        <h3 className="friend-profile-name">{this.state.name}</h3>
+                                    <div className="row friends-profile-background">
+                                        <div className="col-sm-4">
+                                            <img className="img-responsive" src={this.state.image} alt="" />
+                                        </div>
+                                        <div className="col-sm-8">
+                                            <h3 className="friend-profile-name">{this.state.name}</h3>
+                                            <h4>Points: <span className="badge">{this.state.reviews.length}0</span></h4>
+                                            <h4>Achievements:</h4>
+                                            {userBadges}
+                                        </div>
                                     </div>
                                     <div className="row">
                                         {userReviews}
