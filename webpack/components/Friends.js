@@ -162,8 +162,10 @@ class Friends extends React.Component {
       }
         var lookupFriends = this.state.searchFriends.map((search, i) => {
           return <div style={eachFriend} className="col-sm-3" key={i}>
+                                <Link to={'/friendprofile/' + search.id}>
                                 <img height="200"  width="200" className="img-responsive" src={search.image} alt="" />
                                 <h4 className="text-center">{search.name}</h4>
+                                </Link>
                                 <div className="text-center">
                                     <button className="btn btn-info" onClick={() => this.followSingleFriend(search)}>Follow</button>
                                 </div>
@@ -195,9 +197,9 @@ class Friends extends React.Component {
             <div className="home-middle-section">
                 <LeftMenu  {...this.props}/>
               <div className="col-sm-8 home-middle-middle">
-                  {/* <div className="post-review-header">
-                      <h1 className="text-center">Most Recent Reviews</h1>
-                  </div> */}
+                  <div className="row post-review-header">
+                          <h1 className="text-center">Friends</h1>
+                  </div>
                   <div className="row">
                       <div className="col-sm-6 text-right">
                           <button className="btn btn-primary" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Search for Friends</button>

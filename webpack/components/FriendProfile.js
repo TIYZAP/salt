@@ -72,7 +72,7 @@ class FriendProfile extends React.Component{
                                 <div className="col-sm-12 home-middle-middle-friends-profile">
                                     <div className="row friends-profile-background">
                                         <div className="col-sm-4">
-                                            <img  height="250" width="200" src={this.state.image} alt="" />
+                                            <img  height="300" width="200" src={this.state.image} alt="" />
                                         </div>
                                         <div className="col-sm-8">
                                             <h3 className="friend-profile-name">{this.state.name}</h3>
