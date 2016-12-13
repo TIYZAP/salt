@@ -30,8 +30,17 @@ export default React.createClass({
       }))
   },
   render() {
+    var styles = {
+      bmBurgerButton: {
+        zIndex: 200
+      },
+      bmMenuWrap: {
+        zIndex: 202,
+        left: 0
+      }
+    }
     return (
-      <Menu>
+      <Menu styles={styles}>
         <div>
           <h3 className="text-center">{this.state.name}</h3>
         </div>

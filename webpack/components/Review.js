@@ -57,7 +57,6 @@ class Review extends React.Component{
             headers: {
                 'Content-Type': 'application/json'
             }
-
         })
         .then(response => response.json())
         .then(response => window.location.href="/home")

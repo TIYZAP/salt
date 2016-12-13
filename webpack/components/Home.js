@@ -48,19 +48,20 @@ class Home extends React.Component {
                 return  (
                     <div className="col-sm-5 home-middle-middle-review" key={i}>
                         <div className="row">
+                            <h4 className="text-center">
+                                {review.venue_name}
+                            </h4>
                             <div className="col-sm-4">
                               <p className="text-center">{review.user.name}</p>
-                                <img height="100" className="img-rounded" src={review.image} alt="Reviewers Picture" />
+                                <img height="100" className="img-rounded" src={review.user.image} alt="Reviewers Picture" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
                                 <Link to={'/readreview?place_id=' + review.place_id} >
-                                <h4 className="text-center">{review.venue_name}</h4>
+                                {/* <h5 className="text-center">{review.venue_name}</h5> */}
                                 </Link>
-                                {/* <h5>Address: {review.venue_address}</h5>
-                                <h5>Phone: {review.phone}</h5>
-                                <h5>Website: <a href={review.website}>Link to website</a></h5> */}
-                                Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
+                                <br/>
+                                <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
                                 <h5>Review: <br />{review.body}</h5>
                             </div>

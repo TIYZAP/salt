@@ -30,7 +30,6 @@ class Search extends React.Component{
     search(e){
         var zip = this._inputZip.value
         var place = this._inputPlace.value
-        console.log(zip, place)
         this.updateSearch(zip, place)
         zip = ''
         place = ''
@@ -90,7 +89,11 @@ class Search extends React.Component{
                             </div>
                             </form>
                           </div>
-                          {results}
+                          <div className="row">
+                              <div className="col-sm-11 col-sm-offset-1">
+                                  {results}
+                              </div>
+                          </div>
                       </div>
                   </div>
                   <FriendSideBar />

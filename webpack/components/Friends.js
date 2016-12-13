@@ -35,6 +35,7 @@ class Friends extends React.Component {
         this.enterHandler = this.enterHandler.bind(this)
         this.followAllFriends = this.followAllFriends.bind(this)
         this.followSingleFriend = this.followSingleFriend.bind(this)
+        this.followClickHandler = this.followClickHandler.bind(this)
         this.state = {
             friends: [],
             id: '',
@@ -118,6 +119,9 @@ class Friends extends React.Component {
         this.findFriend(e)
       }
     }
+    followClickHandler(){
+      this.findFriend()
+    }
     inputHandler(e){
       this.setState({
         name: e.target.value
@@ -162,7 +166,7 @@ class Friends extends React.Component {
                                 <img height="200"  width="200" className="img-rounded" src={search.image} alt="" />
                                 <h4 className="text-center">{search.name}</h4>
                                 <div className="text-center">
-                                    <button className="btn btn-info" onClick={this.followSingleFriend(search)}>Follow</button>
+                                    <button className="btn btn-info" onClick={() => this.followSingleFriend(search)}>Follow</button>
                                 </div>
                           </div>
         })
@@ -212,7 +216,7 @@ class Friends extends React.Component {
                                     <div className="input-group">
                                         <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler}  onKeyPress={this.enterHandler}/>
                                         <span className="input-group-btn">
-                                            <button className="btn my-button btn-md" id="invite-friend-button">Search</button>
+                                            <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.followClickHandler}>Search</button>
                                         </span>
                                     </div>
                             </div>
