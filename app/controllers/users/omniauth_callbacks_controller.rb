@@ -29,7 +29,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def facebook
    # You need to implement the method below in your model (e.g. app/models/user.rb)
    @user = User.from_omniauth(request.env["omniauth.auth"])
-   puts 'hello?'
    if @user.persisted?
      redirect_to home_path email: @user.email, token: @user.authentication_token, id: @user.id
      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
