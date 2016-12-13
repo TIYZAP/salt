@@ -89,7 +89,11 @@ class Search extends React.Component{
                             </div>
                             </form>
                           </div>
-                          {results}
+                          <div className="row">
+                              <div className="col-sm-11 col-sm-offset-1">
+                                  {results}
+                              </div>
+                          </div>
                       </div>
                   </div>
                   <FriendSideBar />

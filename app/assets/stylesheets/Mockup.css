@@ -58,6 +58,11 @@
   height: 93vh;
 }
 
+.home-middle-section .home-middle-left .badge {
+  background: white;
+  color: black;
+}
+
 .home-middle-section .home-middle-left img {
   width: 100%;
   padding: 10px;
@@ -178,8 +183,14 @@
   box-shadow: 5px 5px 10px lightgrey;
 }
 
+.home-middle-section .home-middle-middle .home-middle-middle-myreview .delete-review i {
+  padding: 0;
+  margin: 0;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-myreview p {
   margin: 0;
+  padding: 0;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-myreview img {
@@ -187,11 +198,18 @@
   height: 200px;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-myreview h3 {
+.home-middle-section .home-middle-middle .home-middle-middle-myreview h5 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 80%;
+  padding: 0;
+  margin: 0;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-myreview h5:hover {
+  white-space: normal;
+  overflow: visible;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-myreview h5 {
@@ -200,6 +218,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 80%;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-myreview h5:hover {
+  white-space: normal;
+  overflow: visible;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends {
@@ -343,7 +366,7 @@
   .head-nav-wrapper .head-nav-middle {
     width: 100%;
     position: fixed;
-    z-index: 0;
+    z-index: 10;
   }
   .head-nav-right {
     display: none;
@@ -354,7 +377,14 @@
   .home-middle-section .home-middle-middle {
     overflow: visible;
     height: 100%;
-    z-index: -1;
+  }
+  .home-middle-section .home-middle-middle .home-middle-middle-review h5 {
+    overflow: visible;
+    white-space: normal;
+    height: 100%;
+  }
+  .home-middle-section .home-middle-middle .home-middle-middle-review img {
+    height: 200px;
   }
   .home-middle-right {
     display: none;

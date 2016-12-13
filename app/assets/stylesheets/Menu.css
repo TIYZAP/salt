@@ -3,14 +3,15 @@
   position: fixed;
   width: 36px;
   height: 30px;
-  left: 20px;
+  left: 10px;
   top: 20px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
   border-radius: 10px;
-  background: #dcdcdd;
+  background: #E2624B;
+  position: fixed;
 }
 
 /* Position and sizing of clickable cross button */
@@ -29,7 +30,7 @@
   background: #252626;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  z-index: 500;
+  z-index: 201;
 }
 
 /* Morph shape necessary with bubble or elastic */

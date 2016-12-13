@@ -19,7 +19,6 @@ const customStyles = {
     background            : '#E6EFF2',
     width                 : '800px',
     height                : '800px',
-    // overflow              : 'scroll',
     transform             : 'translate(-50%, -50%)'
   }
 }
@@ -31,6 +30,7 @@ class YourProfile extends React.Component{
         this.closeModal = this.closeModal.bind(this)
         this.afterOpenModal = this.afterOpenModal.bind(this)
         this.sendId = this.sendId.bind(this)
+        this.destroyReview = this.destroyReview.bind(this)
         // this.friendsList = this.friendsList.bind(this)
         this.state = {
             myReviews: [],
@@ -83,6 +83,20 @@ class YourProfile extends React.Component{
     }
     afterOpenModal() {
     }
+    destroyReview(review){
+      fetch('/api/reviews/destroy' , {
+        body: JSON.stringify({
+          user_token: sessionStorage.getItem('token'),
+          user_email: sessionStorage.getItem('email'),
+          id: review.id
+        }),
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }})
+      .then(response => response.json())
+      .then(response => window.location.href="/yourprofile")
+    }
     render(){
       var eachFriend = {
         boxShadow: '5px 5px 5px lightgrey',
@@ -104,18 +118,21 @@ class YourProfile extends React.Component{
             return <div className="col-sm-12 home-middle-middle-myreview" key={i}>
                         <div className="row">
                             <div className="col-sm-12">
+                              <p className="text-right delete-review"><i className="fa fa-times" aria-hidden="true" onClick={() => this.destroyReview(review)}></i></p>
                               <Link to={'/readreview?place_id=' + review.place_id}>
-                              <h3 className="text-center">{review.venue_name}</h3>
+                              <h4 className="text-center">{review.venue_name}</h4>
                               </Link>
                                 <img  className="img-rounded" src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-12">
+                              <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
-                                Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
-                                <p>website: <a href={review.website}>Link to website</a></p>
-                                <h5>Review: <br/>{review.body}</h5>
+                                {/* <p>website: <a href={review.website}>Link to website</a></p> */}
                               </div>
+                                <div className="col-sm-12">
+                                  <h5>Review: <br/>{review.body}</h5>
+                                </div>
                               <div className="col-sm-12 text-center">
                                 <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
                                 <Modal
