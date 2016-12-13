@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   validates_inclusion_of :rating, :in => 0..5
 
   attachment :image, type: :image
-  after_create :update_review_count
+  after_commit :update_review_count
 
 
   def self.timeline(user)
