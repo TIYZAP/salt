@@ -75,7 +75,7 @@
 
 .home-middle-section .home-middle-left ul li {
   padding: 20px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   padding-left: 0;
   color: #8ca2ad;
@@ -92,11 +92,14 @@
   color: white;
 }
 
+.home-middle-section .home-middle-left ul li img {
+  height: 100px;
+}
+
 .home-middle-section .home-middle-middle {
   background: #E6EFF2;
   height: 93vh;
   overflow: scroll;
-  padding: 30px;
 }
 
 .home-middle-section .home-middle-middle .homepage-box {
@@ -281,13 +284,20 @@
   border: 1px solid white;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-friends-profile {
-  padding: 10px;
-}
-
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile img {
   width: 300px;
   height: 300px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background {
+  background: url(/images/friendsbackground.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 10px;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h3, .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h4, .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h5 {
+  color: white;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friend-profile-name {
@@ -303,6 +313,26 @@
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .home-middle-middle-friendsreview img {
   padding: 10px;
+}
+
+.home-middle-section .home-middle-middle .post-review-section {
+  padding: 20px;
+}
+
+.home-middle-section .home-middle-middle .post-review-section .post-review {
+  padding: 10px;
+  box-shadow: 5px 5px 10px lightgrey;
+  background: #dcdcdd;
+}
+
+.home-middle-section .home-middle-middle .post-review-section .post-review textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.home-middle-section .home-middle-middle .post-review-header {
+  background: #E2624B;
+  color: white;
 }
 
 .home-middle-section .home-middle-right {
@@ -325,6 +355,11 @@
 
 .home-middle-section .home-middle-right .home-each-friend img {
   width: 100%;
+}
+
+.home-middle-section .home-middle-right .home-each-friend .badge {
+  background: white;
+  color: black;
 }
 
 .input-group {
