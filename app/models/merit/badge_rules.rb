@@ -38,6 +38,19 @@ module Merit
         review.user.reviews.count == 1
       end
 
+      grant_on 'reviews#create', badge: 'five-reviews',
+        to: :user do |review|
+
+        review.user.reviews.count == 5
+      end
+
+      grant_on 'reviews#create', badge: 'twenty-reviews',
+        to: :user do |review|
+
+        review.user.reviews.count == 20
+      end
+
+
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', badge: 'autobiographer',
       #   temporary: true, model_name: 'User' do |user|

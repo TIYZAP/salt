@@ -19,12 +19,28 @@ Merit.setup do |config|
   config.current_user_method = 'current_user'
 
   Merit::Badge.create!(
-  id: 1,
-  name: "first-review",
-  description: "Written one review!",
-  custom_fields: { difficulty: :silver }
-)
-end
+    id: 1,
+    name: "first-review",
+    description: "Written one review!",
+    custom_fields: { difficulty: :silver }
+    )
+  end
+
+  Merit::Badge.create!(
+    id: 2,
+    name: "five-reviews",
+    description: "Written five reviews!",
+    custom_fields: { difficulty: :silver }
+    )
+  end
+  
+  Merit::Badge.create!(
+    id: 3,
+    name: "twenty-reviews",
+    description: "Written twenty reviews!",
+    custom_fields: { difficulty: :silver }
+    )
+  end
 
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
