@@ -33,7 +33,7 @@ Merit.setup do |config|
     custom_fields: { difficulty: :silver }
     )
   end
-  
+
   Merit::Badge.create!(
     id: 3,
     name: "twenty-reviews",
@@ -41,7 +41,7 @@ Merit.setup do |config|
     custom_fields: { difficulty: :silver }
     )
   end
-
+end
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
 # [{
