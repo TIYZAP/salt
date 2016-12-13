@@ -58,14 +58,26 @@
   height: 93vh;
 }
 
+.home-middle-section .home-middle-left h4 {
+  padding: 5px;
+  margin: 0;
+}
+
+.home-middle-section .home-middle-left p {
+  padding: 0;
+  margin: 0;
+}
+
 .home-middle-section .home-middle-left .badge {
   background: white;
   color: black;
 }
 
 .home-middle-section .home-middle-left img {
-  width: 100%;
+  min-width: 100px;
+  min-height: 100px;
   padding: 10px;
+  border-radius: 100%;
 }
 
 .home-middle-section .home-middle-left ul {
@@ -75,7 +87,7 @@
 
 .home-middle-section .home-middle-left ul li {
   padding: 20px;
-  font-size: 15px;
+  font-size: 90%;
   cursor: pointer;
   padding-left: 0;
   color: #8ca2ad;
@@ -113,8 +125,8 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-readreview-inner {
-  margin: 10px;
-  padding: 10px;
+  margin: 5px;
+  padding: 20px;
   background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
   line-height: 15px;
@@ -125,14 +137,9 @@
   margin: 0;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-readreview-inner .readreview-img img {
-  height: 100px;
-  width: 90px;
-}
-
 .home-middle-section .home-middle-middle .home-middle-middle-readreview-place {
   width: 100%;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
@@ -174,8 +181,10 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
-  width: 100%;
+  min-width: 80px;
+  min-height: 80px;
   padding: 5px;
+  border-radius: 100%;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-myreview {
@@ -285,8 +294,9 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile img {
-  width: 300px;
-  height: 300px;
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 100%;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background {
@@ -354,7 +364,9 @@
 }
 
 .home-middle-section .home-middle-right .home-each-friend img {
-  width: 100%;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 100%;
 }
 
 .home-middle-section .home-middle-right .home-each-friend .badge {

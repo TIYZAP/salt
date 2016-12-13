@@ -37,9 +37,6 @@ class FriendProfile extends React.Component{
             reviews: response.user.reviews,
             badges: response.user.badges
         }))
-        // .then(response => {
-        //     console.log(response)
-        // })
     }
 
     render(){
@@ -49,15 +46,15 @@ class FriendProfile extends React.Component{
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-11 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
-                                <img  className="img-responsive" src={review.image} alt="" />
+                                <img height="250" width="200" src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
                                 <Link to={"/readreview?place_id=" + review.place_id}>
-                                <h1 className="text-center">{review.venue_name}</h1>
+                                <h2 className="text-center">{review.venue_name}</h2>
                                 </Link>
+                                <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
-                                Rating: <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>website: <a href={review.website}>Link to website</a></p>
                                 <h5>Review: <br />{review.body}</h5>
                             </div>
@@ -75,7 +72,7 @@ class FriendProfile extends React.Component{
                                 <div className="col-sm-12 home-middle-middle-friends-profile">
                                     <div className="row friends-profile-background">
                                         <div className="col-sm-4">
-                                            <img className="img-responsive" src={this.state.image} alt="" />
+                                            <img  height="250" width="200" src={this.state.image} alt="" />
                                         </div>
                                         <div className="col-sm-8">
                                             <h3 className="friend-profile-name">{this.state.name}</h3>

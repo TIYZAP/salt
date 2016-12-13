@@ -195,9 +195,9 @@ class Friends extends React.Component {
             <div className="home-middle-section">
                 <LeftMenu  {...this.props}/>
               <div className="col-sm-8 home-middle-middle">
-                  <div className="post-review-header">
+                  {/* <div className="post-review-header">
                       <h1 className="text-center">Most Recent Reviews</h1>
-                  </div>
+                  </div> */}
                   <div className="row">
                       <div className="col-sm-6 text-right">
                           <button className="btn btn-primary" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Search for Friends</button>

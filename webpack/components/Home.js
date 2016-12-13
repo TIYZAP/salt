@@ -54,7 +54,7 @@ class Home extends React.Component {
                             </Link>
                             <div className="col-sm-4">
                               <p className="text-center">{review.user.name}</p>
-                                <img height="100" className="img-responsive" src={review.user.image} alt="Reviewers Picture" />
+                                <img height="120"  src={review.user.image} alt="Reviewers Picture" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
