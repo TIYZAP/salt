@@ -11,7 +11,6 @@ before_action :configure_sign_in_params, only: [:create]
   def create
     user = User.find_by(sign_in_params)
     render json: user, serializer: SigninSerializer
-    puts 'stuff is happening!!!!'
   end
 
   # DELETE /resource/sign_out

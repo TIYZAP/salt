@@ -24,7 +24,6 @@ class User < ApplicationRecord
       user.remote_image_url = auth.info.image # assuming the user model has an image
       user.fb_token = auth.credentials.token
       user.fb_id = auth.extra.raw_info.id
-      puts auth.inspect
     end
   end
 
@@ -38,8 +37,6 @@ class User < ApplicationRecord
     User.all.each do |user|
       if (user.reviews.last == nil) && (user.created_at < 7.day.ago)
         RemindersMailer.no_reviews(user).deliver
-      elsif user.reviews.last == nil
-        puts 'doh'
       elsif user.reviews.last.created_at < 7.day.ago
         RemindersMailer.send_reminder(user).deliver
       end
