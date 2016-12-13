@@ -42,9 +42,9 @@ class FriendProfile extends React.Component{
 
     render(){
         var userReviews = this.state.reviews.map((review, i) => {
-            return       <div className="col-sm-12 home-middle-middle-friendsreview" key={i}>
+            return       <div className="col-sm-11 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
-                                <img  className="img-rounded" src={review.image} alt="" />
+                                <img  className="img-responsive" src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
