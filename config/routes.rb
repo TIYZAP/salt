@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     post '/invite/friends' => 'user#send_invites'
     get '/search/friends' => 'user#search_for_friends'
     post '/follow/friend' => 'user#follow_one_friend'
+    post '/reviews/destroy' => 'reviews#destroy'
   end
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks",
