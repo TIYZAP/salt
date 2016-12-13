@@ -35,7 +35,10 @@ class YourProfile extends React.Component{
             myReviews: [],
             modalIsOpen: false,
             modalCurrentReview: undefined,
-            friends: []
+            friends: [],
+            name: '',
+            image: '',
+            badges: ''
         }
     }
     componentWillMount(){
@@ -43,8 +46,14 @@ class YourProfile extends React.Component{
         fetch('/api/profile?id=' + sessionStorage.getItem('id'))
         .then(response => response.json())
         .then(response => this.setState({
-            myReviews: response.user.reviews
+            myReviews: response.user.reviews,
+            name: response.user.name,
+            image: response.user.image,
+            badges: response.user.badges[0].description
         }))
+        // .then(response => {
+        //   console.log(response)
+        // })
     }
     componentDidMount(){
       fetch('/api/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
@@ -52,9 +61,6 @@ class YourProfile extends React.Component{
       .then(response => this.setState({
         friends: response.users
       }))
-      // .then(response => {
-      //   console.log(response)
-      // })
     }
     sendId(friend, target){
       let sentFriends = this.state.sentFriends
@@ -141,7 +147,7 @@ class YourProfile extends React.Component{
                                   <div className="col-sm-12">
                                     <h5>Review: <br/>{review.body}</h5>
                                   </div>
-                                <div className="col-sm-12 text-center">
+                                <div className="col-sm-12 text-center recommend-button-section">
                                   <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
                                   <Modal
                                     isOpen={this.state.modalIsOpen}
@@ -169,6 +175,17 @@ class YourProfile extends React.Component{
                 <div className="row home-middle-section">
                   <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
+                    <div className="row my-profile-background">
+                        <div className="col-sm-4">
+                            <img  height="300" width="200" src={this.state.image} alt="" />
+                        </div>
+                        <div className="col-sm-8">
+                            <h3 className="friend-profile-name">{this.state.name}</h3>
+                            <h4>Points: <span className="badge">{this.state.myReviews.length}0</span></h4>
+                            <h4>Achievements:</h4>
+                            {this.state.badges}
+                        </div>
+                    </div>
                      {displayMyReviews}
                   </div>
                   <FriendSideBar />

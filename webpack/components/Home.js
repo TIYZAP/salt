@@ -79,6 +79,12 @@ class Home extends React.Component {
                                     </div>
                                 </div>
         }
+        if(this.state.allReviews.length){
+            var homeHeader =      <div className="row post-review-header">
+                                      <h1 className="text-center">Most Recent Reviews</h1>
+                                  </div>
+        }
+
         return(
             <div>
                 <Menu />
@@ -86,6 +92,7 @@ class Home extends React.Component {
                 <div className="row home-middle-section">
                   <LeftMenu {...this.props} />
                   <div className={this.state.allReviews.length?"col-sm-8 home-middle-middle":"col-sm-10 home-middle-middle"}>
+                     {homeHeader}
                     {friendsReviews}
                   </div>
                   {this.state.allReviews.length?<FriendSideBar />:''}
