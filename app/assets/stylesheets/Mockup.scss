@@ -182,9 +182,11 @@ $br: 10px;
             h4{
                 padding: 0;
             }
-            p{
+            .col-sm-4 >p{
                 margin: 0;
-
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
             }
             h5{
                 margin: 0;
@@ -280,7 +282,7 @@ $br: 10px;
                 margin: 5px;
                 margin-bottom: 15px;
                 padding: 10px;
-                background: white;
+                background: $col2;
                 width: 300px;
                 height: 350px;
                 box-shadow: 5px 5px 10px lightgrey;
@@ -360,12 +362,11 @@ $br: 10px;
 
     }
     .home-middle-right{
-        // background: white;
         background: $col2;
         height: 93vh;
         text-align: center;
+        overflow: scroll;
         h1{
-            // color: $col5;
             color: #6A8795;
         }
         .home-each-friend{

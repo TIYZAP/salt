@@ -163,8 +163,11 @@
   padding: 0;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-review p {
+.home-middle-section .home-middle-middle .home-middle-middle-review .col-sm-4 > p {
   margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review h5 {
@@ -264,7 +267,7 @@
   margin: 5px;
   margin-bottom: 15px;
   padding: 10px;
-  background: white;
+  background: #dcdcdd;
   width: 300px;
   height: 350px;
   box-shadow: 5px 5px 10px lightgrey;
@@ -349,6 +352,7 @@
   background: #dcdcdd;
   height: 93vh;
   text-align: center;
+  overflow: scroll;
 }
 
 .home-middle-section .home-middle-right h1 {
