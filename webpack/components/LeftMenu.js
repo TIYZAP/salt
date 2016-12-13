@@ -6,10 +6,10 @@ class LeftMenu extends React.Component {
     constructor(props){
         super(props)
         this.followAllFriends = this.followAllFriends.bind(this)
-        this.activeHandler = this.activeHandler.bind(this)
         this.state = {
             name: '',
             image: '',
+            reviews: []
         }
     }
     componentWillMount(){
@@ -18,16 +18,17 @@ class LeftMenu extends React.Component {
         .then(response => response.json())
         .then(response => this.setState({
             name: response.user.name,
-            image: response.user.image
+            image: response.user.image,
+            reviews: response.user.reviews
         }))
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
         .then(response => window.location.href="/friends")
-    }
-    activeHandler(){
-
     }
     render(){
         // console.log(this.props)
@@ -36,6 +37,7 @@ class LeftMenu extends React.Component {
               <div>
                   <h1 className="text-center">{this.state.name}</h1>
                   <img className="img-responsive" src={this.state.image} alt="User Profile Picture" />
+                  <p>Points: <span className="badge">{this.state.reviews.length}0</span></p>
               </div>
               <ul>
                  <Link to="/home" style={{textDecoration:'none'}}><li className={this.props.route.path === '/home'?"nav active":"nav"} onClick={this.activeHandler}><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</li></Link>

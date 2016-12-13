@@ -39,6 +39,19 @@ class ReadReview extends React.Component{
     render(){
         console.log(this.state.reviews)
         if(this.state.reviews.length){
+            var reviewPlace =     <div className="row home-middle-middle-readreview-place">
+                                      <div className="col-sm-4">
+                                          <img height="300" className="img-rounded" src={this.state.image} alt="Place Picture" />
+                                      </div>
+                                      <div className="col-sm-8">
+                                          <h4>{this.state.name}</h4>
+                                          <p>Address: {this.state.address}</p>
+                                          <p>Phone: {this.state.phone}</p>
+                                          <p>Website: <a href={this.state.website}>Link to website</a></p>
+                                      </div>
+                                  </div>
+
+
             var friendsReviews = this.state.reviews.map((review, i) => {
                return             <div key={i}>
                                     <div className="col-sm-12 home-middle-middle-readreview-inner" >
@@ -73,17 +86,7 @@ class ReadReview extends React.Component{
                 <div className="home-middle-section">
                   <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
-                      <div className="row home-middle-middle-readreview-place">
-                          <div className="col-sm-4">
-                              <img height="300" className="img-rounded" src={this.state.image} alt="Place Picture" />
-                          </div>
-                          <div className="col-sm-8">
-                              <h4>{this.state.name}</h4>
-                              <p>Address: {this.state.address}</p>
-                              <p>Phone: {this.state.phone}</p>
-                              <p>Website: <a href={this.state.website}>Link to website</a></p>
-                          </div>
-                      </div>
+                     {reviewPlace}
                     {friendsReviews}
                   </div>
                   <FriendSideBar />

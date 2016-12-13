@@ -35,13 +35,6 @@ $br: 10px;
 // $col8: #B39A94;
 
 
-//style 6
-// $col2: #B39A94;
-// $col1: #5C4540;
-// $col7: #EBEBE2;
-// $col5: #5C4540;
-// $col8: #B39A94;
-
 /* RGB */
 // $col5: rgba(220, 220, 221, 1);
 // $col3: rgba(197, 195, 198, 1);
@@ -97,6 +90,10 @@ $br: 10px;
         background: $col8;
         color: $col5;
         height: 93vh;
+        .badge{
+            background: white;
+            color: black;
+        }
         img{
             width: 100%;
             padding: 10px;
@@ -206,18 +203,31 @@ $br: 10px;
             height: 500px;
             width: 300px;
             box-shadow: 5px 5px 10px lightgrey;
+            .delete-review{
+                i{
+                    padding: 0;
+                    margin: 0;
+                }
+            }
             p{
                 margin: 0;
+                padding: 0;
             }
             img{
                 width: 100%;
                 height: 200px;
             }
-            h3{
+            h5{
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 width: 80%;
+                padding: 0;
+                margin: 0;
+                &:hover{
+                    white-space: normal;
+                    overflow: visible;
+                }
             }
             h5{
                 height: 80px;
@@ -225,6 +235,10 @@ $br: 10px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 width: 80%;
+                &:hover{
+                    white-space: normal;
+                    overflow: visible;
+                }
             }
         }
 
@@ -362,10 +376,9 @@ $br: 10px;
         .head-nav-middle{
             width: 100%;
             position: fixed;
-            z-index: 0;
+            z-index: 10;
         }
     }
-
     .head-nav-right{
         display: none;
     }
@@ -376,7 +389,16 @@ $br: 10px;
         .home-middle-middle{
             overflow: visible;
             height: 100%;
-            z-index: -1;
+            .home-middle-middle-review{
+                h5{
+                    overflow: visible;
+                    white-space: normal;
+                    height: 100%;
+                }
+                img{
+                    height: 200px;
+                }
+            }
         }
     }
     .home-middle-right{
