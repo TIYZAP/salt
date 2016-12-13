@@ -25,8 +25,8 @@ class LeftMenu extends React.Component {
         return(
             <div className="col-sm-2 home-middle-left text-center">
               <div>
-                  <h1 className="text-center">{this.state.name}</h1>
-                  <img className="img-responsive" src={this.state.image} alt="User Profile Picture" />
+                  <img src={this.state.image} alt="User Profile Picture" />
+                  <h4 className="text-center">{this.state.name}</h4>
                   <p>Points: <span className="badge">{this.state.reviews.length}0</span></p>
               </div>
               <ul>

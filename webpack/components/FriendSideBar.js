@@ -25,7 +25,7 @@ class FriendSideBar extends React.Component{
             return    <Link to={'/friendprofile/' + friend.id} key={i}>
                         <div className="col-sm-12 home-each-friend">
                           <div className="col-sm-5">
-                            <img className="img-responsive" src={friend.image} alt="" />
+                            <img  src={friend.image} alt="" />
                           </div>
                           <div className="col-sm-7">
                               <h5>{friend.name}</h5>

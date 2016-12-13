@@ -57,6 +57,8 @@ class ReadReview extends React.Component{
                                                 <p>{moment(review.created_at).fromNow()}</p>
                                             </div>
                                             <div className="col-sm-10">
+                                                <br/>
+                                                <br/>
                                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'} size={18}/>
                                                 <br />
                                                 <p>Dish: {review.dish}</p>
