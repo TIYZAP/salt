@@ -30,7 +30,6 @@ class Search extends React.Component{
     search(e){
         var zip = this._inputZip.value
         var place = this._inputPlace.value
-        console.log(zip, place)
         this.updateSearch(zip, place)
         zip = ''
         place = ''

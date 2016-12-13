@@ -32,13 +32,13 @@ class ReadReview extends React.Component{
             website: response.reviews[0].website,
             phone: response.reviews[0].phone
         }))
-        .then(response => {
-            console.log(response)
-        })
+        // .then(response => {
+        //     console.log(response)
+        // })
     }
     render(){
         console.log(this.state.reviews)
-        if(this.state.reviews){
+        if(this.state.reviews.length){
             var friendsReviews = this.state.reviews.map((review, i) => {
                return             <div key={i}>
                                     <div className="col-sm-12 home-middle-middle-readreview-inner" >
