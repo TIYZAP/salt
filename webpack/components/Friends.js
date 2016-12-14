@@ -64,7 +64,11 @@ class Friends extends React.Component {
             }
         })
         .then(response => response.json())
-        .then(response => window.location.href="/friends")
+        .then(response => {
+          let friends = this.state.friends
+          friends = friends.filter(friend => friend.id !== id)
+          this.setState({friends: friends})
+        })
     }
     enter(e){
         if(e.key === 'Enter'){
@@ -112,7 +116,7 @@ class Friends extends React.Component {
     }
     closeModal() {
       this.setState({modalIsOpen: false});
-      window.location.href="/friends"
+      // window.location.href="/friends"
     }
     enterHandler(e){
       if(e.key === 'Enter'){
@@ -137,7 +141,24 @@ class Friends extends React.Component {
     followAllFriends(){
         fetch('/api/facebook/follow?user_email=' + sessionStorage.getItem('email') + '&user_token=' + sessionStorage.getItem('token'))
         .then(response => response.json())
-        .then(response => window.location.href="/friends")
+        .then(response => {
+          let allFriends = response.users.filter(newFriend => {
+            let shouldAddFriend = true
+            this.state.friends.forEach(friend => {
+              if (friend.id === newFriend.id) {
+                shouldAddFriend = false
+              }
+            })
+            return shouldAddFriend
+          })
+
+          let friends = this.state.friends
+          friends = friends.concat(allFriends)
+
+          this.setState({
+            friends: friends
+          })
+        })
     }
     followSingleFriend(search){
       fetch('/api/follow/friend', {
@@ -152,6 +173,12 @@ class Friends extends React.Component {
         }
       })
       .then(response => response.json())
+      .then(response => {
+        console.log(response.user)
+        let friends = this.state.friends
+        friends.push(response.user)
+        this.setState({friends: friends})
+      })
     }
     render(){
       var eachFriend = {
@@ -161,13 +188,18 @@ class Friends extends React.Component {
         margin: 10
       }
         var lookupFriends = this.state.searchFriends.map((search, i) => {
+          let isFriend = false
+          this.state.friends.forEach(friend => {
+            isFriend = (isFriend || friend.id === search.id)
+          })
+
           return <div style={eachFriend} className="col-sm-3" key={i}>
                                 <Link to={'/friendprofile/' + search.id}>
                                 <img height="200"  width="200" className="img-responsive" src={search.image} alt="" />
                                 <h4 className="text-center">{search.name}</h4>
                                 </Link>
                                 <div className="text-center">
-                                    <button className="btn btn-info" onClick={() => this.followSingleFriend(search)}>Follow</button>
+                                    <button className="btn btn-info" onClick={() => this.followSingleFriend(search)} disabled={isFriend}>{isFriend?'Following':'Follow'}</button>
                                 </div>
                           </div>
         })
@@ -207,7 +239,6 @@ class Friends extends React.Component {
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
                             onRequestClose={this.closeModal}
-                            style={customStyles}
                             contentLabel="Example Modal">
                             <div className="text-right">
                               <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
@@ -244,7 +275,7 @@ class Friends extends React.Component {
                       {myFriends}
                   </div>
               </div>
-              <FriendSideBar />
+              <FriendSideBar friends={this.state.friends} />
             </div>
           </div>
         </div>

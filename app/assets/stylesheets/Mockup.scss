@@ -15,10 +15,12 @@ $br: 10px;
 
 //style 3
 // $col1: #F67849;
-// $col5: #EE8972;
-// $col2: #BF9989;
+// // $col5: #EE8972;
+// $col5: white;
+// $col8: #BF9989;
 // $col7: #F9D9C7;
-// $col8: #9C9396;
+// $col2: #BF9989;
+// $col3: rgba(70, 73, 76, 1);
 
 //style 4
 // $col2: #Ebb582;
@@ -26,6 +28,7 @@ $br: 10px;
 // $col8: #7C8C8B;
 // $col7: #CEC9C4;
 // $col5: #2A3339;
+// $col3: rgba(70, 73, 76, 1);
 
 //style 5
 // $col2: #B39A94;
@@ -33,6 +36,23 @@ $br: 10px;
 // $col7: #EBEBE2;
 // $col5: #5C4540;
 // $col8: #B39A94;
+// $col3: rgba(70, 73, 76, 1);
+
+//style 6
+// $col2: #Ebb582;
+// $col1: #C35C23;
+// $col8: #6B4535;
+// $col7: #CEC9C4;
+// $col5: #2A3339;
+// $col3: #97AF92;
+
+//style 7
+// $col2: #736467;
+// $col1: #2D2A30;
+// $col8: #6B4535;
+// $col7: #E4D4C6;
+// $col5: #7E7C86;
+// $col3: #746467;
 
 
 /* RGB */
@@ -96,7 +116,6 @@ $br: 10px;
         }
         p{
             padding: 0;
-            margin: 0;
         }
         .badge{
             background: white;
@@ -240,6 +259,7 @@ $br: 10px;
             .recommend-button-section{
                 padding: 20px;
                 margin-top: 30px;
+
             }
         }
 
@@ -348,6 +368,7 @@ $br: 10px;
                 textarea {
                 	box-sizing: border-box;
                 	width: 100%;
+                    white-space: pre-wrap;
                 }
             }
         }
@@ -413,6 +434,7 @@ $br: 10px;
 }
 
 @media ( max-width : 768px ) {
+
     .head-nav-left{
         display: none;
     }
@@ -443,6 +465,29 @@ $br: 10px;
                     height: 200px;
                 }
             }
+            .home-middle-middle-myreview{
+                .recommend-button-section{
+                    // .recommend-modal{
+                    //     margin-top: 60px;
+                    //     top: 90%;
+                    //     left: 50%;
+                    //     right: auto;
+                    //     bottom: auto;
+                    //     margin-right: 50%;
+                    //     background:#E6EFF2;
+                    //     overflow: scroll;
+                    //     transform: translate(-50%, -50%);
+                    //     min-width: 95%;
+                    //     min-height: 95%;
+                    //     z-index: 1000;
+                    // }
+                    // .ReactModal__Body--open {
+                    //     margin-top: 60px;
+                    //     min-width: 80%;
+                    //     min-height: 80%;
+                    // }
+                }
+            }
         }
     }
     .home-middle-right{
@@ -471,4 +516,11 @@ $br: 10px;
 
 .no-friends{
     display: none;
+}
+
+.ReactModal__Content--after-open.YourProfile {
+    top:95px !important;
+    left:14px !important;
+    bottom:-17px !important;
+    z-index: 10 !important;
 }

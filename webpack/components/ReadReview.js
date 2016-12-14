@@ -43,7 +43,7 @@ class ReadReview extends React.Component{
                                           <h4>{this.state.name}</h4>
                                           <p>Address: {this.state.address}</p>
                                           <p>Phone: {this.state.phone}</p>
-                                          <p>Website: <a href={this.state.website}>Link to website</a></p>
+                                          <p>Website: <a href={this.state.website} target="_blank">Link to website</a></p>
                                       </div>
                                   </div>
 

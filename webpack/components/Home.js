@@ -61,7 +61,7 @@ class Home extends React.Component {
                                 <br/>
                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
-                                <h5>Review: <br />{review.body}</h5>
+                                <h5>Review: <br /><span dangerouslySetInnerHTML={{__html:review.body.replace(/\n/g, '<br/>')}}></span></h5>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@ class Home extends React.Component {
                                         <h1 className="text-center">Welcome User!</h1>
                                         <br />
                                         <h2 className="text-center">To Get Started:</h2>
-                                        <h2 className="text-center">1.) Add Facebook friends: <button className="btn btn-info"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i> Friends</button></h2>
+                                        <h2 className="text-center">1.) Add Facebook friends: <Link to={'/friends'}><button className="btn btn-info"><i className="fa fa-facebook-official fa-lg" aria-hidden="true"> </i> Friends</button></Link></h2>
                                         <h2 className="text-center">2.) Leave a Review: <Link to="/search"><button className="btn btn-info my-button">Review</button></Link></h2>
                                     </div>
                                 </div>

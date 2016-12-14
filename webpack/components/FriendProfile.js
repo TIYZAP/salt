@@ -55,7 +55,7 @@ class FriendProfile extends React.Component{
                                 </Link>
                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
-                                <p>website: <a href={review.website}>Link to website</a></p>
+                                <p>website: <a href={review.website} target="_blank">Link to website</a></p>
                                 <h5>Review: <br />{review.body}</h5>
                             </div>
                          </div>

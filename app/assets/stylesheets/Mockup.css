@@ -65,7 +65,6 @@
 
 .home-middle-section .home-middle-left p {
   padding: 0;
-  margin: 0;
 }
 
 .home-middle-section .home-middle-left .badge {
@@ -337,6 +336,7 @@
 .home-middle-section .home-middle-middle .post-review-section .post-review textarea {
   box-sizing: border-box;
   width: 100%;
+  white-space: pre-wrap;
 }
 
 .home-middle-section .home-middle-middle .post-review-header {
@@ -456,4 +456,11 @@
 
 .no-friends {
   display: none;
+}
+
+.ReactModal__Content--after-open.YourProfile {
+  top: 95px !important;
+  left: 14px !important;
+  bottom: -17px !important;
+  z-index: 10 !important;
 }

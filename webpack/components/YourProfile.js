@@ -17,10 +17,9 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     background            : '#E6EFF2',
-    width                 : '800px',
-    height                : '800px',
-    transform             : 'translate(-50%, -50%)'
-  }
+    overflow              : 'scroll',
+    transform             : 'translate(-50%, -50%)',
+    }
 }
 
 class YourProfile extends React.Component{
@@ -51,9 +50,7 @@ class YourProfile extends React.Component{
             image: response.user.image,
             badges: response.user.badges[0].description
         }))
-        // .then(response => {
-        //   console.log(response)
-        // })
+
     }
     componentDidMount(){
       fetch('/api/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
@@ -65,6 +62,9 @@ class YourProfile extends React.Component{
     sendId(friend, target){
       let sentFriends = this.state.sentFriends
       target.disabled = true
+      target.innerHTML = 'Sent'
+      target.classList.add('btn-success')
+      target.classList.remove('btn-info')
 
       fetch('/api/send/rec', {
               body: JSON.stringify({
@@ -99,7 +99,13 @@ class YourProfile extends React.Component{
             'Content-Type': 'application/json'
         }})
       .then(response => response.json())
-      .then(response => window.location.href="/yourprofile")
+      .then(response => {
+        let removeReview = this.state.myReviews
+        removeReview = removeReview.filter((r) => r.id !== review.id )
+        this.setState({
+          myReviews: removeReview
+        })
+      })
     }
     render(){
       var eachFriend = {
@@ -153,10 +159,10 @@ class YourProfile extends React.Component{
                                     isOpen={this.state.modalIsOpen}
                                     onAfterOpen={this.afterOpenModal}
                                     onRequestClose={this.closeModal}
-                                    style={customStyles}
-                                    contentLabel="Recommend Friends">
+                                    contentLabel="Recommend Friends"
+                                    overlayClassName="YourProfile">
                                     <div className="text-right">
-                                      <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
+                                      <button onClick={this.closeModal}><i className="fa fa-times fa-2x" aria-hidden="true"></i>
                                       </button>
                                     </div>
                                     <div className="row">
