@@ -53,7 +53,7 @@
 }
 
 .home-middle-section .home-middle-left {
-  background: #252626;
+  background: url(/images/footer_lodyas.png);
   color: #8ca2ad;
   height: 93vh;
 }
@@ -349,13 +349,17 @@
 }
 
 .home-middle-section .home-middle-middle .post-review-header {
-  background: #E2624B;
+  background: url(/images/footer_lodyas.png);
   color: white;
   margin-bottom: 10px;
 }
 
+.home-middle-section .home-middle-middle .post-review-header h1 {
+  font-family: lobster;
+}
+
 .home-middle-section .home-middle-right {
-  background: #dcdcdd;
+  background: url(/images/footer_lodyas.png);
   height: 93vh;
   text-align: center;
   overflow: scroll;

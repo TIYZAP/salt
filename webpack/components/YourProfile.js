@@ -37,7 +37,7 @@ class YourProfile extends React.Component{
             friends: [],
             name: '',
             image: '',
-            badges: ''
+            badges: []
         }
     }
     componentWillMount(){
@@ -48,7 +48,7 @@ class YourProfile extends React.Component{
             myReviews: response.user.reviews,
             name: response.user.name,
             image: response.user.image,
-            badges: response.user.badges[0].description
+            badges: response.user.badges
         }))
 
     }
@@ -114,6 +114,9 @@ class YourProfile extends React.Component{
         padding: 10,
         margin: 10
       }
+      var myBadges = this.state.badges.map((badge, i) => {
+        return <h5 key={i}>{badge.description}</h5>
+      })
       if(this.state.friends){
         var recFriends = this.state.friends.map((friend, i) => {
           return          <div style={eachFriend} className="col-sm-3" key={i}>
@@ -182,14 +185,14 @@ class YourProfile extends React.Component{
                   <LeftMenu  {...this.props}/>
                   <div className="col-sm-8 home-middle-middle">
                     <div className="row my-profile-background">
-                        <div className="col-sm-4">
+                        {/* <div className="col-sm-4">
                             <img  height="300" width="200" src={this.state.image} alt="" />
-                        </div>
-                        <div className="col-sm-8">
-                            <h3 className="friend-profile-name">{this.state.name}</h3>
+                        </div> */}
+                        <div className="col-sm-12 text-center">
+                            <h1 className="friend-profile-name">{this.state.name}</h1>
                             <h4>Points: <span className="badge">{this.state.myReviews.length}0</span></h4>
                             <h4>Achievements:</h4>
-                            {this.state.badges}
+                            {myBadges}
                         </div>
                     </div>
                      {displayMyReviews}

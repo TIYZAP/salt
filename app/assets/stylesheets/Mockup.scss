@@ -108,7 +108,8 @@ $br: 10px;
     padding: 0;
     margin: 0;
     .home-middle-left{
-        background: $col8;
+        // background: $col8;
+        background: url(/images/footer_lodyas.png);
         color: $col5;
         height: 93vh;
         h4{
@@ -382,14 +383,19 @@ $br: 10px;
             }
         }
         .post-review-header{
-            background:$col3;
+            // background:$col3;
+            background: url(/images/footer_lodyas.png);
             color: white;
             margin-bottom: 10px;
+            h1{
+                font-family: lobster;
+            }
         }
 
     }
     .home-middle-right{
-        background: $col2;
+        // background: $col2;
+        background: url(/images/footer_lodyas.png);
         height: 93vh;
         text-align: center;
         overflow: scroll;
