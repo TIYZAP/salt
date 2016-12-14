@@ -239,8 +239,19 @@ class Friends extends React.Component {
                           <h1 className="text-center">Friends</h1>
                   </div>
                   <div className="row">
-                      <div className="col-sm-6 text-right">
-                          <button className="btn btn-primary" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Search for Friends</button>
+                    <div className="col-sm-6 col-sm-offset-3 invite-section">
+                            <div className="input-group">
+                                <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
+                                <span className="input-group-btn">
+                                    <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
+                                </span>
+                            </div>
+                    </div>
+                  </div>
+                  <br/>
+                    <div className="row">
+                      <div className="col-sm-3 col-sm-offset-1  col-xs-3 text-right">
+                          <button className="btn friends-button" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Friends Search</button>
                           <Modal
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
@@ -264,18 +275,8 @@ class Friends extends React.Component {
                             </div>
                           </Modal>
                       </div>
-                      <div className="col-sm-6">
-                        <button className="btn btn-primary" onClick={this.followAllFriends}>Add All FB Friends</button>
-                      </div>
-                      <br />
-                      <br />
-                      <div className="col-sm-6 col-sm-offset-3 invite-section">
-                              <div className="input-group">
-                                  <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
-                                  <span className="input-group-btn">
-                                      <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
-                                  </span>
-                              </div>
+                      <div className="col-sm-3 col-xs-3 col-xs-offset-3 text-left">
+                        <button className="btn friends-button" onClick={this.followAllFriends}>Add All FB Friends</button>
                       </div>
                   </div>
                   <div className="row myfriends-list">

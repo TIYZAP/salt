@@ -152,16 +152,15 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review {
-  margin: 10px;
+  margin-bottom: 15px;
   padding: 10px;
   background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
   overflow: hidden;
   line-height: 15px;
-}
-
-.home-middle-section .home-middle-middle .home-middle-middle-review h4 {
-  padding: 0;
+  min-height: 200px;
+  max-height: 500px h4;
+  max-height-padding: 0;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review .col-sm-4 > p {
@@ -185,8 +184,8 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-review img {
-  min-width: 80px;
-  min-height: 80px;
+  width: 100px;
+  height: 100px;
   padding: 5px;
   border-radius: 100%;
 }
@@ -392,6 +391,13 @@
   z-index: 0;
 }
 
+.friends-button {
+  width: 150px;
+  height: 40px;
+  background: #1985a1;
+  color: white;
+}
+
 .my-button {
   background: #1985a1;
   color: white;
@@ -426,6 +432,12 @@
 }
 
 @media (max-width: 768px) {
+  .friends-button {
+    min-width: 50px;
+    min-height: 20px;
+    background: #1985a1;
+    color: white;
+  }
   .head-nav-left {
     display: none;
   }
@@ -441,7 +453,7 @@
     display: none;
   }
   .home-middle-section .home-middle-middle {
-    overflow: visible;
+    overflow: visible !important;
     height: 100%;
   }
   .home-middle-section .home-middle-middle .home-middle-middle-review h5 {
@@ -450,7 +462,8 @@
     height: 100%;
   }
   .home-middle-section .home-middle-middle .home-middle-middle-review img {
-    height: 200px;
+    height: 80px;
+    width: 80px;
   }
   .home-middle-right {
     display: none;

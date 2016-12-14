@@ -45,19 +45,19 @@ class Home extends React.Component {
         if(this.state.allReviews.length ){
             var friendsReviews = this.state.allReviews.map((review, i) => {
                 return  (
-                    <div className="col-sm-5 home-middle-middle-review" key={i}>
+                    <div className="col-sm-8 col-sm-offset-2 home-middle-middle-review" key={i}>
                         <div className="row">
                             <Link to={'/readreview?place_id=' + review.place_id} >
                             <h4 className="text-center">
                                 {review.venue_name}
                             </h4>
                             </Link>
-                            <div className="col-sm-4">
+                            <div className="col-xs-4 text-center">
                               <p className="text-center">{review.user.name}</p>
-                                <img height="120"  src={review.user.image} alt="Reviewers Picture" />
-                                <p className="text-center">{moment(review.created_at).fromNow()}</p>
+                                <img src={review.user.image} alt="Reviewers Picture" />
+                                <p>{moment(review.created_at).fromNow()}</p>
                             </div>
-                            <div className="col-sm-8">
+                            <div className="col-xs-8">
                                 <br/>
                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>

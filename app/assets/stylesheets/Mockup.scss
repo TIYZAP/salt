@@ -197,12 +197,14 @@ $br: 10px;
 
         //css for reviews on home page
         .home-middle-middle-review{
-            margin: 10px;
+            margin-bottom: 15px;
             padding: 10px;
             background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
             overflow: hidden;
             line-height: 15px;
+            min-height: 200px;
+            max-height: 500px
             h4{
                 padding: 0;
             }
@@ -225,8 +227,8 @@ $br: 10px;
                 }
             }
             img{
-                min-width: 80px;
-                min-height: 80px;
+                width: 100px;
+                height: 100px;
                 padding: 5px;
                 border-radius: 100%;
             }
@@ -288,6 +290,7 @@ $br: 10px;
                 min-height: 150px;
                 min-width: 150px;
             }
+
         }
 
         //css for search
@@ -423,7 +426,12 @@ $br: 10px;
 .input-group{
   z-index: 0;
 }
-
+.friends-button{
+    width: 150px;
+    height: 40px;
+    background: $col1;
+    color:white;
+}
 .my-button{
     background: $col1;
     color: white;
@@ -453,6 +461,12 @@ $br: 10px;
 }
 
 @media ( max-width : 768px ) {
+    .friends-button{
+        min-width: 50px;
+        min-height: 20px;
+        background: $col1;
+        color:white;
+    }
     .head-nav-left{
         display: none;
     }
@@ -471,7 +485,7 @@ $br: 10px;
     }
     .home-middle-section{
         .home-middle-middle{
-            overflow: visible;
+            overflow: visible !important;
             height: 100%;
             .home-middle-middle-review{
                 h5{
@@ -480,7 +494,8 @@ $br: 10px;
                     height: 100%;
                 }
                 img{
-                    height: 200px;
+                    height: 80px;
+                    width: 80px;
                 }
             }
             .home-middle-middle-myreview{
