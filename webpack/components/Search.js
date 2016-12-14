@@ -84,7 +84,7 @@ class Search extends React.Component{
                             <div className="input-group">
                                 <label>Step 1:  Enter zip or address for restaurant</label>
                               <input type="text"  className="form-control" placeholder="Enter Zip Code/Address" ref={(a) => this._inputZip = a} onKeyPress={this.enter} defaultValue={window.cacheSearchZip || ''} />
-                              <label className="text-center">Step 2:  Enter name or food type</label>
+                              <label className="text-center">Step 2:  Enter name or food type (Optional)</label>
                               <input type="text" className="form-control" placeholder="Enter name of place" ref={(a) => this._inputPlace = a} onKeyPress={this.enter} defaultValue={window.cacheSearchPlace || ''} />
                               <div className="text-center">
                                 <button className="btn" type="submit">Search</button>
