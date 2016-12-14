@@ -40,8 +40,13 @@ class ReviewsController < ApplicationController
   def send_rec
     @review = Review.find(params[:review_id])
     @user = User.find(params[:friend_id])
-    RecNotifierMailer.send_rec_email(@user, @review).deliver
-    render json: @review
+    if RecNotifierMailer.send_rec_email(@user, @review).deliver
+      render json: @review
+    else
+      status = 'error'
+      message = 'There was a problem sending your recommendation'
+      render json: {:status => status , :message => message}
+    end
   end
 
 
