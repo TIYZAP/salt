@@ -46,7 +46,7 @@ class FriendProfile extends React.Component{
         var userReviews = this.state.reviews.map((review, i) => {
             return       <div className="col-sm-11 home-middle-middle-friendsreview" key={i}>
                             <div className="col-sm-4">
-                                <img height="250" width="200" src={review.image} alt="" />
+                                <img  src={review.image} alt="" />
                                 <p className="text-center">{moment(review.created_at).fromNow()}</p>
                             </div>
                             <div className="col-sm-8">
@@ -56,7 +56,7 @@ class FriendProfile extends React.Component{
                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
                                 <p>website: <a href={review.website} target="_blank">Link to website</a></p>
-                                <h5>Review: <br />{review.body}</h5>
+                                <h5>Review: <br /><span dangerouslySetInnerHTML={{__html:review.body.replace(/\n/g, '<br/>')}}></span></h5>
                             </div>
                          </div>
         })
@@ -72,7 +72,7 @@ class FriendProfile extends React.Component{
                                 <div className="col-sm-12 home-middle-middle-friends-profile">
                                     <div className="row friends-profile-background">
                                         <div className="col-sm-4">
-                                            <img  height="300" width="200" src={this.state.image} alt="" />
+                                            <img src={this.state.image} alt="friends profile image" />
                                         </div>
                                         <div className="col-sm-8">
                                             <h3 className="friend-profile-name">{this.state.name}</h3>

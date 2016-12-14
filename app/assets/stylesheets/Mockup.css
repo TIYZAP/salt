@@ -108,7 +108,7 @@
 }
 
 .home-middle-section .home-middle-middle {
-  background: #E6EFF2;
+  background: url(/images/brushed_alu2X.png);
   height: 93vh;
   overflow: scroll;
 }
@@ -117,10 +117,12 @@
   background: #dcdcdd;
   box-shadow: 5px 5px 10px lightgrey;
   padding: 20px;
+  margin-top: 90px;
 }
 
 .home-middle-section .home-middle-middle .homepage-box h2 {
   padding: 10px;
+  margin: 0;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-readreview-inner {
@@ -246,7 +248,8 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends img {
-  height: 200px;
+  min-height: 150px;
+  min-width: 150px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review {
@@ -289,7 +292,7 @@
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background {
-  background: url(/images/friendsbackground.jpg);
+  background: url(/images/footer_lodyas.png);
   background-position: center;
   background-size: cover;
   padding: 10px;
@@ -297,6 +300,10 @@
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h3, .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h4, .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background h5 {
   color: white;
+}
+
+.home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friends-profile-background img {
+  width: 250px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .friend-profile-name {
@@ -312,10 +319,12 @@
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile .home-middle-middle-friendsreview img {
   padding: 10px;
+  width: 250px;
+  height: 250px;
 }
 
 .home-middle-section .home-middle-middle .my-profile-background {
-  background-image: url(/images/friendsbackground.jpg);
+  background-image: url(/images/footer_lodyas.png);
   color: white;
 }
 
@@ -407,6 +416,11 @@
   color: white;
 }
 
+.myfriends-list {
+  padding: 20px;
+  padding-left: 60px;
+}
+
 @media (max-width: 768px) {
   .head-nav-left {
     display: none;
@@ -414,7 +428,7 @@
   .head-nav-wrapper .head-nav-middle {
     width: 100%;
     position: fixed;
-    z-index: 10;
+    z-index: 100;
   }
   .head-nav-right {
     display: none;
@@ -437,6 +451,9 @@
   .home-middle-right {
     display: none;
   }
+  .myfriends-list {
+    padding: 0;
+  }
 }
 
 .friend-button-changer {
@@ -458,9 +475,11 @@
   display: none;
 }
 
-.ReactModal__Content--after-open.YourProfile {
-  top: 95px !important;
-  left: 14px !important;
-  bottom: -17px !important;
-  z-index: 10 !important;
+.ReactModal__Overlay--after-open {
+  position: fixed;
+  top: 45px;
+  left: -30px;
+  right: -30px;
+  bottom: -30px;
+  background-color: rgba(255, 255, 255, 0.74);
 }

@@ -144,11 +144,13 @@ class Friends extends React.Component {
         .then(response => {
           let allFriends = response.users.filter(newFriend => {
             let shouldAddFriend = true
-            this.state.friends.forEach(friend => {
-              if (friend.id === newFriend.id) {
-                shouldAddFriend = false
-              }
-            })
+            if(this.state.friends){
+              this.state.friends.forEach(friend => {
+                if (friend.id === newFriend.id) {
+                  shouldAddFriend = false
+                }
+              })
+            }
             return shouldAddFriend
           })
 
@@ -174,7 +176,7 @@ class Friends extends React.Component {
       })
       .then(response => response.json())
       .then(response => {
-        console.log(response.user)
+        // console.log(response.user)
         let friends = this.state.friends
         friends.push(response.user)
         this.setState({friends: friends})
@@ -189,9 +191,12 @@ class Friends extends React.Component {
       }
         var lookupFriends = this.state.searchFriends.map((search, i) => {
           let isFriend = false
-          this.state.friends.forEach(friend => {
-            isFriend = (isFriend || friend.id === search.id)
-          })
+          if(this.state.friends){
+            this.state.friends.forEach(friend => {
+              isFriend = (isFriend || friend.id === search.id)
+            })
+          }
+
 
           return <div style={eachFriend} className="col-sm-3" key={i}>
                                 <Link to={'/friendprofile/' + search.id}>
@@ -209,6 +214,7 @@ class Friends extends React.Component {
                         <Link to={'/friendprofile/' + friend.id} >
                         <img className="img-responsive" src={friend.image} alt="" />
                         <h4 className="text-center">{friend.name}</h4>
+                        <h5 className="text-center">Points: <span className="badge">{friend.reviews.length}0</span></h5>
                         </Link>
                         <div className="text-center">
                             <button className="btn btn-info" onClick={() => this.removeFriend(friend.id)}>Unfollow</button>
@@ -228,7 +234,7 @@ class Friends extends React.Component {
           <div className="row">
             <div className="home-middle-section">
                 <LeftMenu  {...this.props}/>
-              <div className="col-sm-8 home-middle-middle">
+              <div className={window.location.href.indexOf('friends')?"col-sm-10 home-middle-middle":''}>
                   <div className="row post-review-header">
                           <h1 className="text-center">Friends</h1>
                   </div>
@@ -239,6 +245,7 @@ class Friends extends React.Component {
                             isOpen={this.state.modalIsOpen}
                             onAfterOpen={this.afterOpenModal}
                             onRequestClose={this.closeModal}
+                            overlayClassName="YourProfile"
                             contentLabel="Example Modal">
                             <div className="text-right">
                               <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
@@ -271,11 +278,11 @@ class Friends extends React.Component {
                               </div>
                       </div>
                   </div>
-                  <div className="row">
+                  <div className="row myfriends-list">
                       {myFriends}
                   </div>
               </div>
-              <FriendSideBar friends={this.state.friends} />
+              {window.location.href.indexOf('friends')?'':<div><FriendSideBar friends={this.state.friends} /></div>}
             </div>
           </div>
         </div>
