@@ -53,25 +53,25 @@ class LandingPage extends React.Component {
                         <img className="img-circle" src="/images/manny.jpg"></img>
                         <h5>Manpreet Singh (Manny)</h5>
                         <h5>Front-End Engineering Student</h5>
-                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/mannyy91s">https://www.linkedin.com/in/mannyy91s</a></h5>
-                        <h5>GitHub-<a href="https://github.com/mannyy91s">https://github.com/mannyy91s</a></h5>
-                        <h5>Email-<a href="mannyy91s@gmail.com">mannyy91s@gmail.com</a></h5>
+                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/mannyy91s" target="_blank">https://www.linkedin.com/in/mannyy91s</a></h5>
+                        <h5>GitHub-<a href="https://github.com/mannyy91s" target="_blank">https://github.com/mannyy91s</a></h5>
+                        <h5>Email-<a href="mailto:mannyy91s@gmail.com">mannyy91s@gmail.com</a></h5>
                     </div>
                     <div className="col-sm-4 text-center">
                         <img className="img-circle" src="/images/Zach Pinner.jpg"></img>
                         <h5>Zach Pinner</h5>
                         <h5>Back-End Engineering Student</h5>
-                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/zapinner">https://www.linkedin.com/in/zapinner</a></h5>
-                        <h5>GitHub-<a href="https://github.com/TIYZAP">https://github.com/TIYZAP</a></h5>
-                        <h5>Email-<a href="zapinner@gmail.com">zapinner@gmail.com</a></h5>
+                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/zapinner" target="_blank">https://www.linkedin.com/in/zapinner</a></h5>
+                        <h5>GitHub-<a href="https://github.com/TIYZAP" target="_blank">https://github.com/TIYZAP</a></h5>
+                        <h5>Email-<a href="mailto:zapinner@gmail.com">zapinner@gmail.com</a></h5>
                     </div>
                     <div className="col-sm-4 text-center">
                         <img className="img-circle" src="/images/Jon Krouse.jpg"></img>
                         <h5>Jon Krouse</h5>
                         <h5>Back-End Engineering Student</h5>
-                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/jon-krouse13">https://www.linkedin.com/in/jon-krouse13</a></h5>
-                        <h5>GitHub-<a href="https://github.com/Jkrouse13">https://github.com/Jkrouse13</a></h5>
-                        <h5>Email-<a href="jon.krouse@gmail.com">jon.krouse@gmail.com</a></h5>
+                        <h5>LinkedIn-<a href="https://www.linkedin.com/in/jon-krouse13" target="_blank">https://www.linkedin.com/in/jon-krouse13</a></h5>
+                        <h5>GitHub-<a href="https://github.com/Jkrouse13" target="_blank">https://github.com/Jkrouse13</a></h5>
+                        <h5>Email-<a href="mailto:jon.krouse@gmail.com">jon.krouse@gmail.com</a></h5>
                     </div>
             </div>
             </div>
