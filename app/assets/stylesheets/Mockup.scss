@@ -259,6 +259,7 @@ $br: 10px;
             .recommend-button-section{
                 padding: 20px;
                 margin-top: 30px;
+
             }
         }
 
@@ -367,6 +368,7 @@ $br: 10px;
                 textarea {
                 	box-sizing: border-box;
                 	width: 100%;
+                    white-space: pre-wrap;
                 }
             }
         }
@@ -479,12 +481,6 @@ $br: 10px;
                     //     min-height: 95%;
                     //     z-index: 1000;
                     // }
-                    // .ReactModal__Content--after-open{
-                    //     top:89px;
-                    //     left:14px;
-                    //     bottom:-17px;
-                    //     z-index: 10;
-                    // }
                     // .ReactModal__Body--open {
                     //     margin-top: 60px;
                     //     min-width: 80%;
@@ -520,4 +516,11 @@ $br: 10px;
 
 .no-friends{
     display: none;
+}
+
+.ReactModal__Content--after-open.YourProfile {
+    top:95px !important;
+    left:14px !important;
+    bottom:-17px !important;
+    z-index: 10 !important;
 }

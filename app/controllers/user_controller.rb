@@ -25,8 +25,9 @@ acts_as_token_authentication_handler_for User, except: [:index, :show]
 
   def follow_one_friend
     @user = current_user
-    @user.follow!(User.find(params[:id]))
-    render json: @user
+    @friend = User.find(params[:id])
+    @user.follow!(@friend)
+    render json: @friend
   end
 
   def send_invites
