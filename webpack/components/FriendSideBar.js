@@ -4,24 +4,31 @@ import urlParse from 'url-parse'
 
 
 class FriendSideBar extends React.Component{
-    // constructor(props){
-    //     super(props)
-    //     this.state = {
-    //         friends: []
-    //     }
-    // }
-    // componentWillMount(){
-    //     var url = new urlParse(window.location.href, true)
-    //     fetch('/api/friends/all?' + 'user_token=' + (sessionStorage.getItem('token')?sessionStorage.getItem('token'):url.query.token) + '&user_email=' + (sessionStorage.getItem('email')?sessionStorage.getItem('email'):url.query.email) )
-    //     .then(response => response.json())
-    //     .then(response => this.setState({
-    //         friends: response.users
-    //     }))
-    // }
+    constructor(props){
+        super(props)
+        this.state = {
+            myFriends: []
+        }
+    }
+    componentWillMount(){
+        if(!this.props.friends){
+            var url = new urlParse(window.location.href, true)
+            fetch('/api/friends/all?' + 'user_token=' + (sessionStorage.getItem('token')?sessionStorage.getItem('token'):url.query.token) + '&user_email=' + (sessionStorage.getItem('email')?sessionStorage.getItem('email'):url.query.email) )
+            .then(response => response.json())
+            .then(response => this.setState({
+                myFriends: response.users
+            }))
+        } else {
+            this.setState({
+                myFriends: this.props.friends
+            })
+        }
+
+    }
 
     render(){
-        if(this.props.friends){
-            var friendsList = this.props.friends.map((friend, i) =>{
+        if(this.state.myFriends){
+            var friendsList = this.state.myFriends.map((friend, i) =>{
             return    <Link to={'/friendprofile/' + friend.id} key={i}>
                         <div className="col-sm-12 home-each-friend">
                           <div className="col-sm-5">
