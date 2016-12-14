@@ -61,7 +61,7 @@ class Home extends React.Component {
                                 <br/>
                                 <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
                                 <p>Dish: {review.dish}</p>
-                                <h5>Review: <br />{review.body}</h5>
+                                <h5>Review: <br /><span dangerouslySetInnerHTML={{__html:review.body.replace(/\n/g, '<br/>')}}></span></h5>
                             </div>
                         </div>
                     </div>
