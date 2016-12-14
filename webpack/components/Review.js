@@ -93,7 +93,7 @@ class Review extends React.Component{
                               <div className="col-sm-5">
                                 <img height="300" width="300" src={this.state.searchResults.photos && this.state.searchResults.photos.length? 'https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=' + this.state.searchResults.photos[0].photo_reference + '&key=' + this.state.searchResults.photos[0].api_key :'https://unsplash.it/600?random'} alt="" />
                                 <h4>{this.state.name}</h4>
-                                <h4>Website: {this.state.website?<a href={this.state.website}>Click here for website!</a>:<span>No website available</span>}</h4>
+                                <h4>Website: {this.state.website?<a href={this.state.website} target="_blank">Click here for website!</a>:<span>No website available</span>}</h4>
                                 <h4>Address: {this.state.address}</h4>
                                 <h4>Phone: {this.state.phone}</h4>
                               </div>

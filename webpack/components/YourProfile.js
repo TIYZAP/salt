@@ -17,10 +17,9 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     background            : '#E6EFF2',
-    width                 : '800px',
-    height                : '800px',
-    transform             : 'translate(-50%, -50%)'
-  }
+    overflow              : 'scroll',
+    transform             : 'translate(-50%, -50%)',
+    }
 }
 
 class YourProfile extends React.Component{
@@ -51,9 +50,7 @@ class YourProfile extends React.Component{
             image: response.user.image,
             badges: response.user.badges[0].description
         }))
-        // .then(response => {
-        //   console.log(response)
-        // })
+
     }
     componentDidMount(){
       fetch('/api/friends/all?' + 'user_token=' + sessionStorage.getItem('token') + '&user_email=' + sessionStorage.getItem('email'))
@@ -153,7 +150,6 @@ class YourProfile extends React.Component{
                                     isOpen={this.state.modalIsOpen}
                                     onAfterOpen={this.afterOpenModal}
                                     onRequestClose={this.closeModal}
-                                    style={customStyles}
                                     contentLabel="Recommend Friends">
                                     <div className="text-right">
                                       <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
