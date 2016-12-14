@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Salt</title>
+    <title>Grain of Salt</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag *webpack_asset_paths('application', extension: 'js') %>
     <%= stylesheet_link_tag *webpack_asset_paths('application', extension: 'css') %>
+    <link rel="icon" type="image" href="salticon.ico" sizes="16x16"/>
     <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -24,7 +25,7 @@
   <body>
       <%= yield %>
     <div class="container-fluid" id="app">
-        
+
     </div>
     <script>
  window.fbAsyncInit = function() {
