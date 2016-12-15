@@ -1,2 +1,1 @@
-
-{"errors":[],"warnings":[],"version":"1.13.3","hash":"e81e822862ba345fe7d8","publicPath":"/webpack/","assetsByChunkName":{"application":"application-684edc8b56624d3bb194.js"},"assets":[{"name":"application-684edc8b56624d3bb194.js","size":642208,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}
+{"errors":[],"warnings":[],"version":"1.13.3","hash":"37a07177f2baaf507652","publicPath":"/webpack/","assetsByChunkName":{"application":"application-4106e1e88385a5b300c7.js"},"assets":[{"name":"application-4106e1e88385a5b300c7.js","size":637544,"chunks":[0],"chunkNames":["application"],"emitted":true},{"name":"manifest.json","size":0,"chunks":[],"chunkNames":[]}],"children":[]}

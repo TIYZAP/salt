@@ -155,8 +155,7 @@ class Friends extends React.Component {
             }
             return shouldAddFriend
           })
-
-          let friends = this.state.friends
+          let friends = this.state.friends || []
           friends = friends.concat(allFriends)
 
           this.setState({
