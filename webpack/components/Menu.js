@@ -45,8 +45,8 @@ export default React.createClass({
           <h3 className="text-center">{this.state.name}</h3>
         </div>
         <RadiumLink className="menu-item" to="/home"><i className="fa fa-home fa-2x" aria-hidden="true"></i><br />Home</RadiumLink>
-        <RadiumLink className="menu-item" to="/search"><i className="fa fa-plus fa-2x" aria-hidden="true"></i><br />Review</RadiumLink>
-        <RadiumLink className="menu-item" to="/yourprofile"><i className="fa fa-user fa-2x" aria-hidden="true"></i><br />Your Profile</RadiumLink>
+        <RadiumLink className="menu-item" to="/search"><i className="fa fa-file-text-o fa-2x" aria-hidden="true"></i><br />Post a Review</RadiumLink>
+        <RadiumLink className="menu-item" to="/yourprofile"><i className="fa fa-star fa-2x" aria-hidden="true"></i><br />Your Profile</RadiumLink>
         <RadiumLink className="menu-item" to="/friends"><i className="fa fa-users fa-2x" aria-hidden="true"></i><br />Friends</RadiumLink>
         <RadiumLink className="menu-item" onClick={this.logoutHandler}><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i><br />Logout</RadiumLink>
       </Menu>
