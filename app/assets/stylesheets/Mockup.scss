@@ -115,11 +115,18 @@ img{
                 margin: 0;
             }
             .readreview-img{
+                img{
+                    width: 100px;
+                    height: 100px;
+                    padding: 5px;
+                    border-radius: 100%;
+                }
             }
         }
         .home-middle-middle-readreview-place{
             width: 100%;
             margin: 5px;
+            margin-bottom: 10px;
             padding: 10px;
             background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
@@ -148,17 +155,17 @@ img{
                 white-space: nowrap;
                 text-overflow: ellipsis;
             }
-            h5{
-                margin: 0;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                height: 90px;
-                white-space: nowrap;
-                &:hover, &:focus{
-                    white-space: normal;
-                    transition: all 0.9s ease;
-                }
-            }
+            // h4{
+            //     margin: 0;
+            //     text-overflow: ellipsis;
+            //     overflow: hidden;
+            //     height: 90px;
+            //     white-space: nowrap;
+            //     &:hover, &:focus{
+            //         white-space: normal;
+            //         transition: all 0.9s ease;
+            //     }
+            // }
             img{
                 width: 100px;
                 height: 100px;

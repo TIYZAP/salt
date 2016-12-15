@@ -53,7 +53,7 @@ class ReadReview extends React.Component{
                                         <div className="row">
                                             <div className="col-sm-2 readreview-img">
                                               <p>{review.user.name}</p>
-                                                <img className="img-responsive" src={review.user.image} alt="Reviewers Picture" />
+                                                <img src={review.user.image} alt="Reviewers Picture" />
                                                 <p>{moment(review.created_at).fromNow()}</p>
                                             </div>
                                             <div className="col-sm-10">
