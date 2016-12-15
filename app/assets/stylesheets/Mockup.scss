@@ -39,27 +39,12 @@ img{
         background: $col1;
         height: 70px;
         padding: 0px;
-        button{
-            border-radius: $br;
-            font-size: 19px;
-            background: $col1;
-            border: none;
-            &:hover{
-                background: transparent;
-                transform: scale(1.1);
-                border: 1px solid white;
-            }
-        }
-        i{
-            padding: 5px;
-        }
     }
 }
 .home-middle-section{
     padding: 0;
     margin: 0;
     .home-middle-left{
-        // background: $col8;
         background: url(/images/footer_lodyas.png);
         color: $col5;
         height: 93vh;

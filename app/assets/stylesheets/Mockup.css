@@ -37,23 +37,6 @@ img {
   padding: 0px;
 }
 
-.head-nav-wrapper .head-nav-right button {
-  border-radius: 10px;
-  font-size: 19px;
-  background: #1985a1;
-  border: none;
-}
-
-.head-nav-wrapper .head-nav-right button:hover {
-  background: transparent;
-  transform: scale(1.1);
-  border: 1px solid white;
-}
-
-.head-nav-wrapper .head-nav-right i {
-  padding: 5px;
-}
-
 .home-middle-section {
   padding: 0;
   margin: 0;
