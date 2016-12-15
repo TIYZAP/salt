@@ -45,7 +45,7 @@ class FriendSideBar extends React.Component{
             var friendsList = <Link to="/friends"><button className="btn btn-primary">Add Friends</button></Link>
         }
         return(
-            <div className="col-sm-2 home-middle-right">
+            <div className="col-sm-2 home-middle-right hidden-xs">
                 <h1>Friends</h1>
                 {friendsList}
             </div>

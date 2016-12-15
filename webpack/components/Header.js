@@ -17,12 +17,12 @@ class Header extends React.Component{
             <div className="row">
                 <div className="col-sm-12 head-nav-wrapper">
                     <div className="row">
-                  <div className="col-sm-2 head-nav-left">
+                  <div className="col-sm-2 head-nav-left hidden-xs">
                   </div>
                   <div className="col-sm-8 head-nav-middle">
                     <h1>Grain Of Salt</h1>
                   </div>
-                  <div className="col-sm-2 head-nav-right">
+                  <div className="col-sm-2 head-nav-right hidden-xs">
                       <div className="row">
                           <div className="col-sm-6 about">
                           </div>

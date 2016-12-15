@@ -38,7 +38,6 @@ class Search extends React.Component{
     updateSearch(zip, place){
         window.cacheSearchZip = zip
         window.cacheSearchPlace = place
-
         fetch('/api/search?address=' + zip + '&name=' + place)
         .then(response => response.json())
         .then(response => this.setState({searchResults: response}))

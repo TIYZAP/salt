@@ -5,65 +5,16 @@ $col8: #252626;
 $col3: #E2624B;
 $col5: #8ca2ad;
 $col7: #E6EFF2;
-
 $br: 10px;
-//style 2
-// $col1: #D24136;
-// $col8: #Eb8a3e;
-// $col2: #Ebb582;
-// $col7: #f2e6e6;
-// $col5: #D24136;
-
-//style 3
-// $col1: #F67849;
-// // $col5: #EE8972;
-// $col5: white;
-// $col8: #BF9989;
-// $col7: #F9D9C7;
-// $col2: #BF9989;
-// $col3: rgba(70, 73, 76, 1);
-
-//style 4
-// $col2: #Ebb582;
-// $col1: #C69343;
-// $col8: #7C8C8B;
-// $col7: #CEC9C4;
-// $col5: #2A3339;
-// $col3: rgba(70, 73, 76, 1);
-
-//style 5
-// $col2: #B39A94;
-// $col1: #5C4540;
-// $col7: #EBEBE2;
-// $col5: #5C4540;
-// $col8: #B39A94;
-// $col3: rgba(70, 73, 76, 1);
-
-//style 6
-// $col2: #Ebb582;
-// $col1: #C35C23;
-// $col8: #6B4535;
-// $col7: #CEC9C4;
-// $col5: #2A3339;
-// $col3: #97AF92;
-
-//style 7
-// $col2: #736467;
-// $col1: #2D2A30;
-// $col8: #6B4535;
-// $col7: #E4D4C6;
-// $col5: #7E7C86;
-// $col3: #746467;
 
 
-/* RGB */
-// $col5: rgba(220, 220, 221, 1);
-// $col3: rgba(197, 195, 198, 1);
-// $col8: rgba(70, 73, 76, 1);
-// $col7: rgba(76, 92, 104, 1);
-// $col1: rgba(25, 133, 161, 1);
 
-
+*{
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
 .head-nav-wrapper{
     color: white;
     text-align: center;
@@ -246,19 +197,15 @@ $br: 10px;
                     margin: 0;
                 }
             }
-            p{
-                // margin: 0;
-                // padding: 10;
-            }
             img{
                 width: 100%;
                 height: 200px;
             }
-            h5, h4{
+            h5, h4, p{
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                width: 90%;
+                width: 95%;
                 padding: 0;
                 margin: 0;
             }
@@ -484,7 +431,7 @@ $br: 10px;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow:  hidden;
-            width: 80%;
+            width: 90%;
         }
         img{
             max-height: 20px;
@@ -494,15 +441,6 @@ $br: 10px;
 }
 
 @media ( max-width : 768px ) {
-    .friends-button{
-        min-width: 50px;
-        min-height: 20px;
-        background: $col1;
-        color:white;
-    }
-    .head-nav-left{
-        display: none;
-    }
     .head-nav-wrapper{
         .head-nav-middle{
             width: 100%;
@@ -510,11 +448,11 @@ $br: 10px;
             z-index: 100;
         }
     }
-    .head-nav-right{
-        display: none;
-    }
-    .home-middle-left{
-        display: none;
+    .friends-button{
+        min-width: 50px;
+        min-height: 20px;
+        background: $col1;
+        color:white;
     }
     .home-middle-section{
         .home-middle-middle{
@@ -534,14 +472,9 @@ $br: 10px;
             .my-review-row{
                 padding-left: 0;
             }
-            .home-middle-middle-myreview{
-                // padding-left: 10px;
-            }
         }
     }
-    .home-middle-right{
-        display: none;
-    }
+
     .myfriends-list{
         padding: 0;
     }
@@ -552,6 +485,14 @@ $br: 10px;
         right: -20px;
         bottom: -30px;
         background: url(/images/footer_lodyas.png);
+        .ReactModal__Content--after-open{
+            background: url(/images/brushed_alu2X.png) !important;
+            top: 40px;
+            bottom: 40px;
+            left: 40px !important;
+            right: 40px !important;
+
+        }
     }
 }
 

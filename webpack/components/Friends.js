@@ -73,6 +73,9 @@ class Friends extends React.Component {
     enter(e){
         if(e.key === 'Enter'){
             this.inviteFriends(e)
+            this.setState({
+                email: ''
+            })
         }
     }
     emailsHandler(e){
@@ -82,6 +85,9 @@ class Friends extends React.Component {
     }
     clickHandler(){
         this.inviteFriends()
+        this.setState({
+          email: ''
+        })
     }
     inviteFriends(e){
         if (this.state.email !== '') {
@@ -104,11 +110,8 @@ class Friends extends React.Component {
             .then(response => {if(response.status >= 200 && response.status < 300){
               alert('Invite Sent')
             } else{
-              alert('Error: ' + response.status + ' Please enter valid Email')
+              alert('Please enter valid Email')
             }})
-        }
-        else {
-
         }
     }
     openModal() {
@@ -175,7 +178,6 @@ class Friends extends React.Component {
       })
       .then(response => response.json())
       .then(response => {
-        // console.log(response.user)
         let friends = this.state.friends
         friends.push(response.user)
         this.setState({friends: friends})
@@ -196,7 +198,6 @@ class Friends extends React.Component {
             })
           }
 
-
           return <div style={eachFriend} className="col-sm-3" key={i}>
                                 <Link to={'/friendprofile/' + search.id}>
                                 <img height="200"  width="200" className="img-responsive" src={search.image} alt="" />
@@ -211,7 +212,7 @@ class Friends extends React.Component {
           var myFriends = this.state.friends.map((friend, i) =>{
           return     <div className="col-sm-3 home-middle-middle-friends" key={i}>
                         <Link to={'/friendprofile/' + friend.id} >
-                        <img className="img-responsive" src={friend.image} alt="" />
+                        <img className="img-responsive" src={friend.image} alt="Friends Image" />
                         <h4 className="text-center">{friend.name}</h4>
                         <h5 className="text-center">Points: <span className="badge">{friend.reviews.length}0</span></h5>
                         </Link>
@@ -240,7 +241,7 @@ class Friends extends React.Component {
                   <div className="row">
                     <div className="col-sm-5 col-sm-offset-3 invite-section well">
                       <div className="input-group">
-                        <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
+                        <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  value={this.state.email} onKeyPress={this.enter}/>
                         <span className="input-group-btn">
                           <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
                         </span>
@@ -263,7 +264,7 @@ class Friends extends React.Component {
                       </div>
                       <div className="col-sm-6 col-sm-offset-3 well">
                         <div className="input-group">
-                          <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler}  onKeyPress={this.enterHandler}/>
+                          <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler} value={this.state.input} onKeyPress={this.enterHandler}/>
                           <span className="input-group-btn">
                             <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.followClickHandler}>Search</button>
                           </span>
