@@ -14,7 +14,7 @@ class LandingPage extends React.Component {
             <div>
             <div className="row landing-container">
                         <div className="col-sm-12 landingpage-box text-center">
-                                <h1>G     rain of Salt</h1>
+                                <h1>Grain of Salt</h1>
                                 <h3>Restaurant reviews from your Facebook friends</h3>
                             <div className="col-sm-12 text-center">
                             <a className="btn btn-primary" href="/users/auth/facebook"><i className="fa fa-facebook-official" aria-hidden="true"></i> Log In with Facebook</a>
