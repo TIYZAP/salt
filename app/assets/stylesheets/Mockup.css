@@ -190,11 +190,13 @@
   border-radius: 100%;
 }
 
+.home-middle-section .home-middle-middle .my-review-row {
+  padding-left: 90px;
+}
+
 .home-middle-section .home-middle-middle .home-middle-middle-myreview {
   background: #dcdcdd;
   margin: 10px;
-  height: 450px;
-  width: 300px;
   box-shadow: 5px 5px 10px lightgrey;
 }
 
@@ -203,21 +205,16 @@
   margin: 0;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-myreview p {
-  margin: 0;
-  padding: 0;
-}
-
 .home-middle-section .home-middle-middle .home-middle-middle-myreview img {
   width: 100%;
   height: 200px;
 }
 
-.home-middle-section .home-middle-middle .home-middle-middle-myreview h5 {
+.home-middle-section .home-middle-middle .home-middle-middle-myreview h5, .home-middle-section .home-middle-middle .home-middle-middle-myreview h4 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 80%;
+  width: 90%;
   padding: 0;
   margin: 0;
 }
@@ -276,12 +273,16 @@
   background: #8ca2ad;
   color: white;
   border: 1px solid white;
+  min-width: 60px;
+  min-height: 40px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-search .home-middle-middle-search-review .post-review-button {
   background: #1985a1;
   color: white;
   border: 1px solid white;
+  min-width: 60px;
+  min-height: 40px;
 }
 
 .home-middle-section .home-middle-middle .home-middle-middle-friends-profile img {
@@ -431,6 +432,39 @@
   padding-left: 60px;
 }
 
+.ReactModal__Overlay--after-open {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+}
+
+.ReactModal__Overlay--after-open .ReactModal__Content--after-open {
+  background: url(/images/brushed_alu2X.png) !important;
+  top: 40px;
+  bottom: 40px;
+  left: 250px !important;
+  right: 250px !important;
+}
+
+.ReactModal__Overlay--after-open .rec-modal-friends {
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.ReactModal__Overlay--after-open .rec-modal-friends h5 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+}
+
+.ReactModal__Overlay--after-open .rec-modal-friends img {
+  max-height: 20px;
+  max-height: 250px;
+}
+
 @media (max-width: 768px) {
   .friends-button {
     min-width: 50px;
@@ -465,11 +499,22 @@
     height: 80px;
     width: 80px;
   }
+  .home-middle-section .home-middle-middle .my-review-row {
+    padding-left: 0;
+  }
   .home-middle-right {
     display: none;
   }
   .myfriends-list {
     padding: 0;
+  }
+  .ReactModal__Overlay--after-open {
+    position: fixed;
+    top: 45px;
+    left: -20px;
+    right: -20px;
+    bottom: -30px;
+    background: url(/images/footer_lodyas.png);
   }
 }
 
@@ -490,13 +535,4 @@
 
 .no-friends {
   display: none;
-}
-
-.ReactModal__Overlay--after-open {
-  position: fixed;
-  top: 45px;
-  left: -30px;
-  right: -30px;
-  bottom: -30px;
-  background-color: rgba(255, 255, 255, 0.74);
 }

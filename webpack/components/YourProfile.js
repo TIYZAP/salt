@@ -119,11 +119,11 @@ class YourProfile extends React.Component{
       })
       if(this.state.friends){
         var recFriends = this.state.friends.map((friend, i) => {
-          return          <div style={eachFriend} className="col-sm-3" key={i}>
-                                <img height="200"  width="200" className="img-responsive" src={friend.image} alt="" />
-                                <h4 className="text-center">{friend.name}</h4>
+          return          <div style={eachFriend} className="col-xs-4 rec-modal-friends" key={i}>
+                                <img src={friend.image} alt="" />
+                                <h5 className="text-center">{friend.name}</h5>
                                 <div className="text-center">
-                                    <button className="btn btn-info" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
+                                    <button className="btn btn-info btn-xs" onClick={(e) => this.sendId(friend, e.target)}>Recommend</button>
                                 </div>
                           </div>
         })
@@ -139,67 +139,66 @@ class YourProfile extends React.Component{
       }
         if(this.state.myReviews){
           var displayMyReviews = this.state.myReviews.map((review, i) => {
-              return <div className="col-sm-12 home-middle-middle-myreview" key={i}>
-                          <div className="row">
-                              <div className="col-sm-12">
-                                <p className="text-right delete-review"><i className="fa fa-times" aria-hidden="true" onClick={() => this.destroyReview(review)}></i></p>
-                                <Link to={'/readreview?place_id=' + review.place_id}>
-                                <h4 className="text-center">{review.venue_name}</h4>
-                                </Link>
-                                  <img  className="img-responsive" src={review.image} alt="" />
-                                  <p className="text-center">{moment(review.created_at).fromNow()}</p>
-                              </div>
-                              <div className="col-sm-12">
-                                <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
-                                  <p>Dish: {review.dish}</p>
-                                </div>
-                                  <div className="col-sm-12">
-                                    <h5>Review: <br/>{review.body}</h5>
-                                  </div>
-                                <div className="col-sm-12 text-center recommend-button-section">
-                                  <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
-                                  <Modal
-                                    isOpen={this.state.modalIsOpen}
-                                    onAfterOpen={this.afterOpenModal}
-                                    onRequestClose={this.closeModal}
-                                    contentLabel="Recommend Friends"
-                                    overlayClassName="YourProfile">
-                                    <div className="text-right">
-                                      <button onClick={this.closeModal}><i className="fa fa-times fa-2x" aria-hidden="true"></i>
-                                      </button>
-                                    </div>
-                                    <div className="row">
-                                      {recFriends}
-                                    </div>
-                                  </Modal>
-                              </div>
+              return <div className="col-sm-3 home-middle-middle-myreview" key={i}>
+                        <div className="row">
+                            <div className="col-sm-12">
+                              <p className="text-right delete-review"><i className="fa fa-times" aria-hidden="true" onClick={() => this.destroyReview(review)}></i></p>
+                              <Link to={'/readreview?place_id=' + review.place_id}>
+                              <h4 className="text-center">{review.venue_name}</h4>
+                            </Link>
+                            <img  className="img-responsive" src={review.image} alt="" />
+                            <p className="text-center">{moment(review.created_at).fromNow()}</p>
                           </div>
-                      </div>
-          })
-        }
-        return(
-            <div>
-                <Menu />
-                <Header />
-                <div className="row home-middle-section">
-                  <LeftMenu  {...this.props}/>
-                  <div className="col-sm-8 home-middle-middle">
-                    <div className="row my-profile-background">
-                        {/* <div className="col-sm-4">
-                            <img  height="300" width="200" src={this.state.image} alt="" />
-                        </div> */}
-                        <div className="col-sm-12 text-center">
-                            <h1 className="friend-profile-name">{this.state.name}</h1>
-                            <h4>Points: <span className="badge">{this.state.myReviews.length}0</span></h4>
-                            <h4>Achievements:</h4>
-                            {myBadges}
+                          <div className="col-sm-12">
+                            <ReactStars count={review.rating} edit={false} color1={'#Eb8a3e'}/>
+                            <p>Dish: {review.dish}</p>
+                          </div>
+                          <div className="col-sm-12">
+                            <h5>Review: <br/>{review.body}</h5>
+                          </div>
+                          <div className="col-sm-12 text-center recommend-button-section">
+                            <button className="btn btn-info" onClick={() => this.openModal(review)}>Recommend</button>
+                            <Modal
+                              isOpen={this.state.modalIsOpen}
+                              onAfterOpen={this.afterOpenModal}
+                              onRequestClose={this.closeModal}
+                              contentLabel="Recommend Friends"
+                              overlayClassName="YourProfile">
+                              <div className="text-right">
+                                <button onClick={this.closeModal}><i className="fa fa-times fa-2x" aria-hidden="true"></i>
+                              </button>
+                            </div>
+                            <div className="row">
+                              {recFriends}
+                            </div>
+                          </Modal>
                         </div>
                     </div>
-                     {displayMyReviews}
                   </div>
-                  <FriendSideBar />
-              </div>
-            </div>
+                })
+              }
+              return(
+                <div>
+                  <Menu />
+                  <Header />
+                  <div className="row home-middle-section">
+                    <LeftMenu  {...this.props}/>
+                    <div className="col-sm-8 home-middle-middle">
+                      <div className="row my-profile-background">
+                        <div className="col-sm-12 text-center">
+                          <h1 className="friend-profile-name">{this.state.name}</h1>
+                          <h4>Points: <span className="badge">{this.state.myReviews.length}0</span></h4>
+                          <h4>Achievements:</h4>
+                          {myBadges}
+                        </div>
+                      </div>
+                      <div className="row my-review-row">
+                        {displayMyReviews}
+                      </div>
+                    </div>
+                    <FriendSideBar />
+                  </div>
+          </div>
         )
     }
 }

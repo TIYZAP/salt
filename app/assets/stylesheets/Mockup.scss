@@ -154,11 +154,9 @@ $br: 10px;
         }
     }
     .home-middle-middle{
-        // background: $col7;
         background: url(/images/brushed_alu2X.png);
         height: 93vh;
         overflow: scroll;
-        // padding: 30px;
         .homepage-box{
             background: $col2;
             box-shadow: 5px 5px 10px lightgrey;
@@ -221,7 +219,6 @@ $br: 10px;
                 height: 90px;
                 white-space: nowrap;
                 &:hover, &:focus{
-                    // overflow: visible;
                     white-space: normal;
                     transition: all 0.9s ease;
                 }
@@ -235,11 +232,13 @@ $br: 10px;
         }
 
         //css for myreviews on myprofile
+        .my-review-row{
+            padding-left: 90px;
+
+        }
         .home-middle-middle-myreview{
             background: $col2;
             margin: 10px;
-            height: 450px;
-            width: 300px;
             box-shadow: 5px 5px 10px lightgrey;
             .delete-review{
                 i{
@@ -248,21 +247,22 @@ $br: 10px;
                 }
             }
             p{
-                margin: 0;
-                padding: 0;
+                // margin: 0;
+                // padding: 10;
             }
             img{
                 width: 100%;
                 height: 200px;
             }
-            h5{
+            h5, h4{
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: nowrap;
-                width: 80%;
+                width: 90%;
                 padding: 0;
                 margin: 0;
             }
+
             .recommend-button-section{
                 padding: 20px;
                 margin-top: 30px;
@@ -317,11 +317,15 @@ $br: 10px;
                     background: $col5;
                     color: white;
                     border: 1px solid white;
+                    min-width: 60px;
+                    min-height: 40px;
                 }
                 .post-review-button{
                     background: $col1;
                     color: white;
                     border: 1px solid white;
+                    min-width: 60px;
+                    min-height: 40px;
                 }
 
             }
@@ -459,6 +463,35 @@ $br: 10px;
     padding: 20px;
     padding-left: 60px;
 }
+.ReactModal__Overlay--after-open {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    bottom: 50px;
+    .ReactModal__Content--after-open{
+        background: url(/images/brushed_alu2X.png) !important;
+        top: 40px;
+        bottom: 40px;
+        left: 250px !important;
+        right: 250px !important;
+
+    }
+    .rec-modal-friends{
+        max-width: 300px;
+        max-height: 400px;
+        h5{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow:  hidden;
+            width: 80%;
+        }
+        img{
+            max-height: 20px;
+            max-height: 250px;
+        }
+    }
+}
 
 @media ( max-width : 768px ) {
     .friends-button{
@@ -498,9 +531,11 @@ $br: 10px;
                     width: 80px;
                 }
             }
+            .my-review-row{
+                padding-left: 0;
+            }
             .home-middle-middle-myreview{
-                .recommend-button-section{
-                }
+                // padding-left: 10px;
             }
         }
     }
@@ -510,15 +545,18 @@ $br: 10px;
     .myfriends-list{
         padding: 0;
     }
+    .ReactModal__Overlay--after-open {
+        position: fixed;
+        top: 45px;
+        left: -20px;
+        right: -20px;
+        bottom: -30px;
+        background: url(/images/footer_lodyas.png);
+    }
 }
 
 .friend-button-changer{
     background: grey;
-}
-
-
-@media ( max-width : 375px ) {
-
 }
 
 .middle-nav{
@@ -533,13 +571,4 @@ $br: 10px;
 
 .no-friends{
     display: none;
-}
-
-.ReactModal__Overlay--after-open {
-    position: fixed;
-    top: 45px;
-    left: -30px;
-    right: -30px;
-    bottom: -30px;
-    background-color: rgba(255, 255, 255, 0.74);
 }
