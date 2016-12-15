@@ -32,7 +32,6 @@ class LandingPage extends React.Component {
                     <li><i className="devicon-javascript-plain"></i></li>
                     <li><i className="devicon-react-original-wordmark"></i></li>
                     <br/>
-                    {/* <li><i className="devicon-atom-original-wordmark"></i></li> */}
                     <li><i className="devicon-git-plain-wordmark"></i></li>
                     <li><i className="devicon-github-plain-wordmark"></i></li>
                     <li><i className="devicon-heroku-plain-wordmark"></i></li>
