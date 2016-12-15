@@ -72,6 +72,8 @@ class LandingPage extends React.Component {
                         <h5>GitHub-<a href="https://github.com/Jkrouse13" target="_blank">https://github.com/Jkrouse13</a></h5>
                         <h5>Email-<a href="mailto:jon.krouse@gmail.com">jon.krouse@gmail.com</a></h5>
                     </div>
+                    <br/>
+                    <br/>
             </div>
             </div>
         )
