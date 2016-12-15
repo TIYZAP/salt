@@ -116,7 +116,6 @@ class Friends extends React.Component {
     }
     closeModal() {
       this.setState({modalIsOpen: false});
-      // window.location.href="/friends"
     }
     enterHandler(e){
       if(e.key === 'Enter'){
@@ -228,60 +227,60 @@ class Friends extends React.Component {
         }
 
         return(
-        <div>
+          <div>
             <Header />
             <Menu />
-          <div className="row">
-            <div className="home-middle-section">
+            <div className="row">
+              <div className="home-middle-section">
                 <LeftMenu  {...this.props}/>
-              <div className={window.location.href.indexOf('friends')?"col-sm-10 home-middle-middle":''}>
+                <div className={window.location.href.indexOf('friends')?"col-sm-10 home-middle-middle":''}>
                   <div className="row post-review-header">
-                          <h1 className="text-center">Friends</h1>
+                    <h1 className="text-center">Friends</h1>
                   </div>
                   <div className="row">
-                    <div className="col-sm-6 col-sm-offset-3 invite-section">
-                            <div className="input-group">
-                                <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
-                                <span className="input-group-btn">
-                                    <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
-                                </span>
-                            </div>
+                    <div className="col-sm-5 col-sm-offset-3 invite-section well">
+                      <div className="input-group">
+                        <input type="text" id="invite-input" className="form-control" placeholder="Enter friends email to invite them"   onChange={this.emailsHandler}  onKeyPress={this.enter}/>
+                        <span className="input-group-btn">
+                          <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.clickHandler}>Invite</button>
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <br/>
-                    <div className="row">
-                      <div className="col-sm-3 col-sm-offset-1  col-xs-3 text-right">
-                          <button className="btn friends-button" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Friends Search</button>
-                          <Modal
-                            isOpen={this.state.modalIsOpen}
-                            onAfterOpen={this.afterOpenModal}
-                            onRequestClose={this.closeModal}
-                            overlayClassName="YourProfile"
-                            contentLabel="Example Modal">
-                            <div className="text-right">
-                              <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
-                              </button>
-                            </div>
-                            <div className="col-sm-6 col-sm-offset-3 well">
-                                    <div className="input-group">
-                                        <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler}  onKeyPress={this.enterHandler}/>
-                                        <span className="input-group-btn">
-                                            <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.followClickHandler}>Search</button>
-                                        </span>
-                                    </div>
-                            </div>
-                            <div className="row">
-                              {lookupFriends}
-                            </div>
-                          </Modal>
+                  <div className="row">
+                    <div className="col-sm-3 col-sm-offset-1  col-xs-3 text-right">
+                      <button className="btn friends-button" onClick={this.openModal}><i className="fa fa-search" aria-hidden="true"></i> Friends Search</button>
+                      <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                        overlayClassName="YourProfile"
+                        contentLabel="Example Modal">
+                        <div className="text-right">
+                          <button onClick={this.closeModal}><i className="fa fa-times" aria-hidden="true"></i>
+                        </button>
                       </div>
-                      <div className="col-sm-3 col-xs-3 col-xs-offset-3 text-left">
-                        <button className="btn friends-button" onClick={this.followAllFriends}>Add All FB Friends</button>
+                      <div className="col-sm-6 col-sm-offset-3 well">
+                        <div className="input-group">
+                          <input type="text" id="invite-input" className="form-control" placeholder="Search for friends"   onChange={this.inputHandler}  onKeyPress={this.enterHandler}/>
+                          <span className="input-group-btn">
+                            <button className="btn my-button btn-md" id="invite-friend-button" onClick={this.followClickHandler}>Search</button>
+                          </span>
+                        </div>
                       </div>
+                      <div className="row">
+                        {lookupFriends}
+                      </div>
+                    </Modal>
                   </div>
-                  <div className="row myfriends-list">
-                      {myFriends}
+                  <div className="col-sm-3 col-xs-3 col-xs-offset-3 text-left">
+                    <button className="btn friends-button" onClick={this.followAllFriends}>Add All FB Friends</button>
                   </div>
+                </div>
+                <div className="row myfriends-list">
+                  {myFriends}
+                </div>
               </div>
               {window.location.href.indexOf('friends')?'':<div><FriendSideBar friends={this.state.friends} /></div>}
             </div>

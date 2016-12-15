@@ -54,12 +54,12 @@ class Search extends React.Component{
                         <h5>{result.vicinity}</h5>
                     </div>
                     <div className="col-sm-12">
-                        <div className="col-sm-6">
+                        <div className="col-xs-6">
                             <Link to={'/readreview?place_id=' + result.place_id} >
                             <button className="btn read-review-button btn-primary">Read Review</button>
                             </Link>
                         </div>
-                        <div className="col-sm-6">
+                        <div className="col-xs-6">
                             <Link to={'/review?place_id=' + result.place_id} >
                             <button className="btn post-review-button btn-success">Post Review</button>
                             </Link>
@@ -79,7 +79,7 @@ class Search extends React.Component{
                           <h1 className="text-center">Post a Review</h1>
                       </div>
                       <div className="col-sm-12 home-middle-middle-search">
-                          <div className="col-sm-6 col-sm-offset-3 search-wrapper">
+                          <div className="col-sm-6 col-sm-offset-3 search-wrapper well">
                               <form onSubmit={this.search}>
                             <div className="input-group">
                                 <label>Step 1:  Enter zip or address for restaurant</label>
